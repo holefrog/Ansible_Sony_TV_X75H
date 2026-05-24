@@ -1,11 +1,18 @@
 ---
+# 查询一次当前所有已启用的包，供后续四个 task 复用
+- name: 获取设备当前已启用的包列表
+  delegate_to: localhost
+  ansible.builtin.command: "{{ adb_cmd }} shell pm list packages -e"
+  register: enabled_packages
+  changed_when: false
+
 # 禁用遥测 / 隐私追踪类应用
 - name: 禁用遥测与隐私追踪应用
   delegate_to: localhost
   ansible.builtin.command: "{{ adb_cmd }} shell pm disable-user --user 0 {{ item }}"
   loop: "{{ telemetry_apps | default([]) }}"
-  register: disable_telemetry
-  changed_when: "'disabled-user' in disable_telemetry.stdout"
+  when: item in enabled_packages.stdout
+  changed_when: true
   failed_when: false
 
 # 禁用广告 / 推广内容类应用
@@ -13,8 +20,8 @@
   delegate_to: localhost
   ansible.builtin.command: "{{ adb_cmd }} shell pm disable-user --user 0 {{ item }}"
   loop: "{{ ad_apps | default([]) }}"
-  register: disable_ads
-  changed_when: "'disabled-user' in disable_ads.stdout"
+  when: item in enabled_packages.stdout
+  changed_when: true
   failed_when: false
 
 # 禁用 Sony 无用内置功能类应用
@@ -22,8 +29,8 @@
   delegate_to: localhost
   ansible.builtin.command: "{{ adb_cmd }} shell pm disable-user --user 0 {{ item }}"
   loop: "{{ sony_bloat_apps | default([]) }}"
-  register: disable_sony
-  changed_when: "'disabled-user' in disable_sony.stdout"
+  when: item in enabled_packages.stdout
+  changed_when: true
   failed_when: false
 
 # 禁用 Google 冗余组件类应用
@@ -31,6 +38,6 @@
   delegate_to: localhost
   ansible.builtin.command: "{{ adb_cmd }} shell pm disable-user --user 0 {{ item }}"
   loop: "{{ google_bloat_apps | default([]) }}"
-  register: disable_google
-  changed_when: "'disabled-user' in disable_google.stdout"
+  when: item in enabled_packages.stdout
+  changed_when: true
   failed_when: false

@@ -1,0 +1,13 @@
+---
+# Android 11 Scoped Storage 限制下，部分应用无法通过正常流程获取完整存储权限。
+# 使用 appops 直接授权，效果等同于在系统设置中手动开启"所有文件访问权限"。
+- name: 授予完整存储权限 (Android 11 MANAGE_EXTERNAL_STORAGE)
+  delegate_to: localhost
+  ansible.builtin.command: >
+    {{ adb_cmd }} shell appops set --uid {{ item }} MANAGE_EXTERNAL_STORAGE allow
+  loop:
+    - pl.solidexplorer2
+    - org.xbmc.kodi
+    - org.videolan.vlc
+  failed_when: false
+  changed_when: false
