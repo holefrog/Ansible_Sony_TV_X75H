@@ -1,0 +1,43 @@
+---
+# 遥测 / 隐私追踪类
+telemetry_apps:
+  - tv.samba.ssm
+  - tv.samba.gat
+  - com.sony.dtv.watchtvrecommendation
+  - com.sony.dtv.networkrecommendation
+  - com.sony.dtv.irbrecommendation
+  - com.sony.dtv.woprecommendation
+  - com.sony.dtv.recommendationservice
+  - com.sony.qrmt
+  - com.google.android.feedback
+
+# 广告 / 推广内容类
+ad_apps:
+  - com.google.android.tvrecommendations
+  - com.sony.dtv.sonyselect
+  - com.sony.dtv.sonyselect.overlay
+  - com.sony.dtv.discovery
+  - com.sony.snei.video.hhvu
+  - com.sony.dtv.bravialifehack
+
+# Sony 无用内置功能类
+sony_bloat_apps:
+  - com.sony.dtv.demo
+  - com.sony.dtv.demomode
+  - com.sony.dtv.demosupport
+  - com.sony.dtv.multiscreendemo
+  - com.sony.dtv.smarthelp
+  - com.sony.dtv.customersupport
+  - com.sony.dtv.imanual
+  - com.sony.dtv.eulaviewer
+  - com.sony.dtv.interactive.tv.service  # ⚠️ 部分固件禁用后设置菜单无法打开，出现时执行: adb shell pm enable com.sony.dtv.interactive.tv.service
+
+# Google 冗余组件类
+google_bloat_apps:
+  - com.google.android.videos
+  - com.google.android.youtube.tvmusic
+  - com.google.android.play.games
+  - com.google.android.marvin.talkback
+  - com.google.android.tts
+  - com.google.android.tvtutorials
+  - com.google.android.katniss

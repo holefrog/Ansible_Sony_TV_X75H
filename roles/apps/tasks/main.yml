@@ -1,0 +1,5 @@
+---
+- import_tasks: install_apks.yml
+- import_tasks: launcher.yml
+- import_tasks: kodi.yml
+- import_tasks: status.yml

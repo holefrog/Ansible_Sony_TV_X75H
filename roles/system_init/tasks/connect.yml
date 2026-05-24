@@ -1,0 +1,25 @@
+---
+# 主动连接设备，防止息屏后 ADB Wi-Fi 静默断开
+- name: 主动连接 ADB 设备
+  delegate_to: localhost
+  ansible.builtin.shell: "adb connect {{ tv_ip }}:5555"
+  changed_when: false
+  ignore_errors: yes
+
+# 验证设备是否在线且已授权
+- name: 检查 ADB 设备在线状态
+  delegate_to: localhost
+  ansible.builtin.command: "{{ adb_cmd }} get-state"
+  register: adb_state
+  changed_when: false
+  ignore_errors: yes
+
+- name: 验证设备在线（离线时中断并显示明确错误）
+  ansible.builtin.fail:
+    msg: |
+      【连接失败】无法与 Sony TV 建立 ADB 通信，设备处于离线或未授权状态。
+      请排查以下原因：
+      1. 屏幕上是否弹出"允许网络调试"的对话框？（勾选"一律允许"并确认）
+      2. 设备是否息屏导致 Wi-Fi ADB 断开？（先唤醒屏幕再重试）
+      3. 设备 IP 是否变化？（当前配置：{{ tv_ip }}）
+  when: adb_state.rc != 0 or 'device' not in adb_state.stdout

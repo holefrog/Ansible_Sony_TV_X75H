@@ -1,0 +1,34 @@
+---
+# 查找 files/ 目录下所有 APK 文件
+- name: 查找所有待安装的 APK 文件
+  delegate_to: localhost
+  ansible.builtin.find:
+    paths: "{{ role_path }}/files"
+    patterns: "*.apk"
+    recurse: no
+  register: apk_files
+
+- name: 显示待安装 APK 列表
+  ansible.builtin.debug:
+    msg:
+      待安装: "{{ apk_files.files | map(attribute='path') | map('basename') | list }}"
+
+# 逐个安装，ignore_errors 防止单个安装失败终止整体流程
+- name: 安装 APK 到设备
+  delegate_to: localhost
+  ansible.builtin.command: "{{ adb_cmd }} install -r '{{ item.path }}'"
+  loop: "{{ apk_files.files | default([]) }}"
+  loop_control:
+    label: "{{ item.path | basename }}"
+  register: install_result
+  changed_when: "'Success' in install_result.stdout"
+  failed_when: false
+
+# 打印安装失败的 APK，方便排查
+- name: 报告安装失败的 APK
+  ansible.builtin.debug:
+    msg: "【安装失败】{{ item.item.path | basename }}: {{ item.stderr | default('') }}"
+  loop: "{{ install_result.results | default([]) }}"
+  loop_control:
+    label: "{{ item.item.path | basename }}"
+  when: "'Success' not in (item.stdout | default(''))"

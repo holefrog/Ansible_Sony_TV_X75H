@@ -1,0 +1,32 @@
+<sources>
+    <video>
+        <default pathversion="1"></default>
+
+        <source>
+            <name>电影 (NAS_Media)</name>
+            <path>nfs://192.168.50.210/Media/Video/Movie/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>剧集 (NAS_Media)</name>
+            <path>nfs://192.168.50.210/Media/Video/TV/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+
+        <source>
+            <name>蓝光原盘 (Media_1T)</name>
+            <path>nfs://192.168.50.210/Media_1T/Bluray/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>动漫 (Media_1T)</name>
+            <path>nfs://192.168.50.210/Media_1T/Cartoon/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>剧集 (Media_1T)</name>
+            <path>nfs://192.168.50.210/Media_1T/TV/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+    </video>
+</sources>

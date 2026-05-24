@@ -1,0 +1,23 @@
+---
+- name: 通过 ADB 自动化配置 Sony Bravia X75H
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    tv_ip: "192.168.50.220"
+    adb_cmd: "adb -s {{ tv_ip }}:5555"
+    kodi_data: "/storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi"
+  pre_tasks:
+    - name: 确认 NAS 检查清单
+      ansible.builtin.pause:
+        prompt: |
+          ====================================================
+          部署前检查清单：
+          1. Sony TV 已开机且屏幕已唤醒（息屏会断开 ADB）
+          2. TV 与控制节点在同一网段（{{ tv_ip }}）
+          3. 所有 APK 已放入 roles/apps/files/
+          按 Enter 继续，Ctrl+C 取消
+          ====================================================
+  roles:
+    - system_init
+    - apps

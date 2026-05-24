@@ -1,0 +1,26 @@
+---
+# 确保 Projectivy 组件处于启用状态
+- name: 启用 Projectivy Launcher
+  delegate_to: localhost
+  ansible.builtin.command: "{{ adb_cmd }} shell pm enable com.spocky.projengmenu"
+  register: enable_result
+  changed_when: "'enabled' in enable_result.stdout"
+  failed_when: false
+
+# 将 Projectivy 设为系统默认 Home Activity
+- name: 设置 Projectivy 为默认桌面
+  delegate_to: localhost
+  ansible.builtin.command: >
+    {{ adb_cmd }} shell cmd package set-home-activity
+    com.spocky.projengmenu/com.spocky.projengmenu.ui.home.MainActivity
+  register: set_home_result
+  changed_when: true
+  failed_when: false
+
+# 禁用 Sony 原生桌面，防止按 Home 键回到原生界面
+- name: 禁用 Sony 原生桌面
+  delegate_to: localhost
+  ansible.builtin.command: "{{ adb_cmd }} shell pm disable-user --user 0 com.google.android.tvlauncher"
+  register: disable_launcher
+  changed_when: "'disabled-user' in disable_launcher.stdout"
+  failed_when: false
