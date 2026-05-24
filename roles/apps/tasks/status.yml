@@ -73,6 +73,17 @@
   changed_when: false
   failed_when: check_fonts.rc != 0 or check_fonts.stdout | trim == ''
 
+- name: 验证完整存储权限已授予
+  delegate_to: localhost
+  ansible.builtin.command: "{{ adb_cmd }} shell appops get --uid {{ item }} MANAGE_EXTERNAL_STORAGE"
+  register: check_permissions
+  changed_when: false
+  failed_when: "'allow' not in check_permissions.stdout"
+  loop:
+    - pl.solidexplorer2
+    - org.xbmc.kodi
+    - org.videolan.vlc
+
 # ── 部署完成汇总 ──────────────────────────────────────────────────────────
 
 - name: 打印最终部署状态
