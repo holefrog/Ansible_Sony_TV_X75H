@@ -12,12 +12,16 @@
     filter: databases
   register: mysql_db_info
 
-- name: 确认数据库已就绪
-  ansible.builtin.fail:
+- name: 提示数据库未就绪
+  ansible.builtin.debug:
     msg: |
       【未就绪】MyVideos131 数据库目前不存在。
-      如果出错，请先在 Sony TV 上运行 Kodi 一次，等待其连接 MariaDB 并自动完成建库。
+      请先在 Sony TV 上运行 Kodi 一次，等待其连接 MariaDB 并自动完成建库。
       建库完成后关闭 Kodi，然后再重新运行此 playbook (执行 apply_mariadb.sh)。
+  when: "'MyVideos131' not in mysql_db_info.databases"
+
+- name: 中止后续任务等待 Kodi 初始化 (非报错退出)
+  ansible.builtin.meta: end_play
   when: "'MyVideos131' not in mysql_db_info.databases"
 
 # INSERT IGNORE：路径已存在则跳过，不重复插入

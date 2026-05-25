@@ -3,6 +3,11 @@
         <default pathversion="1"></default>
 
         <source>
+            <name>Movie Set Art (NAS_Media)</name>
+            <path>nfs://192.168.50.210/Media/Video/Movie_Set_Art/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
             <name>电影 (NAS_Media)</name>
             <path>nfs://192.168.50.210/Media/Video/Movie/</path>
             <allowsharing>true</allowsharing>
