@@ -27,16 +27,4 @@ $ADB pull "${KODI_DATA}/userdata/guisettings.xml" "${DEST_KODI}/guisettings.xml"
 echo ">>> 拉取 Fonts 目录"
 $ADB pull "${KODI_DATA}/media/Fonts" "$DEST_FONTS"
 
-echo ">>> 查找 Kodi 皮肤目录"
-SKINS=$($ADB shell "ls ${KODI_DATA}/addons" 2>/dev/null | tr -d '\r' | grep '^skin' || true)
-
-if [ -n "$SKINS" ]; then
-  for skin in $SKINS; do
-    echo ">>> 拉取皮肤: $skin"
-    $ADB pull "${KODI_DATA}/addons/${skin}" "${DEST_ADDONS}/${skin}"
-  done
-else
-  echo ">>> 未检测到 Kodi 皮肤目录 (skin.*)"
-fi
-
-echo ">>> 备份完成。请检查 ${DEST_KODI}, ${DEST_FONTS}, ${DEST_ADDONS}"
+echo ">>> 备份完成。请检查 ${DEST_KODI} 和 ${DEST_FONTS}"

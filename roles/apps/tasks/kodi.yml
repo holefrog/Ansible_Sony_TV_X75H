@@ -27,6 +27,28 @@
   when: fonts_dir.stat.exists and fonts_dir.stat.isdir
   changed_when: true
 
+# 推送 Kodi 皮肤 addon
+- name: 检查本地 Kodi skin addon 是否存在
+  delegate_to: localhost
+  ansible.builtin.stat:
+    path: "{{ role_path }}/files/addons/skin.aeon.nox.silvo"
+  register: skin_addon_dir
+
+- name: 确保 Kodi addons 目录存在
+  delegate_to: localhost
+  ansible.builtin.command: >
+    {{ adb_cmd }} shell mkdir -p {{ kodi_data }}/addons
+  when: skin_addon_dir.stat.exists and skin_addon_dir.stat.isdir
+  changed_when: false
+
+- name: 部署 Kodi 皮肤 addon
+  delegate_to: localhost
+  ansible.builtin.shell: |
+    {{ adb_cmd }} shell rm -rf {{ kodi_data }}/addons/skin.aeon.nox.silvo
+    {{ adb_cmd }} push {{ role_path }}/files/addons/skin.aeon.nox.silvo {{ kodi_data }}/addons/skin.aeon.nox.silvo
+  when: skin_addon_dir.stat.exists and skin_addon_dir.stat.isdir
+  changed_when: true
+
 # 推送 sources.xml
 - name: 检查本地 sources.xml 是否存在
   delegate_to: localhost
