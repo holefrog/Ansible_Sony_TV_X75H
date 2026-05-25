@@ -85,10 +85,10 @@ pip install PyMySQL --break-system-packages
 
 ```
 第一步：QNAP 启动 MariaDB 容器
-第二步：./apply_mariadb.sh     ← 创建 kodi 用户和权限
+第二步：./apply_mariadb.sh     ← 创建 kodi 用户和权限（本阶段仅准备 MariaDB 账号权限，若 Kodi 未首次启动完成建库，则本次运行会提前退出，不写入媒体路径）
 第三步：./apply.sh             ← 部署 TV（含推送 advancedsettings.xml）
-第四步：TV 上启动 Kodi          ← 等待 Kodi 自动建库（MyVideos131）
-第五步：./apply_mariadb.sh     ← 写入媒体路径绑定关系
+第四步：TV 上启动 Kodi          ← 等待 Kodi 自动建库（MyVideos131），此时 Kodi 才会根据 advancedsettings.xml 连接 MariaDB 并完成数据库创建
+第五步：./apply_mariadb.sh     ← 再次运行以写入媒体路径绑定关系
 第六步：Kodi 扫描媒体           ← 读取 NFO 写入 MariaDB，完成
 ```
 

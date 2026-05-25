@@ -1,7 +1,7 @@
 ---
 # MyVideos131 是 Kodi 21 Omega 的数据库版本
-# 必须等 Kodi 第一次启动后自动建库建表，才能执行此 task
-# 如果数据库不存在，此 task 会报错提示先启动 Kodi
+# 必须先执行 site.yml 推送 advancedsettings.xml，并在 Sony TV 上启动 Kodi 完成首次建库
+# 如果数据库不存在，Ansible 会自动通过 ADB 启动 Kodi 并轮询数据库是否 ready
 
 - name: 获取 MariaDB 现有的数据库列表
   community.mysql.mysql_info:
@@ -11,18 +11,70 @@
     login_password: "{{ mariadb_password }}"
     filter: databases
   register: mysql_db_info
+  failed_when: false
+  changed_when: false
 
-- name: 提示数据库未就绪
-  ansible.builtin.debug:
+- name: 规范化数据库列表变量
+  ansible.builtin.set_fact:
+    mariadb_databases: "{{ mysql_db_info.databases | default([]) }}"
+
+- name: 确认 MariaDB 连接成功
+  ansible.builtin.fail:
     msg: |
-      【未就绪】MyVideos131 数据库目前不存在。
-      请先在 Sony TV 上运行 Kodi 一次，等待其连接 MariaDB 并自动完成建库。
-      建库完成后关闭 Kodi，然后再重新运行此 playbook (执行 apply_mariadb.sh)。
-  when: "'MyVideos131' not in mysql_db_info.databases"
+      无法连接到 MariaDB，请检查 mariadb_host、mariadb_port、mariadb_user 和 mariadb_password。
+      还要确认 kodi-mariadb 容器正在运行。
+  when: mysql_db_info.failed is defined and mysql_db_info.failed
 
-- name: 中止后续任务等待 Kodi 初始化 (非报错退出)
-  ansible.builtin.meta: end_play
-  when: "'MyVideos131' not in mysql_db_info.databases"
+- name: 检查 Kodi advancedsettings.xml 是否已部署
+  ansible.builtin.command: "{{ adb_cmd }} shell ls {{ kodi_data }}/userdata/advancedsettings.xml"
+  register: advancedsettings_check
+  failed_when: false
+  changed_when: false
+
+- name: 如果 advancedsettings.xml 未部署则失败
+  ansible.builtin.fail:
+    msg: |
+      advancedsettings.xml 尚未部署到 TV。
+      请先执行 site.yml 部署 Kodi 配置，然后重新运行 init_mariadb.sh。
+  when:
+    - "'MyVideos131' not in mariadb_databases"
+    - advancedsettings_check.rc != 0
+
+- name: 自动启动 Kodi 进行首次数据库创建
+  ansible.builtin.command: "{{ adb_cmd }} shell monkey -p org.xbmc.kodi -c android.intent.category.LAUNCHER 1"
+  register: kodi_start
+  changed_when: true
+  failed_when: kodi_start.rc != 0
+  when: "'MyVideos131' not in mariadb_databases"
+
+- name: 等待 Kodi 首次建立 MyVideos131
+  community.mysql.mysql_info:
+    login_host: "{{ mariadb_host }}"
+    login_port: "{{ mariadb_port }}"
+    login_user: "{{ mariadb_user }}"
+    login_password: "{{ mariadb_password }}"
+    filter: databases
+  register: kodi_db_poll
+  until: "'MyVideos131' in kodi_db_poll.databases"
+  retries: 24
+  delay: 10
+  failed_when: false
+  when: "'MyVideos131' not in mariadb_databases"
+
+- name: 如果 MyVideos131 仍未建立则失败
+  ansible.builtin.fail:
+    msg: |
+      Kodi 启动后仍未检测到 MyVideos131。
+      请确认 TV 已成功启动 Kodi，并且 Kodi 能够连接 MariaDB。
+      你可以检查 Kodi 日志、TV 网络状态和 QNAP MariaDB 容器。
+  when:
+    - "'MyVideos131' not in mariadb_databases"
+    - "'MyVideos131' not in kodi_db_poll.databases"
+
+- name: 关闭 Kodi
+  ansible.builtin.command: "{{ adb_cmd }} shell am force-stop org.xbmc.kodi"
+  changed_when: true
+  when: "'MyVideos131' not in mariadb_databases"
 
 # INSERT IGNORE：路径已存在则跳过，不重复插入
 - name: 写入媒体路径与内容类型绑定关系
