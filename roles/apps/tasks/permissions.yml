@@ -20,3 +20,5 @@
   loop: "{{ permission_check.results }}"
   when: "item.stdout is defined and 'allow' not in item.stdout"
   failed_when: false
+  loop_control:
+    label: "{{ item.item }}"
