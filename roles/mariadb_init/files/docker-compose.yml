@@ -3,6 +3,7 @@ services:
   kodi-mariadb:
     image: mariadb:10.11
     container_name: kodi-mariadb
+    command: --skip-ssl
     ports:
       - 3306:3306
     volumes:

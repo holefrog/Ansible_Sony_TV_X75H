@@ -7,9 +7,9 @@ kodi_data: "/storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi"
 # ── MariaDB ───────────────────────────────────────────────
 mariadb_host: "192.168.50.210"
 mariadb_port: 3306
-mariadb_root_password: "changeme_root"
+mariadb_root_password: "maria_root_pwd"
 mariadb_user: "kodi"
-mariadb_password: "changeme_kodi"
+mariadb_password: "mysql_user_pwd"
 
 # ── Kodi 媒体路径与内容类型绑定 ──────────────────────────
 kodi_paths:
