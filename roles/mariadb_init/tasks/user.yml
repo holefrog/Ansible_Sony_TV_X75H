@@ -1,0 +1,23 @@
+---
+# Kodi 需要 GRANT ALL ON *.* 才能建库、建表、建 TRIGGER
+# 不能限定到单库，否则 Kodi 初始化时建 TRIGGER 会失败
+- name: 创建 Kodi 数据库用户并授予权限
+  community.mysql.mysql_user:
+    login_host: "{{ mariadb_host }}"
+    login_port: "{{ mariadb_port }}"
+    login_user: root
+    login_password: "{{ mariadb_root_password }}"
+    name: "{{ mariadb_user }}"
+    password: "{{ mariadb_password }}"
+    host: "%"
+    priv: "*.*:ALL"
+    plugin: mysql_native_password
+    state: present
+
+- name: 刷新权限
+  community.mysql.mysql_query:
+    login_host: "{{ mariadb_host }}"
+    login_port: "{{ mariadb_port }}"
+    login_user: root
+    login_password: "{{ mariadb_root_password }}"
+    query: "FLUSH PRIVILEGES"

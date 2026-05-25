@@ -1,0 +1,27 @@
+<advancedsettings>
+
+    <!-- MariaDB 集中数据库 -->
+    <videodatabase>
+        <type>mysql</type>
+        <host>{{ mariadb_host }}</host>
+        <port>{{ mariadb_port }}</port>
+        <user>{{ mariadb_user }}</user>
+        <pass>{{ mariadb_password }}</pass>
+    </videodatabase>
+    <musicdatabase>
+        <type>mysql</type>
+        <host>{{ mariadb_host }}</host>
+        <port>{{ mariadb_port }}</port>
+        <user>{{ mariadb_user }}</user>
+        <pass>{{ mariadb_password }}</pass>
+    </musicdatabase>
+
+    <!-- Movie Set 图片目录 -->
+    <videolibrary>
+        <moviesetsfolder>{{ kodi_moviesets_folder }}</moviesetsfolder>
+    </videolibrary>
+
+    <!-- 关闭启动画面 -->
+    <splash>false</splash>
+
+</advancedsettings>

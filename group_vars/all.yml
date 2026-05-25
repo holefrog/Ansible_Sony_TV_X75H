@@ -1,0 +1,43 @@
+---
+# ── TV ────────────────────────────────────────────────────
+tv_ip: "192.168.50.220"
+adb_cmd: "adb -s {{ tv_ip }}:5555"
+kodi_data: "/storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi"
+
+# ── MariaDB ───────────────────────────────────────────────
+mariadb_host: "192.168.50.210"
+mariadb_port: 3306
+mariadb_root_password: "changeme_root"
+mariadb_user: "kodi"
+mariadb_password: "changeme_kodi"
+
+# ── Kodi 媒体路径与内容类型绑定 ──────────────────────────
+kodi_paths:
+  - path: "nfs://192.168.50.210/Media/Video/Movie/"
+    content: "movies"
+    scraper: "metadata.local"
+    scan_recursive: 1
+    use_folder_names: 0
+  - path: "nfs://192.168.50.210/Media/Video/TV/"
+    content: "tvshows"
+    scraper: "metadata.local"
+    scan_recursive: 1
+    use_folder_names: 0
+  - path: "nfs://192.168.50.210/Media_1T/Bluray/"
+    content: "movies"
+    scraper: "metadata.local"
+    scan_recursive: 1
+    use_folder_names: 0
+  - path: "nfs://192.168.50.210/Media_1T/Cartoon/"
+    content: "tvshows"
+    scraper: "metadata.local"
+    scan_recursive: 1
+    use_folder_names: 0
+  - path: "nfs://192.168.50.210/Media_1T/TV/"
+    content: "tvshows"
+    scraper: "metadata.local"
+    scan_recursive: 1
+    use_folder_names: 0
+
+# ── Kodi Movie Set 图片目录 ───────────────────────────────
+kodi_moviesets_folder: "nfs://192.168.50.210/Media/Video/Movies_Sets_Art"

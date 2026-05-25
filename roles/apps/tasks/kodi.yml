@@ -13,7 +13,7 @@
     {{ kodi_data }}/userdata
   changed_when: false
 
-# 推送字体：使用 fonts/. 推送目录内容，避免产生 Fonts/fonts/ 嵌套
+# 推送字体
 - name: 检查本地 fonts 目录是否存在
   delegate_to: localhost
   ansible.builtin.stat:
@@ -42,32 +42,47 @@
   when: sources_xml.stat.exists
   changed_when: true
 
-# splash.jpg 优先；无 splash 则使用 advancedsettings.xml 禁用启动画面
+# 推送 guisettings.xml（包含字体、皮肤等 GUI 设置）
+- name: 检查本地 guisettings.xml 是否存在
+  delegate_to: localhost
+  ansible.builtin.stat:
+    path: "{{ role_path }}/files/kodi/guisettings.xml"
+  register: guisettings_xml
+
+- name: 推送 guisettings.xml
+  delegate_to: localhost
+  ansible.builtin.command: >
+    {{ adb_cmd }} push {{ role_path }}/files/kodi/guisettings.xml
+    {{ kodi_data }}/userdata/guisettings.xml
+  when: guisettings_xml.stat.exists
+  changed_when: true
+
+# 渲染并推送 advancedsettings.xml（含 MariaDB 连接 + moviesetsfolder）
+- name: 渲染 advancedsettings.xml 模板
+  delegate_to: localhost
+  ansible.builtin.template:
+    src: "{{ role_path }}/files/kodi/advancedsettings.xml.j2"
+    dest: "/tmp/advancedsettings.xml"
+    mode: '0644'
+
+- name: 推送 advancedsettings.xml 到 Kodi userdata
+  delegate_to: localhost
+  ansible.builtin.command: >
+    {{ adb_cmd }} push /tmp/advancedsettings.xml
+    {{ kodi_data }}/userdata/advancedsettings.xml
+  changed_when: true
+
+# splash.jpg（可选，优先于 advancedsettings.xml 里的 splash 设置）
 - name: 检查本地 splash.jpg 是否存在
   delegate_to: localhost
   ansible.builtin.stat:
     path: "{{ role_path }}/files/kodi/splash.jpg"
   register: splash_jpg
 
-- name: 检查本地 advancedsettings.xml 是否存在
-  delegate_to: localhost
-  ansible.builtin.stat:
-    path: "{{ role_path }}/files/kodi/advancedsettings.xml"
-  register: adv_settings
-
-- name: 部署 splash.jpg（优先）
+- name: 部署 splash.jpg
   delegate_to: localhost
   ansible.builtin.shell: |
     {{ adb_cmd }} shell "rm {{ kodi_data }}/media/splash.jpg {{ kodi_data }}/media/splash.png 2>/dev/null || true"
-    {{ adb_cmd }} shell "rm {{ kodi_data }}/userdata/advancedsettings.xml 2>/dev/null || true"
     {{ adb_cmd }} push {{ role_path }}/files/kodi/splash.jpg {{ kodi_data }}/media/splash.jpg
   when: splash_jpg.stat.exists
-  changed_when: true
-
-- name: 部署 advancedsettings.xml（仅在无 splash.jpg 时）
-  delegate_to: localhost
-  ansible.builtin.command: >
-    {{ adb_cmd }} push {{ role_path }}/files/kodi/advancedsettings.xml
-    {{ kodi_data }}/userdata/advancedsettings.xml
-  when: not splash_jpg.stat.exists and adv_settings.stat.exists
   changed_when: true

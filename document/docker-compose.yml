@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  kodi-mariadb:
+    image: mariadb:10.11
+    container_name: kodi-mariadb
+    ports:
+      - 3306:3306
+    volumes:
+      - /share/CACHEDEV1_DATA/Container_SSD/kodi-mariadb/data:/var/lib/mysql
+      - /share/CACHEDEV1_DATA/Container_SSD/kodi-mariadb/conf:/etc/mysql/conf.d
+    environment:
+      - MYSQL_ROOT_PASSWORD=maria_root_pwd
+      - MYSQL_DATABASE=kodi_video
+      - MYSQL_USER=kodi
+      - MYSQL_PASSWORD=mysql_user_pwd
+      - TZ=America/Vancouver
+      - PGID=100
+      - PUID=99
+    restart: unless-stopped

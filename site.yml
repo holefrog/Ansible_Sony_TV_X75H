@@ -3,12 +3,9 @@
   hosts: localhost
   connection: local
   gather_facts: false
-  vars:
-    tv_ip: "192.168.50.220"
-    adb_cmd: "adb -s {{ tv_ip }}:5555"
-    kodi_data: "/storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi"
+  # 所有变量统一在 group_vars/all.yml 中定义
   pre_tasks:
-    - name: 确认 NAS 检查清单
+    - name: 部署前检查清单
       ansible.builtin.pause:
         prompt: |
           ====================================================
