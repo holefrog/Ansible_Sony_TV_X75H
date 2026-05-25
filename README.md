@@ -24,10 +24,8 @@
 
 ```
 Ansible_Sony_TV_X75H/
-├── site.yml                          # TV 部署（日常使用）
-├── site_mariadb.yml                  # MariaDB 初始化（只跑一次）
+├── site.yml                          # TV 部署 + MariaDB 初始化
 ├── apply.sh                          # 执行 site.yml
-├── apply_mariadb.sh                  # 执行 site_mariadb.yml
 ├── init_project.sh                   # 初始化目录结构（新机器用）
 ├── backup_kodi.sh                    # 备份 Kodi 配置到本地
 ├── group_vars/
@@ -85,11 +83,10 @@ pip install PyMySQL --break-system-packages
 
 ```
 第一步：QNAP 启动 MariaDB 容器
-第二步：./apply_mariadb.sh     ← 创建 kodi 用户和权限（本阶段仅准备 MariaDB 账号权限，若 Kodi 未首次启动完成建库，则本次运行会提前退出，不写入媒体路径）
-第三步：./apply.sh             ← 部署 TV（含推送 advancedsettings.xml）
-第四步：TV 上启动 Kodi          ← 等待 Kodi 自动建库（MyVideos131），此时 Kodi 才会根据 advancedsettings.xml 连接 MariaDB 并完成数据库创建
-第五步：./apply_mariadb.sh     ← 再次运行以写入媒体路径绑定关系
-第六步：Kodi 扫描媒体           ← 读取 NFO 写入 MariaDB，完成
+第二步：./apply.sh             ← 创建 kodi 用户和权限，并部署 TV（含推送 advancedsettings.xml）
+第三步：等待 Kodi 自动启动并完成首次建库（MyVideos131），此时 Kodi 才会根据 advancedsettings.xml 连接 MariaDB 并完成数据库创建
+第四步：Ansible 会继续写入媒体路径绑定关系
+第五步：Kodi 扫描媒体           ← 读取 NFO 写入 MariaDB，完成
 ```
 
 ### 3.2 TV 重装后（MariaDB 已有数据）
@@ -189,7 +186,7 @@ docker restart kodi-mariadb
 
 - MariaDB 容器初始化
 - `advancedsettings.xml` 模板说明
-- 媒体路径与内容类型绑定（`apply_mariadb.sh` 自动写入）
+- 媒体路径与内容类型绑定（`site.yml` 自动写入）
 - Movie Set 图片目录配置
 - 字体与皮肤设置备份方法
 - Kodi 版本升级处理流程

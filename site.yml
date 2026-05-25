@@ -13,8 +13,42 @@
           1. Sony TV 已开机且屏幕已唤醒（息屏会断开 ADB）
           2. TV 与控制节点在同一网段（{{ tv_ip }}）
           3. 所有 APK 已放入 roles/apps/files/
+          4. QNAP 上 kodi-mariadb 容器已启动
           按 Enter 继续，Ctrl+C 取消
           ====================================================
+
+    - name: 检查控制节点是否已安装 PyMySQL
+      ansible.builtin.command: python3 -c "import pymysql"
+      register: pymysql_check
+      changed_when: false
+      failed_when: false
+
+    - name: 安装 PyMySQL（Ansible community.mysql 模块依赖）
+      ansible.builtin.pip:
+        name: PyMySQL
+        extra_args: "--break-system-packages"
+      when: pymysql_check.rc != 0
+
+    - name: 验证 MariaDB 连通性
+      community.mysql.mysql_info:
+        login_host: "{{ mariadb_host }}"
+        login_port: "{{ mariadb_port }}"
+        login_user: root
+        login_password: "{{ mariadb_root_password }}"
+      register: db_info
+      failed_when: false
+
+    - name: 确认 MariaDB 可达
+      ansible.builtin.fail:
+        msg: |
+          【连接失败】无法连接到 MariaDB {{ mariadb_host }}:{{ mariadb_port }}
+          请检查：
+          1. QNAP 上 kodi-mariadb 容器是否正在运行
+          2. 3306 端口是否已对外开放
+          3. mariadb_root_password 是否正确
+      when: db_info.failed is defined and db_info.failed
+
   roles:
     - system_init
     - apps
+    - mariadb_init

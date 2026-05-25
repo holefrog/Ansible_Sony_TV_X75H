@@ -16,7 +16,7 @@
 
 - name: 规范化数据库列表变量
   ansible.builtin.set_fact:
-    mariadb_databases: {{ mysql_db_info.databases | default([]) }}
+    mariadb_databases: "{{ mysql_db_info.databases | default([]) }}"
 
 - name: 确认 MariaDB 连接成功
   ansible.builtin.fail:
@@ -35,7 +35,7 @@
   ansible.builtin.fail:
     msg: |
       advancedsettings.xml 尚未部署到 TV。
-      请先执行 site.yml 部署 Kodi 配置，然后重新运行 init_mariadb.sh。
+      请确认本次 playbook 已成功部署 Kodi 配置，然后重试 site.yml。
   when:
     - "'MyVideos131' not in mariadb_databases"
     - advancedsettings_check.rc != 0
