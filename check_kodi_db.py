@@ -1,15 +1,24 @@
 import pymysql
 import sys
+import yaml
+import os
 
-# ==========================================
-# 请在此处修改你的 NAS MySQL/MariaDB 数据库配置
-# ==========================================
-NAS_HOST = "192.168.1.100"  # NAS 的 IP 地址
-NAS_PORT = 3306             # 数据库端口，默认通常是 3306
-DB_USER = "kodi"            # Kodi 连接数据库的用户名
-DB_PASSWORD = "kodi"        # Kodi 连接数据库的密码
-DB_NAME = "MyVideos121"     # 数据库名称 (请确认你 NAS 数据库里最新的 MyVideos 版本)
-# ==========================================
+# 自动从 Ansible 的 all.yml 读取 MariaDB 配置
+yaml_path = os.path.join(os.path.dirname(__file__), 'group_vars', 'all.yml')
+try:
+    with open(yaml_path, 'r', encoding='utf-8') as f:
+        config = yaml.safe_load(f)
+        
+    NAS_HOST = config.get('mariadb_host')
+    NAS_PORT = config.get('mariadb_port', 3306)
+    DB_USER = config.get('mariadb_user')
+    DB_PASSWORD = config.get('mariadb_password')
+except Exception as e:
+    print(f"❌ 读取 {yaml_path} 失败: {e}")
+    print("👉 请确保安装了 pyyaml 库: pip install pyyaml")
+    sys.exit(1)
+
+DB_NAME = "MyVideos121"  # 数据库名称 (请确认你 NAS 数据库里最新的 MyVideos 版本)
 
 def analyze_kodi_db():
     print(f"🔄 正在尝试连接 NAS 数据库 {NAS_HOST}:{NAS_PORT} [{DB_NAME}] ...")

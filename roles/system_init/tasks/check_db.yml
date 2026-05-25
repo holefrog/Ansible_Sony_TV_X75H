@@ -1,0 +1,29 @@
+---
+# 纯 Ansible 方式：查询 Kodi 数据库中的“漏网之鱼”
+# 运行前确保已安装 Ansible MySQL 依赖: ansible-galaxy collection install community.mysql
+
+- name: 查询 Kodi 数据库中已扫描但未入库的游离视频
+  delegate_to: localhost
+  community.mysql.mysql_query:
+    login_host: "{{ mariadb_host }}"
+    login_port: "{{ mariadb_port }}"
+    login_user: "{{ mariadb_user }}"
+    login_password: "{{ mariadb_password }}"
+    login_db: "MyVideos121"  # ⚠️ 请根据实际 Kodi 数据库版本调整，如 MyVideos131
+    query: >
+      SELECT strFilename FROM files 
+      WHERE (strFilename LIKE '%.mkv' OR strFilename LIKE '%.mp4' OR strFilename LIKE '%.avi' OR strFilename LIKE '%.ts' OR strFilename LIKE '%.iso')
+      AND idFile NOT IN (SELECT idFile FROM movie)
+      AND idFile NOT IN (SELECT idFile FROM episode)
+  register: unscraped_result
+
+- name: 打印 Kodi 拒绝入库的“罪魁祸首”文件列表
+  ansible.builtin.debug:
+    msg: "⚠️ Kodi 遗漏了此文件: {{ item.strFilename }}"
+  loop: "{{ unscraped_result.query_result[0] | default([]) }}"
+  when: unscraped_result.rowcount > 0
+
+- name: 结果汇总
+  ansible.builtin.debug:
+    msg: "🎉 太棒了，Kodi 数据库已经收录了所有视频！"
+  when: unscraped_result.rowcount == 0
