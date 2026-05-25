@@ -9,7 +9,7 @@
     login_port: "{{ mariadb_port }}"
     login_user: "{{ mariadb_user }}"
     login_password: "{{ mariadb_password }}"
-    login_db: "MyVideos121"  # ⚠️ 请根据实际 Kodi 数据库版本调整，如 MyVideos131
+    login_db: "MyVideos131"  # ⚠️ 请根据实际 Kodi 数据库版本调整，如 MyVideos131
     query: >
       SELECT strFilename FROM files 
       WHERE (strFilename LIKE '%.mkv' OR strFilename LIKE '%.mp4' OR strFilename LIKE '%.avi' OR strFilename LIKE '%.ts' OR strFilename LIKE '%.iso')
