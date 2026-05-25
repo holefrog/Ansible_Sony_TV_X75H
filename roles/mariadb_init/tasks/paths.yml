@@ -16,7 +16,7 @@
 
 - name: 规范化数据库列表变量
   ansible.builtin.set_fact:
-    mariadb_databases: "{{ mysql_db_info.databases | default([]) }}"
+    mariadb_databases: {{ mysql_db_info.databases | default([]) }}
 
 - name: 确认 MariaDB 连接成功
   ansible.builtin.fail:
