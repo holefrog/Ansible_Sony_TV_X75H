@@ -25,6 +25,26 @@
       还要确认 kodi-mariadb 容器正在运行。
   when: mysql_db_info.failed is defined and mysql_db_info.failed
 
+- name: 验证 Kodi NFS 媒体源路径格式
+  ansible.builtin.assert:
+    that:
+      - kodi_paths | map(attribute='path') | select('match', '^nfs://') | list | length == kodi_paths | length
+    fail_msg: |
+      kodi_paths 中存在非 NFS URL，当前配置要求所有媒体源路径均为 nfs:// 格式。
+
+- name: 解析 NFS 媒体源主机列表
+  ansible.builtin.set_fact:
+    nfs_hosts: "{{ kodi_paths | map(attribute='path') | select('match','^nfs://') | map('regex_replace','^nfs://([^/]+)/.*','\\1') | unique | list }}"
+
+- name: 验证 NFS 服务器可达
+  ansible.builtin.wait_for:
+    host: "{{ item }}"
+    port: 2049
+    timeout: 5
+  loop: "{{ nfs_hosts }}"
+  when: nfs_hosts | length > 0
+  changed_when: false
+
 - name: 检查 Kodi advancedsettings.xml 是否已部署
   ansible.builtin.command: "{{ adb_cmd }} shell ls {{ kodi_data }}/userdata/advancedsettings.xml"
   register: advancedsettings_check
