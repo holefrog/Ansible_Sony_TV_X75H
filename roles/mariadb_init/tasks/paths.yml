@@ -3,24 +3,22 @@
 # 必须等 Kodi 第一次启动后自动建库建表，才能执行此 task
 # 如果数据库不存在，此 task 会报错提示先启动 Kodi
 
-- name: 验证 MyVideos131 数据库已由 Kodi 初始化完成
-  community.mysql.mysql_query:
+- name: 获取 MariaDB 现有的数据库列表
+  community.mysql.mysql_info:
     login_host: "{{ mariadb_host }}"
     login_port: "{{ mariadb_port }}"
     login_user: "{{ mariadb_user }}"
     login_password: "{{ mariadb_password }}"
-    login_db: MyVideos131
-    query: "SELECT COUNT(*) FROM path"
-  register: path_check
-  failed_when: false
+    filter: databases
+  register: mysql_db_info
 
 - name: 确认数据库已就绪
   ansible.builtin.fail:
     msg: |
-      【未就绪】MyVideos131 数据库不存在或 path 表不存在。
-      请先在 Sony TV 上启动 Kodi 一次，等待其连接 MariaDB 并完成建库，
-      然后再重新执行 apply_mariadb.sh。
-  when: path_check.failed is defined and path_check.failed
+      【未就绪】MyVideos131 数据库目前不存在。
+      如果出错，请先在 Sony TV 上运行 Kodi 一次，等待其连接 MariaDB 并自动完成建库。
+      建库完成后关闭 Kodi，然后再重新运行此 playbook (执行 apply_mariadb.sh)。
+  when: "'MyVideos131' not in mysql_db_info.databases"
 
 # INSERT IGNORE：路径已存在则跳过，不重复插入
 - name: 写入媒体路径与内容类型绑定关系
