@@ -91,6 +91,20 @@
     - "'MyVideos131' not in mariadb_databases"
     - "'MyVideos131' not in kodi_db_poll.databases"
 
+- name: 确保 Kodi 已完整初始化数据表和视图
+  community.mysql.mysql_query:
+    login_host: "{{ mariadb_host }}"
+    login_port: "{{ mariadb_port }}"
+    login_user: "{{ mariadb_user }}"
+    login_password: "{{ mariadb_password }}"
+    login_db: MyVideos131
+    query: "SHOW TABLES LIKE 'movie_view';"
+  register: kodi_view_poll
+  until: kodi_view_poll.query_result[0] | length > 0
+  retries: 12
+  delay: 5
+  when: "'MyVideos131' not in mariadb_databases"
+
 - name: 关闭 Kodi
   ansible.builtin.command: "{{ adb_cmd }} shell am force-stop org.xbmc.kodi"
   changed_when: true
@@ -118,4 +132,3 @@
   loop: "{{ kodi_paths }}"
   loop_control:
     label: "{{ item.path }}"
-

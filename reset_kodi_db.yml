@@ -1,0 +1,24 @@
+---
+- name: 重置 Kodi 数据库 (删除损坏的空壳库)
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: 删除 MyVideos131 数据库
+      community.mysql.mysql_db:
+        login_host: "{{ mariadb_host }}"
+        login_port: "{{ mariadb_port }}"
+        login_user: root
+        login_password: "{{ mariadb_root_password }}"
+        name: MyVideos131
+        state: absent
+
+    - name: 删除 MyMusic83 数据库
+      community.mysql.mysql_db:
+        login_host: "{{ mariadb_host }}"
+        login_port: "{{ mariadb_port }}"
+        login_user: root
+        login_password: "{{ mariadb_root_password }}"
+        name: MyMusic83
+        state: absent
