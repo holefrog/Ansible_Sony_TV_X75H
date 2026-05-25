@@ -84,6 +84,54 @@
   failed_when: skin_addon_ready.rc != 0
   when: skin_addon_zip.stat.exists
 
+- name: 检查 Aeon 皮肤依赖 script.skinshortcuts 是否已安装
+  delegate_to: localhost
+  ansible.builtin.command: >
+    {{ adb_cmd }} shell test -f {{ kodi_data }}/addons/script.skinshortcuts/addon.xml
+  register: skinshortcuts_ready
+  changed_when: false
+  failed_when: false
+  when: skin_addon_zip.stat.exists
+
+- name: 缺少 Aeon 皮肤依赖：script.skinshortcuts
+  ansible.builtin.fail:
+    msg: "Aeon 皮肤依赖 script.skinshortcuts 未安装，请将其部署到 {{ kodi_data }}/addons/ 或通过 Kodi 安装。"
+  when:
+    - skin_addon_zip.stat.exists
+    - skinshortcuts_ready.rc != 0
+
+- name: 检查 Aeon 皮肤依赖 resource.images.studios.white 是否已安装
+  delegate_to: localhost
+  ansible.builtin.command: >
+    {{ adb_cmd }} shell test -f {{ kodi_data }}/addons/resource.images.studios.white/addon.xml
+  register: resource_studios_ready
+  changed_when: false
+  failed_when: false
+  when: skin_addon_zip.stat.exists
+
+- name: 缺少 Aeon 皮肤依赖：resource.images.studios.white
+  ansible.builtin.fail:
+    msg: "Aeon 皮肤依赖 resource.images.studios.white 未安装，请将其部署到 {{ kodi_data }}/addons/ 或通过 Kodi 安装。"
+  when:
+    - skin_addon_zip.stat.exists
+    - resource_studios_ready.rc != 0
+
+- name: 检查 Aeon 皮肤依赖 resource.images.recordlabels.white 是否已安装
+  delegate_to: localhost
+  ansible.builtin.command: >
+    {{ adb_cmd }} shell test -f {{ kodi_data }}/addons/resource.images.recordlabels.white/addon.xml
+  register: resource_recordlabels_ready
+  changed_when: false
+  failed_when: false
+  when: skin_addon_zip.stat.exists
+
+- name: 缺少 Aeon 皮肤依赖：resource.images.recordlabels.white
+  ansible.builtin.fail:
+    msg: "Aeon 皮肤依赖 resource.images.recordlabels.white 未安装，请将其部署到 {{ kodi_data }}/addons/ 或通过 Kodi 安装。"
+  when:
+    - skin_addon_zip.stat.exists
+    - resource_recordlabels_ready.rc != 0
+
 # 推送 sources.xml
 - name: 检查本地 sources.xml 是否存在
   delegate_to: localhost

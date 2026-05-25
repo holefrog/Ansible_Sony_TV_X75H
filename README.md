@@ -52,7 +52,12 @@ Ansible_Sony_TV_X75H/
 │   │       │   ├── sources.xml               # NFS 媒体源路径
 │   │       │   ├── guisettings.xml           # GUI 设置（含字体，从设备备份）
 │   │       │   └── splash.jpg                # 可选启动画面
-│   │       └── fonts/                        # Kodi 中文字体
+│   │       ├── fonts/                        # Kodi 中文字体
+│   │       └── addons/                       # Kodi addon 安装包（Aeon 皮肤及依赖）
+│
+> 注意：`skin.aeon.nox.silvo` 皮肤依赖 `script.skinshortcuts`、
+> `resource.images.studios.white` 和 `resource.images.recordlabels.white`。
+> 如果不部署这些依赖，Aeon 皮肤可能会出现空白界面或主菜单异常。
 │   └── mariadb_init/
 │       └── tasks/
 │           ├── main.yml
