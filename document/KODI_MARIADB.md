@@ -176,6 +176,16 @@ ORDER BY strPath;
 
 输出应包含你的 NFS 路径，以及对应的 `strContent`（movies/tvshows）和 `strScraper`（metadata.themoviedb.org 等）。
 
+### 3.4 监控媒体库刮削进度（可选）
+
+在 Kodi 扫描更新内容时，Kodi 会将识别到的电影和剧集逐条写入 MariaDB。你可以直接在控制节点使用 Ansible 的 Ad-Hoc 命令配合 Linux 的 `watch` 命令，来实时监控电影表的数据增长，而无需打断电视端的扫描进程：
+
+```bash
+watch -n 2 'ansible localhost -m community.mysql.mysql_query -a "login_host=192.168.50.xxx login_port=3306 login_user=kodi login_password=你的kodi密码 login_db=MyVideos131 query=\"SELECT COUNT(*) as movie_count FROM movie;\"" | grep movie_count'
+```
+
+看着数值不断跳动增长，等它彻底停下来不再增加时，就说明 Kodi 已经全部刮削完毕了。此时退回 Kodi 首页，你的电影海报墙就会完美重生！
+
 ---
 
 ## 第四阶段：日常备份（可选但建议）
@@ -224,6 +234,24 @@ mysql -h 192.168.50.xxx -u root -p < kodi_full_backup_before_upgrade.sql
 ```
 
 然后降回旧版 Kodi APK，查明原因后再重试。
+
+**全新部署或迁移后报错 "The table does not exist" 或进入电影墙卡死**
+
+**现象**：点击首页的“电影”或“剧集”无法正常显示海报墙，界面一直转圈或卡死。通过 ADB 拉取 `kodi.log` 发现大量 `SQL: [MyVideos131] The table does not exist` 的报错。
+
+**原因**：自动化建库时发生了竞态条件（Race Condition）。Kodi 在初次启动时，刚向 MariaDB 创建了 `MyVideos131` 库名，还没来得及执行内部的数十条 `CREATE TABLE` 和 `CREATE VIEW` 语句，外部的 Ansible 脚本因为轮询探测到数据库名存在，就立刻执行 `am force-stop` 将 Kodi 强行关闭。这留下了一个只有空壳、没有数据表和视图的“残缺”数据库。
+
+**解决方案**：
+1. 必须在 MariaDB 中彻底删除已损坏的空壳数据库（也可直接执行项目中提供的 `reset_kodi_db.yml` 进行一键清理）：
+   ```sql
+   DROP DATABASE MyVideos131;
+   DROP DATABASE IF EXISTS MyMusic83;
+   ```
+2. 修复 Ansible 自动化剧本逻辑：在探测到数据库名出现后，**必须增加对关键视图（如 `movie_view`）的探测任务**：
+   ```sql
+   SHOW TABLES LIKE 'movie_view';
+   ```
+3. 只有在确认核心视图已被 Kodi 成功创建后，才能安全地关闭 Kodi，让其不受打扰地完成首次完整建库。
 
 ---
 
