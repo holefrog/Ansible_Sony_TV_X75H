@@ -106,7 +106,7 @@
 - name: 确认 Kodi 媒体源绑定关系已写入
   ansible.builtin.assert:
     that:
-      - check_path_bindings.query_result[0].path_count | int > 0
+      - check_path_bindings.query_result[0][0].path_count | int > 0
     fail_msg: |
       未检测到任何 Kodi 媒体源绑定关系写入到 MyVideos131.path 表。
       请确认 mariadb_init 已成功执行媒体路径写入任务。
