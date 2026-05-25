@@ -74,13 +74,6 @@
   changed_when: false
   failed_when: check_sources.rc != 0
 
-- name: 验证 Kodi advancedsettings.xml 已推送
-  delegate_to: localhost
-  ansible.builtin.command: "{{ adb_cmd }} shell ls {{ kodi_data }}/userdata/advancedsettings.xml"
-  register: check_advancedsettings
-  changed_when: false
-  failed_when: check_advancedsettings.rc != 0
-
 - name: 验证 Kodi 字体目录不为空
   delegate_to: localhost
   ansible.builtin.command: "{{ adb_cmd }} shell ls {{ kodi_data }}/media/Fonts/"

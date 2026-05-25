@@ -3,4 +3,3 @@
 - import_tasks: permissions.yml
 - import_tasks: launcher.yml
 - import_tasks: kodi.yml
-- import_tasks: status.yml

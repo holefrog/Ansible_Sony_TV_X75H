@@ -1,3 +1,4 @@
 ---
 - import_tasks: user.yml
 - import_tasks: paths.yml
+- import_tasks: status.yml
