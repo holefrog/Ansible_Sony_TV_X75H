@@ -27,27 +27,62 @@
   when: fonts_dir.stat.exists and fonts_dir.stat.isdir
   changed_when: true
 
-# 推送 Kodi 皮肤 addon
-- name: 检查本地 Kodi skin addon 是否存在
+# 推送 Kodi 皮肤 addon zip
+- name: 检查本地 Kodi skin addon zip 是否存在
   delegate_to: localhost
   ansible.builtin.stat:
-    path: "{{ role_path }}/files/addons/skin.aeon.nox.silvo"
-  register: skin_addon_dir
+    path: "{{ role_path }}/files/addons/skin.aeon.nox.silvo-10.0.3.zip"
+  register: skin_addon_zip
+
+- name: 创建本地临时解压目录
+  delegate_to: localhost
+  ansible.builtin.file:
+    path: "/tmp/skin.aeon.nox.silvo-extract"
+    state: directory
+    mode: '0755'
+  when: skin_addon_zip.stat.exists
+
+- name: 本地解压 Kodi skin zip
+  delegate_to: localhost
+  ansible.builtin.unarchive:
+    src: "{{ role_path }}/files/addons/skin.aeon.nox.silvo-10.0.3.zip"
+    dest: "/tmp/skin.aeon.nox.silvo-extract"
+    remote_src: false
+  when: skin_addon_zip.stat.exists
 
 - name: 确保 Kodi addons 目录存在
   delegate_to: localhost
   ansible.builtin.command: >
     {{ adb_cmd }} shell mkdir -p {{ kodi_data }}/addons
-  when: skin_addon_dir.stat.exists and skin_addon_dir.stat.isdir
   changed_when: false
+  when: skin_addon_zip.stat.exists
 
-- name: 部署 Kodi 皮肤 addon
+- name: 部署 Kodi 皮肤 addon 到 TV
   delegate_to: localhost
   ansible.builtin.shell: |
     {{ adb_cmd }} shell rm -rf {{ kodi_data }}/addons/skin.aeon.nox.silvo
-    {{ adb_cmd }} push {{ role_path }}/files/addons/skin.aeon.nox.silvo {{ kodi_data }}/addons/skin.aeon.nox.silvo
-  when: skin_addon_dir.stat.exists and skin_addon_dir.stat.isdir
+    {{ adb_cmd }} push /tmp/skin.aeon.nox.silvo-extract/skin.aeon.nox.silvo {{ kodi_data }}/addons/skin.aeon.nox.silvo
+  when: skin_addon_zip.stat.exists
   changed_when: true
+
+- name: 删除本地临时解压目录
+  delegate_to: localhost
+  ansible.builtin.file:
+    path: "/tmp/skin.aeon.nox.silvo-extract"
+    state: absent
+  when: skin_addon_zip.stat.exists
+
+- name: 等待 Kodi Aeon skin 安装完成
+  delegate_to: localhost
+  ansible.builtin.command: >
+    {{ adb_cmd }} shell test -f {{ kodi_data }}/addons/skin.aeon.nox.silvo/addon.xml
+  register: skin_addon_ready
+  retries: 10
+  delay: 3
+  until: skin_addon_ready.rc == 0
+  changed_when: false
+  failed_when: skin_addon_ready.rc != 0
+  when: skin_addon_zip.stat.exists
 
 # 推送 sources.xml
 - name: 检查本地 sources.xml 是否存在
@@ -78,6 +113,8 @@
     {{ kodi_data }}/userdata/guisettings.xml
   when: guisettings_xml.stat.exists
   changed_when: true
+  retries: 3
+  delay: 2
 
 # 渲染并推送 advancedsettings.xml（含 MariaDB 连接 + moviesetsfolder）
 - name: 渲染 advancedsettings.xml 模板

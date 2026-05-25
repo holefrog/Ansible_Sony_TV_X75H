@@ -7,10 +7,8 @@ TV_IP="192.168.50.220"
 ADB="adb -s ${TV_IP}:5555"
 KODI_DATA="/storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi"
 DEST_KODI="roles/apps/files/kodi"
-DEST_FONTS="roles/apps/files/fonts"
-DEST_ADDONS="roles/apps/files/addons"
 
-echo ">>> 备份 Kodi 配置到本地"
+echo ">>> 备份 Kodi 皮肤最基本设置到本地"
 
 echo ">>> 连接 TV ${TV_IP}..."
 if ! $ADB connect "${TV_IP}:5555" 2>&1 | grep -Eq "connected|already connected"; then
@@ -19,12 +17,9 @@ if ! $ADB connect "${TV_IP}:5555" 2>&1 | grep -Eq "connected|already connected";
 fi
 
 echo ">>> 创建本地备份目录"
-mkdir -p "$DEST_KODI" "$DEST_FONTS" "$DEST_ADDONS"
+mkdir -p "$DEST_KODI"
 
 echo ">>> 拉取 guisettings.xml"
 $ADB pull "${KODI_DATA}/userdata/guisettings.xml" "${DEST_KODI}/guisettings.xml"
 
-echo ">>> 拉取 Fonts 目录"
-$ADB pull "${KODI_DATA}/media/Fonts" "$DEST_FONTS"
-
-echo ">>> 备份完成。请检查 ${DEST_KODI} 和 ${DEST_FONTS}"
+echo ">>> 备份完成。请检查 ${DEST_KODI}/guisettings.xml"
