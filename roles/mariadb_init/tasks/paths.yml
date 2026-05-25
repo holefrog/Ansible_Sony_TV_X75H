@@ -119,20 +119,3 @@
   loop_control:
     label: "{{ item.path }}"
 
-- name: 验证绑定关系已写入
-  community.mysql.mysql_query:
-    login_host: "{{ mariadb_host }}"
-    login_port: "{{ mariadb_port }}"
-    login_user: "{{ mariadb_user }}"
-    login_password: "{{ mariadb_password }}"
-    login_db: MyVideos131
-    query: >
-      SELECT strPath, strContent, strScraper
-      FROM path
-      WHERE strContent != '' AND strContent IS NOT NULL
-      ORDER BY strPath
-  register: path_result
-
-- name: 打印当前路径绑定关系
-  ansible.builtin.debug:
-    msg: "{{ path_result.query_result }}"

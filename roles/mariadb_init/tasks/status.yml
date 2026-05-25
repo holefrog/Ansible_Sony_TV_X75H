@@ -67,6 +67,50 @@
   changed_when: false
   failed_when: "'org.xbmc.kodi' not in check_kodi.stdout"
 
+- name: 验证 MariaDB Kodi 数据库 MyVideos131 是否存在
+  delegate_to: localhost
+  community.mysql.mysql_info:
+    login_host: "{{ mariadb_host }}"
+    login_port: "{{ mariadb_port }}"
+    login_user: "{{ mariadb_user }}"
+    login_password: "{{ mariadb_password }}"
+    filter: databases
+  register: check_mariadb
+  changed_when: false
+  failed_when: false
+
+- name: 确认 MariaDB Kodi 数据库 MyVideos131 已初始化
+  ansible.builtin.assert:
+    that:
+      - "'MyVideos131' in check_mariadb.databases"
+    fail_msg: |
+      MariaDB 中未检测到 Kodi 数据库 MyVideos131。
+      这表明 mariadb_init 任务可能未完成或数据库尚未初始化。
+
+- name: 验证 Kodi 媒体源绑定关系已写入 MyVideos131.path
+  delegate_to: localhost
+  community.mysql.mysql_query:
+    login_host: "{{ mariadb_host }}"
+    login_port: "{{ mariadb_port }}"
+    login_user: "{{ mariadb_user }}"
+    login_password: "{{ mariadb_password }}"
+    login_db: MyVideos131
+    query: >
+      SELECT COUNT(*) AS path_count
+      FROM path
+      WHERE strContent != '' AND strContent IS NOT NULL
+  register: check_path_bindings
+  changed_when: false
+  failed_when: false
+
+- name: 确认 Kodi 媒体源绑定关系已写入
+  ansible.builtin.assert:
+    that:
+      - check_path_bindings.query_result[0].path_count | int > 0
+    fail_msg: |
+      未检测到任何 Kodi 媒体源绑定关系写入到 MyVideos131.path 表。
+      请确认 mariadb_init 已成功执行媒体路径写入任务。
+
 - name: 验证 Kodi sources.xml 已推送
   delegate_to: localhost
   ansible.builtin.command: "{{ adb_cmd }} shell ls {{ kodi_data }}/userdata/sources.xml"
@@ -98,4 +142,4 @@
 
 - name: 打印最终部署状态
   ansible.builtin.debug:
-    msg: "✅ 所有检查均已通过：Bloat 已禁用，Projectivy 已就位，Kodi 配置已部署。"
+    msg: "✅ 所有检查均已通过：Bloat 已禁用，Projectivy 已就位，Kodi 配置与 MariaDB 媒体源绑定已部署。"
