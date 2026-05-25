@@ -9,6 +9,8 @@
   changed_when: false
   failed_when: item in check_telemetry.stdout
   loop: "{{ telemetry_apps | default([]) }}"
+  loop_control:
+    label: "{{ item }}"
 
 - name: 验证广告应用已被禁用
   delegate_to: localhost
@@ -17,6 +19,8 @@
   changed_when: false
   failed_when: item in check_ads.stdout
   loop: "{{ ad_apps | default([]) }}"
+  loop_control:
+    label: "{{ item }}"
 
 - name: 验证 Sony 冗余应用已被禁用
   delegate_to: localhost
@@ -25,6 +29,8 @@
   changed_when: false
   failed_when: item in check_sony.stdout
   loop: "{{ sony_bloat_apps | default([]) }}"
+  loop_control:
+    label: "{{ item }}"
 
 - name: 验证 Google 冗余组件已被禁用
   delegate_to: localhost
@@ -33,6 +39,8 @@
   changed_when: false
   failed_when: item in check_google.stdout
   loop: "{{ google_bloat_apps | default([]) }}"
+  loop_control:
+    label: "{{ item }}"
 
 # ── 第二层：应用安装与配置验证 ───────────────────────────────────────────
 
@@ -83,6 +91,8 @@
     - pl.solidexplorer2
     - org.xbmc.kodi
     - org.videolan.vlc
+  loop_control:
+    label: "{{ item }}"
 
 # ── 部署完成汇总 ──────────────────────────────────────────────────────────
 
