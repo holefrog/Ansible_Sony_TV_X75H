@@ -17,7 +17,7 @@ kodi_paths:
     content: "movies"
     scraper: "metadata.local"
     scan_recursive: 1
-    use_folder_names: 0
+    use_folder_names: 1
   - path: "nfs://192.168.50.210/Media/Video/TV/"
     content: "tvshows"
     scraper: "metadata.local"
@@ -27,7 +27,7 @@ kodi_paths:
     content: "movies"
     scraper: "metadata.local"
     scan_recursive: 1
-    use_folder_names: 0
+    use_folder_names: 1
   - path: "nfs://192.168.50.210/Media_1T/Cartoon/"
     content: "tvshows"
     scraper: "metadata.local"
