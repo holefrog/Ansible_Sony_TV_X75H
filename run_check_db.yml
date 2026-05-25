@@ -1,0 +1,7 @@
+---
+- name: 独立执行 Kodi 数据库排查
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - ansible.builtin.import_tasks: roles/system_init/tasks/check_db.yml

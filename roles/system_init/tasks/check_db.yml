@@ -2,6 +2,50 @@
 # 纯 Ansible 方式：查询 Kodi 数据库中的“漏网之鱼”
 # 运行前确保已安装 Ansible MySQL 依赖: ansible-galaxy collection install community.mysql
 
+- name: 统计 Kodi 数据库中的媒体条目总数
+  delegate_to: localhost
+  community.mysql.mysql_query:
+    login_host: "{{ mariadb_host }}"
+    login_port: "{{ mariadb_port }}"
+    login_user: "{{ mariadb_user }}"
+    login_password: "{{ mariadb_password }}"
+    login_db: "MyVideos131"  # ⚠️ 请根据实际 Kodi 数据库版本调整，如 MyVideos131
+    query:
+      - "SELECT COUNT(idMovie) AS total_movies FROM movie"
+      - "SELECT COUNT(idShow) AS total_shows FROM tvshow"
+      - "SELECT COUNT(idEpisode) AS total_episodes FROM episode"
+  register: db_stats
+
+- name: 打印 Kodi 媒体库统计信息
+  ansible.builtin.debug:
+    msg:
+      - "📊 Kodi 数据库中的有效条目统计："
+      - " 🎬 电影 (Movies): {{ db_stats.query_result[0][0].total_movies }} 部"
+      - " 📺 剧集 (TV Shows): {{ db_stats.query_result[1][0].total_shows }} 部 (共包含 {{ db_stats.query_result[2][0].total_episodes }} 集)"
+      - " ➡️  总计媒体条目数 (电影+剧集): {{ (db_stats.query_result[0][0].total_movies | int) + (db_stats.query_result[1][0].total_shows | int) }}"
+
+- name: 统计每个媒体源目录下的实际文件扫描量
+  delegate_to: localhost
+  community.mysql.mysql_query:
+    login_host: "{{ mariadb_host }}"
+    login_port: "{{ mariadb_port }}"
+    login_user: "{{ mariadb_user }}"
+    login_password: "{{ mariadb_password }}"
+    login_db: "MyVideos131"
+    query: >
+      SELECT p_root.strPath, COUNT(f.idFile) AS file_count
+      FROM path p_root
+      LEFT JOIN path p_sub ON p_sub.strPath LIKE CONCAT(p_root.strPath, '%')
+      LEFT JOIN files f ON f.idPath = p_sub.idPath
+      WHERE p_root.strContent IN ('movies', 'tvshows')
+      GROUP BY p_root.strPath
+  register: path_breakdown
+
+- name: 打印各 NFS 媒体源的扫描明细（寻找 0 文件的哑火目录）
+  ansible.builtin.debug:
+    msg: "📁 目录 [{{ item.strPath }}] -> 扫到 {{ item.file_count }} 个视频文件"
+  loop: "{{ path_breakdown.query_result[0] | default([]) }}"
+
 - name: 查询 Kodi 数据库中已扫描但未入库的游离视频
   delegate_to: localhost
   community.mysql.mysql_query:
@@ -21,9 +65,9 @@
   ansible.builtin.debug:
     msg: "⚠️ Kodi 遗漏了此文件: {{ item.strFilename }}"
   loop: "{{ unscraped_result.query_result[0] | default([]) }}"
-  when: unscraped_result.rowcount > 0
+  when: unscraped_result.rowcount[0] > 0
 
 - name: 结果汇总
   ansible.builtin.debug:
     msg: "🎉 太棒了，Kodi 数据库已经收录了所有视频！"
-  when: unscraped_result.rowcount == 0
+  when: unscraped_result.rowcount[0] == 0

@@ -1,0 +1,16 @@
+---
+- name: 从电视拉取 Kodi 运行日志
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: 通过 ADB 下载 kodi.log
+      ansible.builtin.command: >
+        {{ adb_cmd }} pull
+        {{ kodi_data }}/temp/kodi.log
+        {{ playbook_dir }}/kodi.log
+      changed_when: true
+
+    - name: 打印完成提示
+      ansible.builtin.debug:
+        msg: "✅ 日志拉取成功！文件已保存至: {{ playbook_dir }}/kodi.log"

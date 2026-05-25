@@ -1,0 +1,30 @@
+---
+- name: 强制 Kodi 深度重扫媒体库
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: 清除 Kodi 数据库中的目录哈希缓存 (破坏 Fast Hash)
+      community.mysql.mysql_query:
+        login_host: "{{ mariadb_host }}"
+        login_port: "{{ mariadb_port }}"
+        login_user: "{{ mariadb_user }}"
+        login_password: "{{ mariadb_password }}"
+        login_db: "MyVideos131"
+        query: "UPDATE path SET strHash = '';"
+      changed_when: true
+
+    - name: 唤醒并强制把 Kodi 切到前台
+      ansible.builtin.command: >
+        {{ adb_cmd }} shell monkey -p org.xbmc.kodi -c android.intent.category.LAUNCHER 1
+      changed_when: true
+      ignore_errors: true
+
+    - name: 等待 3 秒让 Kodi 界面加载
+      ansible.builtin.pause:
+        seconds: 3
+
+    - name: 触发 Kodi 视频库深度重扫 (使用精确内置命令)
+      ansible.builtin.command: >
+        {{ adb_cmd }} shell am broadcast -a org.xbmc.kodi.intent.action.EXECUTE_BUILTIN --es builtin '"UpdateLibrary(video)"'
+      changed_when: true
