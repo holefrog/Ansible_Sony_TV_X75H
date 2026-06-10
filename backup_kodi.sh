@@ -3,7 +3,14 @@ set -euo pipefail
 
 cd "$(dirname "$0")" || exit
 
-TV_IP="192.168.50.220"
+# 从 all.yml 中提取 IP，未找到则使用默认值
+EXTRACTED_IP=$(grep -E '^\s*(tv_ip|ansible_host)\s*:' all.yml group_vars/all.yml 2>/dev/null | head -n 1 | awk -F':' '{print $2}' | tr -d '"'\'' ' | tr -d '\r')
+if [ -n "$EXTRACTED_IP" ]; then
+    TV_IP="$EXTRACTED_IP"
+else
+    TV_IP="192.168.50.220"
+fi
+
 ADB="adb -s ${TV_IP}:5555"
 KODI_DATA="/storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi"
 DEST_KODI="roles/apps/files/kodi"
