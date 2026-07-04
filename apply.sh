@@ -5,7 +5,7 @@ cd "$(dirname "$0")" || exit
 
 # 从 all.yml 或 group_vars/all.yml 中提取 IP（兼容带空格和引号的格式）
 # 假设变量名为 tv_ip 或 ansible_host
-EXTRACTED_IP=$(grep -E '^\s*(tv_ip|ansible_host)\s*:' all.yml group_vars/all.yml 2>/dev/null | head -n 1 | awk -F':' '{print $2}' | tr -d '"'\'' ' | tr -d '\r')
+EXTRACTED_IP=$(grep -hE '^\s*(tv_ip|ansible_host)\s*:' all.yml group_vars/all.yml 2>/dev/null | head -n 1 | awk -F':' '{print $2}' | tr -d '"'\'' ' | tr -d '\r')
 
 if [ -n "$EXTRACTED_IP" ]; then
     TV_IP="$EXTRACTED_IP"
