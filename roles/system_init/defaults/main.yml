@@ -31,6 +31,8 @@ sony_bloat_apps:
   - com.sony.dtv.imanual
   - com.sony.dtv.eulaviewer
   - com.sony.dtv.interactive.tv.service  # ⚠️ 部分固件禁用后设置菜单无法打开，出现时执行: adb shell pm enable com.sony.dtv.interactive.tv.service
+  - com.sony.dtv.helpguidecontents
+  - android.autoinstalls.config.Sony.BRAVIA_VU1
 
 # Google 冗余组件类
 google_bloat_apps:
@@ -41,3 +43,13 @@ google_bloat_apps:
   - com.google.android.tts
   - com.google.android.tvtutorials
   - com.google.android.katniss
+  - com.android.printspooler
+  - com.android.providers.calendar
+  - com.android.providers.contacts
+  - com.google.android.syncadapters.calendar
+  - com.android.dreams.basic
+
+# 第三方预装冗余类
+third_party_bloat_apps:
+  - com.netflix.ninja
+  - com.amazon.amazonvideo.livingroom

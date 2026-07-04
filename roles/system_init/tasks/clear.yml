@@ -41,3 +41,12 @@
   when: item in enabled_packages.stdout
   changed_when: true
   failed_when: false
+
+# 禁用第三方预装冗余类应用
+- name: 禁用第三方预装冗余应用
+  delegate_to: localhost
+  ansible.builtin.command: "{{ adb_cmd }} shell pm disable-user --user 0 {{ item }}"
+  loop: "{{ third_party_bloat_apps | default([]) }}"
+  when: item in enabled_packages.stdout
+  changed_when: true
+  failed_when: false
