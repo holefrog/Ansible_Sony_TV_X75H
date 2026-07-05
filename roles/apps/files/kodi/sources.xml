@@ -19,5 +19,11 @@
             <path>nfs://192.168.50.210/Media/Video/TV/</path>
             <allowsharing>true</allowsharing>
         </source>
+
+        <source>
+            <name>动画 (NAS_Media)</name>
+            <path>nfs://192.168.50.210/Media/Video/Cartoon/</path>
+            <allowsharing>true</allowsharing>
+        </source>
     </video>
 </sources>
