@@ -9,6 +9,7 @@ echo "1. 正常部署 (运行 site.yml)"
 echo "2. 先清空 Kodi 数据库，再部署"
 echo "3. 仅清空 Kodi 数据库"
 echo "4. 检查 Kodi 数据库"
+echo "5. 强制 Kodi 深度重扫媒体库"
 echo "0. 退出 (默认)"
 echo "======================================"
 read -r -p "请输入选项 [0]: " choice
@@ -30,6 +31,12 @@ case "$choice" in
         echo ">>> 开始检查 Kodi 数据库..."
         python3 check_kodi_db.py
         echo ">>> 检查完毕，退出。"
+        exit 0
+        ;;
+    5)
+        echo ">>> 开始强制 Kodi 深度重扫媒体库..."
+        ansible-playbook force_rescan.yml
+        echo ">>> 触发完毕，退出。"
         exit 0
         ;;
     *)
