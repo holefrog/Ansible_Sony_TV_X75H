@@ -8,6 +8,7 @@ echo "请选择要执行的操作："
 echo "1. 正常部署 (运行 site.yml)"
 echo "2. 先清空 Kodi 数据库，再部署"
 echo "3. 仅清空 Kodi 数据库"
+echo "4. 检查 Kodi 数据库"
 echo "0. 退出 (默认)"
 echo "======================================"
 read -r -p "请输入选项 [0]: " choice
@@ -23,6 +24,12 @@ case "$choice" in
         echo ">>> 开始清空 Kodi 数据库..."
         ansible-playbook reset_kodi_db.yml
         echo ">>> 清理完毕，退出。"
+        exit 0
+        ;;
+    4)
+        echo ">>> 开始检查 Kodi 数据库..."
+        python3 check_kodi_db.py
+        echo ">>> 检查完毕，退出。"
         exit 0
         ;;
     *)
