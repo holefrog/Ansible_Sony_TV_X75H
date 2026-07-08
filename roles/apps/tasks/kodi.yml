@@ -33,19 +33,19 @@
       请手动安装 skin.aeon.nox.silvo 到 {{ kodi_data }}/addons/，或通过 Kodi 插件管理进行安装。
       安装后，请在 Kodi 设置中将 Aeon 皮肤设为默认皮肤。
 
-# 推送 sources.xml
-- name: 检查本地 sources.xml 是否存在
+# 渲染并推送 sources.xml
+- name: 渲染 sources.xml 模板
   delegate_to: localhost
-  ansible.builtin.stat:
-    path: "{{ role_path }}/files/kodi/sources.xml"
-  register: sources_xml
+  ansible.builtin.template:
+    src: "{{ role_path }}/templates/sources.xml.j2"
+    dest: "/tmp/sources.xml"
+    mode: '0644'
 
 - name: 推送 sources.xml
   delegate_to: localhost
   ansible.builtin.shell: |
     {{ adb_cmd }} shell "rm {{ kodi_data }}/userdata/sources.xml 2>/dev/null || true"
-    {{ adb_cmd }} push {{ role_path }}/files/kodi/sources.xml {{ kodi_data }}/userdata/sources.xml
-  when: sources_xml.stat.exists
+    {{ adb_cmd }} push /tmp/sources.xml {{ kodi_data }}/userdata/sources.xml
   changed_when: true
 
 # 推送 guisettings.xml（包含字体、皮肤等 GUI 设置）

@@ -1,0 +1,24 @@
+<sources>
+    <video>
+        <default pathversion="1"></default>
+
+        <source>
+            <name>Movie Set Art (NAS_Media)</name>
+            <path>{{ kodi_moviesets_folder }}</path>
+            <allowsharing>true</allowsharing>
+        </source>
+
+{% for item in kodi_paths %}
+        <source>
+            <name>{{ item.name }} (NAS_Media)</name>
+            <path>{{ item.path }}</path>
+            <allowsharing>true</allowsharing>
+{% if item.scan_recursive == 2147483647 or item.scan_recursive == 1 %}
+            <scanrecursive>true</scanrecursive>
+{% else %}
+            <scanrecursive>false</scanrecursive>
+{% endif %}
+        </source>
+{% endfor %}
+    </video>
+</sources>

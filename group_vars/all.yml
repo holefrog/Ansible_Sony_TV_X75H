@@ -13,20 +13,23 @@ mariadb_password: "mysql_user_pwd"
 
 # ── Kodi 媒体路径与内容类型绑定 ──────────────────────────
 kodi_paths:
-  - path: "nfs://192.168.50.210/Media/Video/Movie/"
+  - name: "电影"
+    path: "nfs://192.168.50.210/Media/Video/Movie/"
     content: "movies"
     scraper: "metadata.local"
-    scan_recursive: 1
+    scan_recursive: 2147483647
     use_folder_names: 1
-  - path: "nfs://192.168.50.210/Media/Video/TV/"
+  - name: "剧集"
+    path: "nfs://192.168.50.210/Media/Video/TV/"
     content: "tvshows"
     scraper: "metadata.local"
-    scan_recursive: 1
+    scan_recursive: 2147483647
     use_folder_names: 0
-  - path: "nfs://192.168.50.210/Media/Cartoon/"
+  - name: "动画"
+    path: "nfs://192.168.50.210/Media/Cartoon/"
     content: "tvshows"
     scraper: "metadata.local"
-    scan_recursive: 1
+    scan_recursive: 2147483647
     use_folder_names: 0
 
 # ── Kodi Movie Set 图片目录 ───────────────────────────────
