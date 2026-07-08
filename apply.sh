@@ -6,10 +6,8 @@ cd "$(dirname "$0")" || exit
 echo "======================================"
 echo "请选择要执行的操作："
 echo "1. 正常部署 (运行 site.yml)"
-echo "2. 先清空 Kodi 数据库，再部署"
-echo "3. 仅清空 Kodi 数据库"
-echo "4. 检查 Kodi 数据库"
-echo "5. 强制 Kodi 深度重扫媒体库"
+echo "2. 清空 Kodi 数据库 (重置)"
+echo "3. 检查并修复 Kodi 媒体库 (查漏 + 强制重扫)"
 echo "0. 退出 (默认)"
 echo "======================================"
 read -r -p "请输入选项 [0]: " choice
@@ -20,23 +18,28 @@ case "$choice" in
     2)
         echo ">>> 开始清空 Kodi 数据库..."
         ansible-playbook reset_kodi_db.yml
+        echo "--------------------------------------"
+        read -r -p "数据库已清空，是否继续执行完整的电视环境部署? (y/N): " deploy_choice
+        if [[ "$deploy_choice" =~ ^[Yy]$ ]]; then
+            echo ">>> 继续执行部署..."
+            # 走到这里不 exit，就会继续执行脚本底部的 site.yml 逻辑
+        else
+            echo ">>> 任务完成，退出。"
+            exit 0
+        fi
         ;;
     3)
-        echo ">>> 开始清空 Kodi 数据库..."
-        ansible-playbook reset_kodi_db.yml
-        echo ">>> 清理完毕，退出。"
-        exit 0
-        ;;
-    4)
         echo ">>> 开始检查 Kodi 数据库..."
         python3 check_kodi_db.py
-        echo ">>> 检查完毕，退出。"
-        exit 0
-        ;;
-    5)
-        echo ">>> 开始强制 Kodi 深度重扫媒体库..."
-        ansible-playbook force_rescan.yml
-        echo ">>> 触发完毕，退出。"
+        echo "--------------------------------------"
+        read -r -p "是否需要清除哈希缓存并强制 Kodi 重新扫描以修复遗漏? (y/N): " rescan_choice
+        if [[ "$rescan_choice" =~ ^[Yy]$ ]]; then
+            echo ">>> 开始强制 Kodi 深度重扫..."
+            ansible-playbook force_rescan.yml
+            echo ">>> 触发完毕！请前往电视查看 Kodi 扫描进度。"
+        else
+            echo ">>> 检查完毕，退出。"
+        fi
         exit 0
         ;;
     *)
