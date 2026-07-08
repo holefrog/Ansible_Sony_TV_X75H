@@ -18,7 +18,7 @@ except Exception as e:
     print("👉 请确保安装了 pyyaml 库: pip install pyyaml")
     sys.exit(1)
 
-DB_NAME = "MyVideos121"  # 数据库名称 (请确认你 NAS 数据库里最新的 MyVideos 版本)
+DB_NAME = "MyVideos131"  # 数据库名称 (请确认你 NAS 数据库里最新的 MyVideos 版本)
 
 def analyze_kodi_db():
     print(f"🔄 正在尝试连接 NAS 数据库 {NAS_HOST}:{NAS_PORT} [{DB_NAME}] ...")
