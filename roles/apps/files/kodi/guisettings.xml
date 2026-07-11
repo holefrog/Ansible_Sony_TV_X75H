@@ -354,7 +354,7 @@
     <setting id="powermanagement.displaysoff">20</setting>
     <setting id="powermanagement.shutdowntime">30</setting>
     <setting id="powermanagement.shutdownstate" default="true">0</setting>
-    <setting id="powermanagement.waitfornetwork" default="true">0</setting>
+    <setting id="powermanagement.waitfornetwork">30</setting>
     <setting id="powermanagement.wakeonaccess" default="true">false</setting>
     <setting id="general.addonupdates" default="true">0</setting>
     <setting id="general.addonnotifications" default="true">false</setting>
