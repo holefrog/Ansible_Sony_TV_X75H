@@ -3,6 +3,24 @@
 # 切换到脚本所在目录，确保相对路径正确
 cd "$(dirname "$0")" || exit
 
+# 全局前置拦截：检查 QNAP 解耦凭证是否存在
+if [ ! -f ~/.config/homelab/mariadb_config.yml ]; then
+    echo ""
+    echo "======================================================================"
+    echo " 🚨 架构解耦拦截：未找到 MariaDB 部署凭证！"
+    echo "======================================================================"
+    echo " 系统检测到 ~/.config/homelab/mariadb_config.yml 不存在。"
+    echo ""
+    echo " 👉 【一键修复方案】:"
+    echo " 请在终端前往 QNAP 项目目录，执行一次部署以生成该凭证："
+    echo ""
+    echo " $ cd ~/Coding/Ansible_QNAP/ansible"
+    echo " $ ansible-playbook site.yml --tags mariadb"
+    echo "======================================================================"
+    echo ""
+    exit 1
+fi
+
 echo "======================================"
 echo "1. 正常部署 (site.yml)                 - 全自动安装和配置环境，适用于新装或重置电视"
 echo "2. 清空 Kodi 数据库 (重置)             - 当数据混乱或刮削错误严重时，一键彻底清空 MariaDB 中的媒体库数据"
