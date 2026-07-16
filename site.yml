@@ -5,6 +5,9 @@
   gather_facts: false
   # 所有变量统一在 group_vars/all.yml 中定义
   pre_tasks:
+    - name: 载入外部数据库配置
+      ansible.builtin.import_tasks: load_db_secrets.yml
+
     - name: 部署前检查清单
       ansible.builtin.pause:
         prompt: |
@@ -42,3 +45,17 @@
   roles:
     - system_init
     - apps
+
+  post_tasks:
+    - name: 自动化收尾 - 启动 Kodi 以触发数据库初始化
+      ansible.builtin.command: "{{ adb_cmd }} shell am start -n org.xbmc.kodi/.Splash"
+      delegate_to: localhost
+      changed_when: true
+
+    - name: 等待 15 秒让 Kodi 自动建库完成
+      ansible.builtin.pause:
+        seconds: 15
+        prompt: "正在等待 Kodi 启动并自动在 MariaDB 中建立 MyVideos131 库..."
+
+- name: 自动同步媒体库内容类型
+  import_playbook: tools/sync_paths.yml

@@ -7,6 +7,9 @@
     - ../group_vars/all.yml
 
   tasks:
+    - name: 载入外部数据库配置
+      ansible.builtin.import_tasks: ../load_db_secrets.yml
+
     - name: 确保安装了数据库依赖
       ansible.builtin.import_tasks: ensure_pymysql.yml
 
