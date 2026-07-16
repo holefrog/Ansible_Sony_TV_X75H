@@ -8,27 +8,70 @@
     recurse: no
   register: apk_files
 
-- name: 显示待安装 APK 列表
-  ansible.builtin.debug:
-    msg:
-      待安装: "{{ apk_files.files | map(attribute='path') | map('basename') | list }}"
-
-# 逐个安装，ignore_errors 防止单个安装失败终止整体流程
-- name: 安装 APK 到设备
+- name: 获取本地 APK 文件的校验和
   delegate_to: localhost
-  ansible.builtin.command: "{{ adb_cmd }} install -r '{{ item.path }}'"
+  ansible.builtin.stat:
+    path: "{{ item.path }}"
   loop: "{{ apk_files.files | default([]) }}"
   loop_control:
     label: "{{ item.path | basename }}"
-  register: install_result
-  changed_when: "'Success' in install_result.stdout"
+  register: apk_stats
+
+- name: 创建 TV 端安装记录目录
+  delegate_to: localhost
+  ansible.builtin.command: "{{ adb_cmd }} shell mkdir -p /data/local/tmp/ansible_installed_apks"
+  changed_when: false
+
+- name: 检查 APK 是否已经安装（比对 MD5）
+  delegate_to: localhost
+  ansible.builtin.command: "{{ adb_cmd }} shell ls /data/local/tmp/ansible_installed_apks/{{ item.stat.checksum }}"
+  loop: "{{ apk_stats.results | default([]) }}"
+  register: apk_check
+  changed_when: false
   failed_when: false
+  loop_control:
+    label: "{{ item.item.path | basename }}"
+
+- name: 显示待安装 APK 列表
+  ansible.builtin.debug:
+    msg: "待安装: {{ item.item.path | basename }}"
+  loop: "{{ apk_stats.results | default([]) }}"
+  loop_control:
+    label: "{{ item.item.path | basename }}"
+    index_var: i
+  when: apk_check.results[i].rc != 0
+
+# 逐个安装，仅当校验和不存在时
+- name: 安装 APK 到设备 (仅在文件变更时)
+  delegate_to: localhost
+  ansible.builtin.command: "{{ adb_cmd }} install -r '{{ item.item.path }}'"
+  loop: "{{ apk_stats.results | default([]) }}"
+  loop_control:
+    label: "{{ item.item.path | basename }}"
+    index_var: i
+  when: apk_check.results[i].rc != 0
+  register: install_result
+  changed_when: "'Success' in (install_result.stdout | default(''))"
+  failed_when: false
+
+- name: 标记已成功安装的 APK
+  delegate_to: localhost
+  ansible.builtin.command: "{{ adb_cmd }} shell touch /data/local/tmp/ansible_installed_apks/{{ item.item.stat.checksum }}"
+  loop: "{{ install_result.results | default([]) }}"
+  loop_control:
+    label: "{{ item.item.item.path | basename }}"
+  when: 
+    - not (item.skipped | default(false))
+    - "'Success' in (item.stdout | default(''))"
+  changed_when: false
 
 # 打印安装失败的 APK，方便排查
 - name: 报告安装失败的 APK
   ansible.builtin.debug:
-    msg: "【安装失败】{{ item.item.path | basename }}: {{ item.stderr | default('') }}"
+    msg: "【安装失败】{{ item.item.item.path | basename }}: {{ item.stderr | default('') }}"
   loop: "{{ install_result.results | default([]) }}"
   loop_control:
-    label: "{{ item.item.path | basename }}"
-  when: "'Success' not in (item.stdout | default(''))"
+    label: "{{ item.item.item.path | basename }}"
+  when: 
+    - not (item.skipped | default(false))
+    - "'Success' not in (item.stdout | default(''))"
