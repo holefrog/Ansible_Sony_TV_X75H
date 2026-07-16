@@ -17,51 +17,13 @@
 
 ---
 
-## 第一阶段：QNAP 上建立 MariaDB 容器（一次性手动）
+## 第一阶段：MariaDB 后端部署（由 Ansible_QNAP 负责）
 
-### 1.1 使用 docker-compose 启动容器
+MariaDB 的完整部署（包括 Docker 容器创建、关闭强制 SSL、建立 kodi 用户并授权）已经**全部移交到 `Ansible_QNAP` 项目中实现**。
 
-使用项目提供的配置文件直接启动 MariaDB：
+在运行本（TV）项目的部署脚本之前，请**务必先在 QNAP 端运行 `Ansible_QNAP` 部署好 MariaDB 后端**。
 
-```bash
-docker-compose -f roles/mariadb_init/files/docker-compose.yml up -d
-```
-
-### 1.2 关闭强制 SSL（重要）
-
-Kodi Android 版连接 MariaDB 时不支持 SSL 握手，必须关闭强制 SSL，否则连接失败。
-由于配置中已将目录映射到宿主机，直接在 QNAP SSH 下执行：
-
-```bash
-cat >> /share/CACHEDEV1_DATA/Container_SSD/kodi-mariadb/conf/kodi.cnf << EOF
-[mysqld]
-skip_ssl
-EOF
-docker restart kodi-mariadb
-```
-
-### 1.3 建立数据库和用户
-
-```bash
-docker exec -it kodi-mariadb mysql -u root -p
-
-# 在 MariaDB 提示符下执行：
-CREATE DATABASE IF NOT EXISTS kodi_video CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE DATABASE IF NOT EXISTS kodi_music CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-GRANT ALL PRIVILEGES ON kodi_video.* TO 'kodi'@'%' IDENTIFIED BY '你的kodi密码';
-GRANT ALL PRIVILEGES ON kodi_music.* TO 'kodi'@'%' IDENTIFIED BY '你的kodi密码';
-FLUSH PRIVILEGES;
-EXIT;
-```
-
-### 1.4 验证连接
-
-在控制节点（ThinkPad）上测试连通性：
-
-```bash
-mysql -h 192.168.50.xxx -u kodi -p kodi_video
-# 输入密码后看到 MariaDB 提示符即成功
-```
+**注意**：本 TV 自动化脚本运行前，会进行探测。如果 QNAP 的 MariaDB 未就绪，TV 部署将自动阻断并提示。
 
 ---
 
@@ -81,14 +43,6 @@ mysql -h 192.168.50.xxx -u kodi -p kodi_video
         <pass>{{ mariadb_pass }}</pass>
         <name>kodi_video</name>
     </videodatabase>
-    <musicdatabase>
-        <type>mysql</type>
-        <host>{{ mariadb_host }}</host>
-        <port>3306</port>
-        <user>{{ mariadb_user }}</user>
-        <pass>{{ mariadb_pass }}</pass>
-        <name>kodi_music</name>
-    </musicdatabase>
 </advancedsettings>
 ```
 
@@ -130,7 +84,7 @@ Ansible 先在控制节点渲染模板，再用 ADB 推送：
 
 ### 3.1 启动 Kodi，确认连接 MariaDB
 
-Kodi 启动后会自动在 MariaDB 里建立 `MyVideos131` 和 `MyMusic83` 数据库，建表完成。
+Kodi 启动后会自动在 MariaDB 里建立 `MyVideos131` 数据库，建表完成。
 
 验证方法（在控制节点）：
 
@@ -197,7 +151,7 @@ QNAP 本身的快照和备份机制已经覆盖。
 
 ```bash
 docker exec kodi-mariadb mysqldump -u kodi -p你的kodi密码 \
-  --databases MyVideos131 kodi_video kodi_music \
+  --databases MyVideos131 kodi_video \
   > kodi_db_backup_$(date +%Y%m%d).sql
 ```
 
@@ -245,7 +199,6 @@ mysql -h 192.168.50.xxx -u root -p < kodi_full_backup_before_upgrade.sql
 1. 必须在 MariaDB 中彻底删除已损坏的空壳数据库（也可直接执行项目中提供的 `reset_kodi_db.yml` 进行一键清理）：
    ```sql
    DROP DATABASE MyVideos131;
-   DROP DATABASE IF EXISTS MyMusic83;
    ```
 2. 修复 Ansible 自动化剧本逻辑：在探测到数据库名出现后，**必须增加对关键视图（如 `movie_view`）的探测任务**：
    ```sql

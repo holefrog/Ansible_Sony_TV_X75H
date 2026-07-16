@@ -24,7 +24,7 @@
 
 ```
 Ansible_Sony_TV_X75H/
-├── site.yml                          # TV 部署 + MariaDB 初始化
+├── site.yml                          # TV 部署主入口
 ├── apply.sh                          # 执行 site.yml
 ├── init_project.sh                   # 初始化目录结构（新机器用）
 ├── backup_kodi.sh                    # 备份 Kodi 配置到本地
@@ -58,11 +58,6 @@ Ansible_Sony_TV_X75H/
 > 注意：`skin.aeon.nox.silvo` 皮肤已改为手动安装。
 > 本项目不再自动部署 Aeon 皮肤包。
 > 如果要启用 Aeon，请手动将 `skin.aeon.nox.silvo` 放到 `{{ kodi_data }}/addons/` 或通过 Kodi 插件管理进行安装，并在 Kodi 中设置为默认皮肤。
-│   └── mariadb_init/
-│       └── tasks/
-│           ├── main.yml
-│           ├── user.yml              # 创建 kodi 用户并授权
-│           └── paths.yml             # 写入媒体路径与刮削器绑定
 ```
 
 ---
@@ -134,30 +129,13 @@ Kodi 启动直接连 MariaDB，媒体库全部恢复，无需任何手动操作�
 
 ---
 
-## 5. MariaDB 容器设置
+## 5. MariaDB 容器设置（已交由 Ansible_QNAP 项目管理）
 
-### 5.1 docker-compose
+**重要更新**：为了贯彻“前后端分离”的架构思想，本 TV 项目现在仅负责客户端配置。
+关于 MariaDB 的所有部署操作（包括 docker-compose 启动容器、创建数据库用户、关闭 SSL、写入媒体库路径绑定等）已经全部迁移到专门的基础设施项目 **Ansible_QNAP** 中实现。
 
-使用项目目录下 `roles/mariadb_init/files/docker-compose.yml`，在 QNAP Container Station 中创建应用程序。
-或 SSH 进 QNAP 执行：
-
-```bash
-docker-compose -f roles/mariadb_init/files/docker-compose.yml up -d
-```
-
-### 5.2 关闭强制 SSL（必须）
-
-Kodi Android 版不支持 SSL 握手，不关闭会导致连接失败：
-
-```bash
-docker exec -it kodi-mariadb bash
-cat >> /etc/mysql/conf.d/kodi.cnf << EOF
-[mysqld]
-skip_ssl
-EOF
-exit
-docker restart kodi-mariadb
-```
+在运行本 TV 部署脚本前，请务必先运行 Ansible_QNAP 项目的部署脚本。
+本项目的 `site.yml` 也会在第一步自动检测 MariaDB 的 3306 端口连通性，若未准备好将自动阻断部署并提示。
 
 ### 5.3 版本升级说明
 
