@@ -4,7 +4,7 @@
 
 - name: 统计 Kodi 数据库中的媒体条目总数
   delegate_to: localhost
-  ansible.mysql.mysql_query:
+  ansible.mariadb.mariadb_query:
     login_host: "{{ mariadb_host }}"
     login_port: "{{ mariadb_port }}"
     login_user: "{{ mariadb_user }}"
@@ -26,7 +26,7 @@
 
 - name: 统计每个媒体源目录下的实际文件扫描量
   delegate_to: localhost
-  ansible.mysql.mysql_query:
+  ansible.mariadb.mariadb_query:
     login_host: "{{ mariadb_host }}"
     login_port: "{{ mariadb_port }}"
     login_user: "{{ mariadb_user }}"
@@ -48,7 +48,7 @@
 
 - name: 查询 Kodi 数据库中已扫描但未入库的游离视频
   delegate_to: localhost
-  ansible.mysql.mysql_query:
+  ansible.mariadb.mariadb_query:
     login_host: "{{ mariadb_host }}"
     login_port: "{{ mariadb_port }}"
     login_user: "{{ mariadb_user }}"
