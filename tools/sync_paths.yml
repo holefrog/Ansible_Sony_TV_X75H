@@ -23,13 +23,32 @@
       register: myvideos_check
       changed_when: false
 
-    - name: 如果 MyVideos131 不存在则终止
-      ansible.builtin.fail:
-        msg: |
-          MariaDB 中未找到 MyVideos131 数据库。
-          请先在 TV 上启动 Kodi，让其连接到这台 MariaDB，Kodi 会自动建库。
-          之后再重新运行此脚本。
+    - name: 如果 MyVideos131 不存在则启动 Kodi 并等待建库
       when: myvideos_check.rowcount[0] == 0
+      block:
+        - name: 启动 Kodi 以触发数据库初始化
+          ansible.builtin.command: "{{ adb_cmd }} shell am start -n org.xbmc.kodi/.Splash"
+          delegate_to: localhost
+          changed_when: true
+
+        - name: 等待 MariaDB 中创建 MyVideos131 数据库
+          delegate_to: localhost
+          ansible.mariadb.mariadb_query:
+            login_host: "{{ mariadb_host }}"
+            login_port: "{{ mariadb_port }}"
+            login_user: "{{ mariadb_user }}"
+            login_password: "{{ mariadb_user_password }}"
+            query: "SHOW DATABASES LIKE 'MyVideos131';"
+          register: wait_db
+          until: wait_db.rowcount[0] > 0
+          retries: 12
+          delay: 5
+          changed_when: false
+
+        - name: 自动关闭 Kodi 以释放数据库锁定
+          ansible.builtin.command: "{{ adb_cmd }} shell am force-stop org.xbmc.kodi"
+          delegate_to: localhost
+          changed_when: true
 
     - name: 写入 Kodi 媒体路径与内容类型绑定关系
       delegate_to: localhost
@@ -59,3 +78,6 @@
     - name: 成功提示
       ansible.builtin.debug:
         msg: "✅ 所有路径的内容类型（movies/tvshows）均已强制同步至 MariaDB！"
+
+    - name: 运行现有数据库排查报告
+      ansible.builtin.import_tasks: check_db_tasks.yml
