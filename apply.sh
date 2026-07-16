@@ -9,6 +9,7 @@ echo "1. 正常部署 (运行 site.yml)"
 echo "2. 清空 Kodi 数据库 (重置)"
 echo "3. 检查并修复 Kodi 媒体库 (查漏 + 强制重扫)"
 echo "4. 从电视拉取 Kodi 运行日志"
+echo "5. 修复/同步 Kodi 媒体路径内容类型 (sync_paths.yml)"
 echo "0. 退出 (默认)"
 echo "======================================"
 read -r -p "请输入选项 [0]: " choice
@@ -46,6 +47,11 @@ case "$choice" in
     4)
         echo ">>> 正在从电视拉取 Kodi 日志..."
         ansible-playbook tools/fetch_kodi_log.yml
+        exit 0
+        ;;
+    5)
+        echo ">>> 开始同步 Kodi 媒体路径内容类型..."
+        ansible-playbook tools/sync_paths.yml
         exit 0
         ;;
     *)

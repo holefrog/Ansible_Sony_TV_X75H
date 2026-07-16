@@ -1,0 +1,58 @@
+---
+- name: 修复/同步 Kodi 媒体路径内容类型
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars_files:
+    - ../group_vars/all.yml
+  tasks:
+    - name: 确保安装了数据库依赖
+      ansible.builtin.import_tasks: ensure_pymysql.yml
+
+    - name: 确认 MyVideos131 数据库已存在
+      delegate_to: localhost
+      ansible.mariadb.mariadb_query:
+        login_host: "{{ mariadb_host }}"
+        login_port: "{{ mariadb_port }}"
+        login_user: "{{ mariadb_user }}"
+        login_password: "{{ mariadb_user_password }}"
+        query: "SHOW DATABASES LIKE 'MyVideos131';"
+      register: myvideos_check
+      changed_when: false
+
+    - name: 如果 MyVideos131 不存在则终止
+      ansible.builtin.fail:
+        msg: |
+          MariaDB 中未找到 MyVideos131 数据库。
+          请先在 TV 上启动 Kodi，让其连接到这台 MariaDB，Kodi 会自动建库。
+          之后再重新运行此脚本。
+      when: myvideos_check.rowcount[0] == 0
+
+    - name: 写入 Kodi 媒体路径与内容类型绑定关系
+      delegate_to: localhost
+      ansible.mariadb.mariadb_query:
+        login_host: "{{ mariadb_host }}"
+        login_port: "{{ mariadb_port }}"
+        login_user: "{{ mariadb_user }}"
+        login_password: "{{ mariadb_user_password }}"
+        login_db: "MyVideos131"
+        query: 
+          - >
+            INSERT IGNORE INTO path
+            (strPath, strContent, strScraper, strSettings, scanRecursive, useFolderNames, noUpdate, exclude)
+            VALUES
+            ('{{ item.path }}', '{{ item.content }}', '{{ item.scraper }}', '', {{ item.scan_recursive }}, {{ item.use_folder_names }}, 0, 0);
+          - >
+            UPDATE path SET
+            strContent = '{{ item.content }}',
+            strScraper = '{{ item.scraper }}',
+            scanRecursive = {{ item.scan_recursive }},
+            useFolderNames = {{ item.use_folder_names }}
+            WHERE strPath = '{{ item.path }}';
+      loop: "{{ kodi_paths }}"
+      loop_control:
+        label: "{{ item.name }}"
+
+    - name: 成功提示
+      ansible.builtin.debug:
+        msg: "✅ 所有路径的内容类型（movies/tvshows）均已强制同步至 MariaDB！"

@@ -1,31 +1,32 @@
-﻿2026-07-16 15:42:21.597 T:1896     info <general>: -----------------------------------------------------------------------
-2026-07-16 15:42:21.598 T:1896     info <general>: Starting Kodi (21.3 (21.3.0) Git:20251031-a3a448d26b). Platform: Android ARM 32-bit
-2026-07-16 15:42:21.602 T:1896     info <general>: Using Release Kodi x32
-2026-07-16 15:42:21.603 T:1896     info <general>: Kodi compiled 2025-12-13 by Clang 9.0.9 (https://android.googlesource.com/toolchain/llvm-project a2a1e703c0edb03ba29944e529ccbf457742737b) for Android ARM 32-bit API level 21 (API level 21)
-2026-07-16 15:42:21.603 T:1896     info <general>: Running on Sony BRAVIA VU1 with Android TV 11.0.0 API level 30, kernel: Linux ARM 32-bit version 4.14.198+
-2026-07-16 15:42:21.603 T:1896     info <general>: FFmpeg version/source: 6.0.1-Kodi
-2026-07-16 15:42:21.603 T:1896     info <general>: Host CPU: ARMv7 Processor rev 0 (v7l), 4 cores available
-2026-07-16 15:42:21.603 T:1896     info <general>: Product: BRAVIA_VU1_UC, Device: BRAVIA_VU1, Board: merlin4 - Manufacturer: Sony, Brand: Sony, Model: BRAVIA VU1, Hardware: rtd287o
-2026-07-16 15:42:21.613 T:1896     info <general>: External storage path = /storage/emulated/0; status = ok; Permissions = WRITE_EXTERNAL_STORAGE
-2026-07-16 15:42:21.613 T:1896     info <general>: ARM Features: Neon enabled
-2026-07-16 15:42:21.613 T:1896     info <general>: special://xbmc/ is mapped to: /data/user/0/org.xbmc.kodi/cache/apk/assets
-2026-07-16 15:42:21.613 T:1896     info <general>: special://xbmcbin/ is mapped to: /data/user/0/org.xbmc.kodi/cache/apk/assets
-2026-07-16 15:42:21.614 T:1896     info <general>: special://xbmcbinaddons/ is mapped to: /data/user/0/org.xbmc.kodi/cache/apk/assets/addons
-2026-07-16 15:42:21.614 T:1896     info <general>: special://masterprofile/ is mapped to: /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/userdata
-2026-07-16 15:42:21.614 T:1896     info <general>: special://envhome/ is mapped to: /storage/emulated/0/Android/data/org.xbmc.kodi/files
-2026-07-16 15:42:21.614 T:1896     info <general>: special://home/ is mapped to: /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi
-2026-07-16 15:42:21.614 T:1896     info <general>: special://temp/ is mapped to: /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/temp
-2026-07-16 15:42:21.614 T:1896     info <general>: special://logpath/ is mapped to: /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/temp
-2026-07-16 15:42:21.614 T:1896     info <general>: Webserver extra whitelist paths: 
-2026-07-16 15:42:21.616 T:1896     info <general>: The executable running is: /data/app/~~e1ZEfy1skzFgZEOWBkmXRg==/org.xbmc.kodi-6sbbMwv9SFNzFYp7bIy2RA==/lib/arm/libkodi.so
-2026-07-16 15:42:21.638 T:1896     info <general>: Local hostname: Sony-TV
-2026-07-16 15:42:21.639 T:1896     info <general>: Log File is located: /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/temp/kodi.log
-2026-07-16 15:42:21.639 T:1896     info <general>: -----------------------------------------------------------------------
-2026-07-16 15:42:21.644 T:1896     info <general>: loading settings
-2026-07-16 15:42:21.647 T:1896     info <general>: special://profile/ is mapped to: special://masterprofile/
-2026-07-16 15:42:21.699 T:1896     info <general>: No settings file to load (special://xbmc/system/advancedsettings.xml)
-2026-07-16 15:42:21.700 T:1896     info <general>: Loaded settings file from special://profile/advancedsettings.xml
-2026-07-16 15:42:21.708 T:1896     info <general>: Contents of special://profile/advancedsettings.xml are...
+﻿2026-07-16 15:48:20.396 T:2756     info <general>: -----------------------------------------------------------------------
+2026-07-16 15:48:20.396 T:2756     info <general>: Starting Kodi (21.3 (21.3.0) Git:20251031-a3a448d26b). Platform: Android ARM 32-bit
+2026-07-16 15:48:20.396 T:2756     info <general>: Using Release Kodi x32
+2026-07-16 15:48:20.396 T:2756     info <general>: Kodi compiled 2025-12-13 by Clang 9.0.9 (https://android.googlesource.com/toolchain/llvm-project a2a1e703c0edb03ba29944e529ccbf457742737b) for Android ARM 32-bit API level 21 (API level 21)
+2026-07-16 15:48:20.397 T:2756     info <general>: Running on Sony BRAVIA VU1 with Android TV 11.0.0 API level 30, kernel: Linux ARM 32-bit version 4.14.198+
+2026-07-16 15:48:20.397 T:2756     info <general>: FFmpeg version/source: 6.0.1-Kodi
+2026-07-16 15:48:20.397 T:2769    debug <general>: CNetworkAndroid::onAvailable: The default network is now: 100
+2026-07-16 15:48:20.397 T:2756     info <general>: Host CPU: ARMv7 Processor rev 0 (v7l), 4 cores available
+2026-07-16 15:48:20.397 T:2756     info <general>: Product: BRAVIA_VU1_UC, Device: BRAVIA_VU1, Board: merlin4 - Manufacturer: Sony, Brand: Sony, Model: BRAVIA VU1, Hardware: rtd287o
+2026-07-16 15:48:20.405 T:2756     info <general>: External storage path = /storage/emulated/0; status = ok; Permissions = WRITE_EXTERNAL_STORAGE
+2026-07-16 15:48:20.406 T:2756     info <general>: ARM Features: Neon enabled
+2026-07-16 15:48:20.406 T:2756     info <general>: special://xbmc/ is mapped to: /data/user/0/org.xbmc.kodi/cache/apk/assets
+2026-07-16 15:48:20.406 T:2756     info <general>: special://xbmcbin/ is mapped to: /data/user/0/org.xbmc.kodi/cache/apk/assets
+2026-07-16 15:48:20.406 T:2756     info <general>: special://xbmcbinaddons/ is mapped to: /data/user/0/org.xbmc.kodi/cache/apk/assets/addons
+2026-07-16 15:48:20.406 T:2756     info <general>: special://masterprofile/ is mapped to: /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/userdata
+2026-07-16 15:48:20.406 T:2756     info <general>: special://envhome/ is mapped to: /storage/emulated/0/Android/data/org.xbmc.kodi/files
+2026-07-16 15:48:20.406 T:2756     info <general>: special://home/ is mapped to: /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi
+2026-07-16 15:48:20.406 T:2756     info <general>: special://temp/ is mapped to: /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/temp
+2026-07-16 15:48:20.406 T:2756     info <general>: special://logpath/ is mapped to: /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/temp
+2026-07-16 15:48:20.407 T:2756     info <general>: Webserver extra whitelist paths: 
+2026-07-16 15:48:20.407 T:2756     info <general>: The executable running is: /data/app/~~JdQBv-VddHxmoDvLwcoCPQ==/org.xbmc.kodi-RdxZm4z4S2kjCI2n21dhpA==/lib/arm/libkodi.so
+2026-07-16 15:48:20.426 T:2756     info <general>: Local hostname: Sony-TV
+2026-07-16 15:48:20.427 T:2756     info <general>: Log File is located: /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/temp/kodi.log
+2026-07-16 15:48:20.427 T:2756     info <general>: -----------------------------------------------------------------------
+2026-07-16 15:48:20.432 T:2756     info <general>: loading settings
+2026-07-16 15:48:20.435 T:2756     info <general>: special://profile/ is mapped to: special://masterprofile/
+2026-07-16 15:48:20.481 T:2756     info <general>: No settings file to load (special://xbmc/system/advancedsettings.xml)
+2026-07-16 15:48:20.482 T:2756     info <general>: Loaded settings file from special://profile/advancedsettings.xml
+2026-07-16 15:48:20.487 T:2756     info <general>: Contents of special://profile/advancedsettings.xml are...
                                                    <advancedsettings>
                                                      <!-- MariaDB 集中数据库 -->
                                                      <videodatabase>
@@ -35,13 +36,6 @@
                                                        <user>kodi</user>
                                                        <pass>*****</pass>
                                                      </videodatabase>
-                                                     <musicdatabase>
-                                                       <type>mysql</type>
-                                                       <host>192.168.50.210</host>
-                                                       <port>3306</port>
-                                                       <user>kodi</user>
-                                                       <pass>*****</pass>
-                                                     </musicdatabase>
                                                      <!-- Movie Set 图片目录 -->
                                                      <videolibrary>
                                                        <moviesetsfolder>nfs://192.168.50.210/Media/Video/Movie_Set_Art/</moviesetsfolder>
@@ -50,18 +44,18 @@
                                                      <splash>false</splash>
                                                    </advancedsettings>
                                                    
-2026-07-16 15:42:21.708 T:1896  warning <general>: VIDEO database configuration is experimental.
-2026-07-16 15:42:21.708 T:1896  warning <CSettingsManager>: missing version attribute
-2026-07-16 15:42:21.711 T:1896     info <general>: Default Video Player: VideoPlayer
-2026-07-16 15:42:21.711 T:1896     info <general>: Default Audio Player: paplayer
-2026-07-16 15:42:21.712 T:1896     info <general>: Disabled debug logging due to GUI setting. Level 0.
-2026-07-16 15:42:21.712 T:1896     info <general>: Log level changed to "info"
-2026-07-16 15:42:21.712 T:1896     info <general>: CMediaSourceSettings: loading media sources from special://masterprofile/sources.xml
-2026-07-16 15:42:21.720 T:1896  warning <general>: CViewStateSettings: no <viewstates> tag found
-2026-07-16 15:42:21.722 T:1896    error <general>: CSettings: unable to load settings from special://masterprofile/guisettings.xml, creating new default settings
-2026-07-16 15:42:21.784 T:1896     info <general>: No settings file to load (special://xbmc/system/advancedsettings.xml)
-2026-07-16 15:42:21.785 T:1896     info <general>: Loaded settings file from special://profile/advancedsettings.xml
-2026-07-16 15:42:21.791 T:1896     info <general>: Contents of special://profile/advancedsettings.xml are...
+2026-07-16 15:48:20.488 T:2756  warning <general>: VIDEO database configuration is experimental.
+2026-07-16 15:48:20.488 T:2756  warning <CSettingsManager>: missing version attribute
+2026-07-16 15:48:20.491 T:2756     info <general>: Default Video Player: VideoPlayer
+2026-07-16 15:48:20.491 T:2756     info <general>: Default Audio Player: paplayer
+2026-07-16 15:48:20.491 T:2756     info <general>: Disabled debug logging due to GUI setting. Level 0.
+2026-07-16 15:48:20.491 T:2756     info <general>: Log level changed to "info"
+2026-07-16 15:48:20.492 T:2756     info <general>: CMediaSourceSettings: loading media sources from special://masterprofile/sources.xml
+2026-07-16 15:48:20.498 T:2756  warning <general>: CViewStateSettings: no <viewstates> tag found
+2026-07-16 15:48:20.500 T:2756    error <general>: CSettings: unable to load settings from special://masterprofile/guisettings.xml, creating new default settings
+2026-07-16 15:48:20.563 T:2756     info <general>: No settings file to load (special://xbmc/system/advancedsettings.xml)
+2026-07-16 15:48:20.564 T:2756     info <general>: Loaded settings file from special://profile/advancedsettings.xml
+2026-07-16 15:48:20.569 T:2756     info <general>: Contents of special://profile/advancedsettings.xml are...
                                                    <advancedsettings>
                                                      <!-- MariaDB 集中数据库 -->
                                                      <videodatabase>
@@ -71,13 +65,6 @@
                                                        <user>kodi</user>
                                                        <pass>*****</pass>
                                                      </videodatabase>
-                                                     <musicdatabase>
-                                                       <type>mysql</type>
-                                                       <host>192.168.50.210</host>
-                                                       <port>3306</port>
-                                                       <user>kodi</user>
-                                                       <pass>*****</pass>
-                                                     </musicdatabase>
                                                      <!-- Movie Set 图片目录 -->
                                                      <videolibrary>
                                                        <moviesetsfolder>nfs://192.168.50.210/Media/Video/Movie_Set_Art/</moviesetsfolder>
@@ -86,367 +73,336 @@
                                                      <splash>false</splash>
                                                    </advancedsettings>
                                                    
-2026-07-16 15:42:21.791 T:1896  warning <general>: VIDEO database configuration is experimental.
-2026-07-16 15:42:21.792 T:1896  warning <CSettingsManager>: missing version attribute
-2026-07-16 15:42:21.794 T:1896     info <general>: Default Video Player: VideoPlayer
-2026-07-16 15:42:21.794 T:1896     info <general>: Default Audio Player: paplayer
-2026-07-16 15:42:21.795 T:1896     info <general>: Disabled debug logging due to GUI setting. Level 0.
-2026-07-16 15:42:21.795 T:1896     info <general>: CMediaSourceSettings: loading media sources from special://masterprofile/sources.xml
-2026-07-16 15:42:21.804 T:1896     info <general>: New Cache GUI Settings (replacement of cache in advancedsettings.xml) are:
+2026-07-16 15:48:20.570 T:2756  warning <general>: VIDEO database configuration is experimental.
+2026-07-16 15:48:20.570 T:2756  warning <CSettingsManager>: missing version attribute
+2026-07-16 15:48:20.573 T:2756     info <general>: Default Video Player: VideoPlayer
+2026-07-16 15:48:20.573 T:2756     info <general>: Default Audio Player: paplayer
+2026-07-16 15:48:20.573 T:2756     info <general>: Disabled debug logging due to GUI setting. Level 0.
+2026-07-16 15:48:20.573 T:2756     info <general>: CMediaSourceSettings: loading media sources from special://masterprofile/sources.xml
+2026-07-16 15:48:20.582 T:2756     info <general>: New Cache GUI Settings (replacement of cache in advancedsettings.xml) are:
                                                      Buffer Mode: 4
                                                      Memory Size: 20 MB
                                                      Read Factor: 4.00 x 
                                                      Chunk Size : 131072 bytes
-2026-07-16 15:42:21.804 T:1896     info <general>: creating subdirectories
-2026-07-16 15:42:21.804 T:1896     info <general>: userdata folder: special://masterprofile/
-2026-07-16 15:42:21.805 T:1896     info <general>: recording folder: 
-2026-07-16 15:42:21.805 T:1896     info <general>: screenshots folder: 
-2026-07-16 15:42:21.836 T:1896     info <general>: Running database version Addons33
-2026-07-16 15:42:22.094 T:1896     info <general>: CAddonMgr::FindAddons: audioencoder.kodi.builtin.aac v1.0.2 installed
-2026-07-16 15:42:22.095 T:1896     info <general>: CAddonMgr::FindAddons: audioencoder.kodi.builtin.wma v1.0.2 installed
-2026-07-16 15:42:22.096 T:1896     info <general>: CAddonMgr::FindAddons: game.controller.default v1.0.46 installed
-2026-07-16 15:42:22.097 T:1896     info <general>: CAddonMgr::FindAddons: game.controller.keyboard v1.1.47 installed
-2026-07-16 15:42:22.098 T:1896     info <general>: CAddonMgr::FindAddons: game.controller.mouse v1.0.30 installed
-2026-07-16 15:42:22.100 T:1896     info <general>: CAddonMgr::FindAddons: game.controller.remote v1.0.32 installed
-2026-07-16 15:42:22.101 T:1896     info <general>: CAddonMgr::FindAddons: game.controller.snes v1.0.46 installed
-2026-07-16 15:42:22.102 T:1896     info <general>: CAddonMgr::FindAddons: kodi.binary.global.audioengine v1.1.1 installed
-2026-07-16 15:42:22.102 T:1896     info <general>: CAddonMgr::FindAddons: kodi.binary.global.filesystem v1.1.9 installed
-2026-07-16 15:42:22.103 T:1896     info <general>: CAddonMgr::FindAddons: kodi.binary.global.general v1.0.5 installed
-2026-07-16 15:42:22.104 T:1896     info <general>: CAddonMgr::FindAddons: kodi.binary.global.gui v5.15.0 installed
-2026-07-16 15:42:22.104 T:1896     info <general>: CAddonMgr::FindAddons: kodi.binary.global.main v2.0.2 installed
-2026-07-16 15:42:22.105 T:1896     info <general>: CAddonMgr::FindAddons: kodi.binary.global.network v1.0.4 installed
-2026-07-16 15:42:22.106 T:1896     info <general>: CAddonMgr::FindAddons: kodi.binary.global.tools v1.0.4 installed
-2026-07-16 15:42:22.107 T:1896     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.audiodecoder v4.0.0 installed
-2026-07-16 15:42:22.107 T:1896     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.audioencoder v3.0.0 installed
-2026-07-16 15:42:22.108 T:1896     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.game v3.0.2 installed
-2026-07-16 15:42:22.109 T:1896     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.imagedecoder v3.0.1 installed
-2026-07-16 15:42:22.109 T:1896     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.inputstream v3.3.0 installed
-2026-07-16 15:42:22.110 T:1896     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.peripheral v3.0.2 installed
-2026-07-16 15:42:22.111 T:1896     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.pvr v8.3.0 installed
-2026-07-16 15:42:22.111 T:1896     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.screensaver v2.2.0 installed
-2026-07-16 15:42:22.112 T:1896     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.vfs v3.0.1 installed
-2026-07-16 15:42:22.113 T:1896     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.videocodec v2.1.0 installed
-2026-07-16 15:42:22.113 T:1896     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.visualization v4.0.0 installed
-2026-07-16 15:42:22.115 T:1896     info <general>: CAddonMgr::FindAddons: kodi.resource v1.0.0 installed
-2026-07-16 15:42:22.115 T:1896     info <general>: CAddonMgr::FindAddons: metadata.album.universal v3.1.18 installed
-2026-07-16 15:42:22.116 T:1896     info <general>: CAddonMgr::FindAddons: metadata.artists.universal v4.3.21 installed
-2026-07-16 15:42:22.117 T:1896     info <general>: CAddonMgr::FindAddons: metadata.common.allmusic.com v3.2.2 installed
-2026-07-16 15:42:22.118 T:1896     info <general>: CAddonMgr::FindAddons: metadata.common.fanart.tv v3.6.5 installed
-2026-07-16 15:42:22.119 T:1896     info <general>: CAddonMgr::FindAddons: metadata.common.musicbrainz.org v2.2.4 installed
-2026-07-16 15:42:22.119 T:1896     info <general>: CAddonMgr::FindAddons: metadata.common.theaudiodb.com v2.0.3 installed
-2026-07-16 15:42:22.120 T:1896     info <general>: CAddonMgr::FindAddons: metadata.generic.albums v1.0.18 installed
-2026-07-16 15:42:22.121 T:1896     info <general>: CAddonMgr::FindAddons: metadata.generic.artists v1.0.18 installed
-2026-07-16 15:42:22.121 T:1896     info <general>: CAddonMgr::FindAddons: metadata.local v1.0.1 installed
-2026-07-16 15:42:22.122 T:1896     info <general>: CAddonMgr::FindAddons: metadata.themoviedb.org.python v3.2.0 installed
-2026-07-16 15:42:22.123 T:1896     info <general>: CAddonMgr::FindAddons: metadata.tvshows.themoviedb.org.python v1.7.6 installed
-2026-07-16 15:42:22.123 T:1896     info <general>: CAddonMgr::FindAddons: peripheral.joystick v21.1.23 installed
-2026-07-16 15:42:22.124 T:1896     info <general>: CAddonMgr::FindAddons: repository.xbmc.org v3.4.0 installed
-2026-07-16 15:42:22.125 T:1896     info <general>: CAddonMgr::FindAddons: resource.images.recordlabels.white v0.0.7 installed
-2026-07-16 15:42:22.125 T:1896     info <general>: CAddonMgr::FindAddons: resource.images.studios.white v0.0.34 installed
-2026-07-16 15:42:22.126 T:1896     info <general>: CAddonMgr::FindAddons: resource.images.weathericons.default v1.1.9 installed
-2026-07-16 15:42:22.127 T:1896     info <general>: CAddonMgr::FindAddons: resource.language.en_gb v2.0.2 installed
-2026-07-16 15:42:22.128 T:1896     info <general>: CAddonMgr::FindAddons: resource.uisounds.kodi v1.0.1 installed
-2026-07-16 15:42:22.128 T:1896     info <general>: CAddonMgr::FindAddons: screensaver.bing v1.0.6 installed
-2026-07-16 15:42:22.129 T:1896     info <general>: CAddonMgr::FindAddons: screensaver.xbmc.builtin.black v1.0.34 installed
-2026-07-16 15:42:22.130 T:1896     info <general>: CAddonMgr::FindAddons: screensaver.xbmc.builtin.dim v1.0.66 installed
-2026-07-16 15:42:22.130 T:1896     info <general>: CAddonMgr::FindAddons: script.module.certifi v2023.5.7 installed
-2026-07-16 15:42:22.132 T:1896     info <general>: CAddonMgr::FindAddons: script.module.chardet v5.1.0 installed
-2026-07-16 15:42:22.133 T:1896     info <general>: CAddonMgr::FindAddons: script.module.idna v3.10.0 installed
-2026-07-16 15:42:22.134 T:1896     info <general>: CAddonMgr::FindAddons: script.module.kodi-six v0.1.3.1 installed
-2026-07-16 15:42:22.134 T:1896     info <general>: CAddonMgr::FindAddons: script.module.pil v5.1.0 installed
-2026-07-16 15:42:22.135 T:1896     info <general>: CAddonMgr::FindAddons: script.module.pycryptodome v3.4.3 installed
-2026-07-16 15:42:22.136 T:1896     info <general>: CAddonMgr::FindAddons: script.module.requests v2.31.0 installed
-2026-07-16 15:42:22.136 T:1896     info <general>: CAddonMgr::FindAddons: script.module.simplecache v2.0.2 installed
-2026-07-16 15:42:22.137 T:1896     info <general>: CAddonMgr::FindAddons: script.module.simpleeval v0.9.13 installed
-2026-07-16 15:42:22.138 T:1896     info <general>: CAddonMgr::FindAddons: script.module.six v1.16.0+matrix.1 installed
-2026-07-16 15:42:22.138 T:1896     info <general>: CAddonMgr::FindAddons: script.module.unidecode v1.3.6 installed
-2026-07-16 15:42:22.139 T:1896     info <general>: CAddonMgr::FindAddons: script.module.urllib3 v2.2.3 installed
-2026-07-16 15:42:22.140 T:1896     info <general>: CAddonMgr::FindAddons: script.skinshortcuts v2.0.3 installed
-2026-07-16 15:42:22.140 T:1896     info <general>: CAddonMgr::FindAddons: service.xbmc.versioncheck v0.5.30+matrix.1 installed
-2026-07-16 15:42:22.141 T:1896     info <general>: CAddonMgr::FindAddons: skin.aeon.nox.silvo v10.0.3 installed
-2026-07-16 15:42:22.142 T:1896     info <general>: CAddonMgr::FindAddons: skin.estuary v4.0.0 installed
-2026-07-16 15:42:22.143 T:1896     info <general>: CAddonMgr::FindAddons: webinterface.default v21.x-1.0.1 installed
-2026-07-16 15:42:22.143 T:1896     info <general>: CAddonMgr::FindAddons: xbmc.addon v21.3.0 installed
-2026-07-16 15:42:22.144 T:1896     info <general>: CAddonMgr::FindAddons: xbmc.core v0.1.0 installed
-2026-07-16 15:42:22.145 T:1896     info <general>: CAddonMgr::FindAddons: xbmc.gui v5.17.0 installed
-2026-07-16 15:42:22.146 T:1896     info <general>: CAddonMgr::FindAddons: xbmc.json v13.5.0 installed
-2026-07-16 15:42:22.146 T:1896     info <general>: CAddonMgr::FindAddons: xbmc.metadata v2.1.0 installed
-2026-07-16 15:42:22.147 T:1896     info <general>: CAddonMgr::FindAddons: xbmc.python v3.0.1 installed
-2026-07-16 15:42:22.148 T:1896     info <general>: CAddonMgr::FindAddons: xbmc.webinterface v1.0.0 installed
-2026-07-16 15:42:22.186 T:1896     info <general>: CKeyboardLayoutManager: loading keyboard layouts from special://xbmc/system/keyboardlayouts...
-2026-07-16 15:42:22.219 T:1896     info <general>: Load: loading filters from special://masterprofile/decoderfilter.xml
-2026-07-16 15:42:22.296 T:1896     info <general>: Mediacodec decoder: c2.android.aac.decoder
-2026-07-16 15:42:22.296 T:1896     info <general>: Mediacodec decoder: OMX.google.aac.decoder
-2026-07-16 15:42:22.296 T:1896     info <general>: Mediacodec decoder: c2.android.amrnb.decoder
-2026-07-16 15:42:22.296 T:1896     info <general>: Mediacodec decoder: OMX.google.amrnb.decoder
-2026-07-16 15:42:22.296 T:1896     info <general>: Mediacodec decoder: c2.android.amrwb.decoder
-2026-07-16 15:42:22.297 T:1896     info <general>: Mediacodec decoder: OMX.google.amrwb.decoder
-2026-07-16 15:42:22.297 T:1896     info <general>: Mediacodec decoder: c2.android.flac.decoder
-2026-07-16 15:42:22.297 T:1896     info <general>: Mediacodec decoder: OMX.google.flac.decoder
-2026-07-16 15:42:22.297 T:1896     info <general>: Mediacodec decoder: c2.android.g711.alaw.decoder
-2026-07-16 15:42:22.297 T:1896     info <general>: Mediacodec decoder: OMX.google.g711.alaw.decoder
-2026-07-16 15:42:22.297 T:1896     info <general>: Mediacodec decoder: c2.android.g711.mlaw.decoder
-2026-07-16 15:42:22.298 T:1896     info <general>: Mediacodec decoder: OMX.google.g711.mlaw.decoder
-2026-07-16 15:42:22.298 T:1896     info <general>: Mediacodec decoder: c2.android.mp3.decoder
-2026-07-16 15:42:22.298 T:1896     info <general>: Mediacodec decoder: OMX.google.mp3.decoder
-2026-07-16 15:42:22.298 T:1896     info <general>: Mediacodec decoder: c2.android.opus.decoder
-2026-07-16 15:42:22.298 T:1896     info <general>: Mediacodec decoder: OMX.google.opus.decoder
-2026-07-16 15:42:22.298 T:1896     info <general>: Mediacodec decoder: c2.android.raw.decoder
-2026-07-16 15:42:22.298 T:1896     info <general>: Mediacodec decoder: OMX.google.raw.decoder
-2026-07-16 15:42:22.298 T:1896     info <general>: Mediacodec decoder: c2.android.vorbis.decoder
-2026-07-16 15:42:22.298 T:1896     info <general>: Mediacodec decoder: OMX.google.vorbis.decoder
-2026-07-16 15:42:22.299 T:1896     info <general>: Mediacodec decoder: OMX.realtek.audio.decoder
-2026-07-16 15:42:22.299 T:1896     info <general>: Mediacodec decoder: OMX.realtek.video.decoder
-2026-07-16 15:42:22.299 T:1896     info <general>: Mediacodec decoder: c2.android.avc.decoder
-2026-07-16 15:42:22.299 T:1896     info <general>: Mediacodec decoder: OMX.google.h264.decoder
-2026-07-16 15:42:22.299 T:1896     info <general>: Mediacodec decoder: c2.android.h263.decoder
-2026-07-16 15:42:22.299 T:1896     info <general>: Mediacodec decoder: OMX.google.h263.decoder
-2026-07-16 15:42:22.299 T:1896     info <general>: Mediacodec decoder: c2.android.hevc.decoder
-2026-07-16 15:42:22.299 T:1896     info <general>: Mediacodec decoder: OMX.google.hevc.decoder
-2026-07-16 15:42:22.299 T:1896     info <general>: Mediacodec decoder: c2.android.mpeg2.decoder
-2026-07-16 15:42:22.300 T:1896     info <general>: Mediacodec decoder: OMX.google.mpeg2.decoder
-2026-07-16 15:42:22.300 T:1896     info <general>: Mediacodec decoder: c2.android.mpeg4.decoder
-2026-07-16 15:42:22.300 T:1896     info <general>: Mediacodec decoder: OMX.google.mpeg4.decoder
-2026-07-16 15:42:22.300 T:1896     info <general>: Mediacodec decoder: c2.android.vp8.decoder
-2026-07-16 15:42:22.300 T:1896     info <general>: Mediacodec decoder: OMX.google.vp8.decoder
-2026-07-16 15:42:22.300 T:1896     info <general>: Mediacodec decoder: c2.android.vp9.decoder
-2026-07-16 15:42:22.300 T:1896     info <general>: Mediacodec decoder: OMX.google.vp9.decoder
-2026-07-16 15:42:22.301 T:1896     info <general>: RetroPlayer[RENDER]: Registering renderer factory for OpenGLES
-2026-07-16 15:42:22.303 T:1896     info <general>: CAndroidUtils: window resolution: 1920x1080
-2026-07-16 15:42:22.303 T:1896     info <general>: CAndroidUtils: Current resolution: 1920x1080 1920x1080 @ 60.000004 - Full Screen
-2026-07-16 15:42:22.303 T:1896     info <general>: Skipped 1 duplicate messages..
-2026-07-16 15:42:22.303 T:1896     info <general>: EGL_VERSION = 1.4 Android META-EGL
-2026-07-16 15:42:22.303 T:1896     info <general>: EGL_VENDOR = Android
-2026-07-16 15:42:22.303 T:1896     info <general>: EGL_EXTENSIONS = EGL_KHR_get_all_proc_addresses EGL_ANDROID_presentation_time EGL_KHR_swap_buffers_with_damage EGL_ANDROID_get_native_client_buffer EGL_ANDROID_front_buffer_auto_refresh EGL_ANDROID_get_frame_timestamps EGL_EXT_surface_SMPTE2086_metadata EGL_EXT_surface_CTA861_3_metadata EGL_KHR_image EGL_KHR_image_base EGL_EXT_image_gl_colorspace EGL_KHR_gl_colorspace EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_KHR_fence_sync EGL_KHR_create_context EGL_KHR_config_attribs EGL_KHR_surfaceless_context EGL_EXT_create_context_robustness EGL_ANDROID_image_native_buffer EGL_KHR_wait_sync EGL_ANDROID_recordable EGL_KHR_partial_update EGL_EXT_pixel_format_float EGL_KHR_mutable_render_buffer EGL_IMG_context_priority EGL_KHR_no_config_context 
-2026-07-16 15:42:22.303 T:1896     info <general>: EGL_CLIENT_EXTENSIONS = EGL_EXT_client_extensions EGL_KHR_platform_android EGL_ANGLE_platform_angle EGL_ANDROID_GLES_layers
-2026-07-16 15:42:22.306 T:1896     info <general>: CApplication::CreateGUI - using the default windowing system
-2026-07-16 15:42:22.307 T:1896     info <general>: Checking resolution 16
-2026-07-16 15:42:22.307 T:1896     info <general>: CAndroidUtils: SetNativeResolution: 1: 1920x1080 1920x1080@60.000004
-2026-07-16 15:42:22.309 T:1896     info <general>: GL_VENDOR = ARM
-2026-07-16 15:42:22.309 T:1896     info <general>: GL_RENDERER = Mali-G31
-2026-07-16 15:42:22.309 T:1896     info <general>: GL_VERSION = OpenGL ES 3.2 v1.r26p0-01eac0.###other-sha0123456789ABCDEF0###
-2026-07-16 15:42:22.309 T:1896     info <general>: GL_SHADING_LANGUAGE_VERSION = OpenGL ES GLSL ES 3.20
-2026-07-16 15:42:22.309 T:1896     info <general>: GL_EXTENSIONS = GL_EXT_debug_marker GL_ARM_rgba8 GL_ARM_mali_shader_binary GL_OES_depth24 GL_OES_depth_texture GL_OES_depth_texture_cube_map GL_OES_packed_depth_stencil GL_OES_rgb8_rgba8 GL_EXT_read_format_bgra GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_standard_derivatives GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_image_external_essl3 GL_OES_EGL_sync GL_OES_texture_npot GL_OES_vertex_half_float GL_OES_required_internalformat GL_OES_vertex_array_object GL_OES_mapbuffer GL_EXT_texture_format_BGRA8888 GL_EXT_texture_rg GL_EXT_texture_type_2_10_10_10_REV GL_OES_fbo_render_mipmap GL_OES_element_index_uint GL_EXT_shadow_samplers GL_OES_texture_compression_astc GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_KHR_texture_compression_astc_sliced_3d GL_EXT_texture_compression_astc_decode_mode GL_EXT_texture_compression_astc_decode_mode_rgb9e5 GL_KHR_debug GL_EXT_occlusion_query_boolean GL_EXT_disjoint_timer_query GL_EXT_blend_minmax GL_EXT_discard_framebuffer GL_OES_get_program_binary GL_OES_texture_3D GL_EXT_texture_storage GL_EXT_multisampled_render_to_texture GL_EXT_multisampled_render_to_texture2 GL_OES_surfaceless_context GL_OES_texture_stencil8 GL_EXT_shader_pixel_local_storage GL_ARM_shader_framebuffer_fetch GL_ARM_shader_framebuffer_fetch_depth_stencil GL_ARM_mali_program_binary GL_EXT_sRGB GL_EXT_sRGB_write_control GL_EXT_texture_sRGB_decode GL_EXT_texture_sRGB_R8 GL_EXT_texture_sRGB_RG8 GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_OES_texture_storage_multisample_2d_array GL_OES_shader_image_atomic GL_EXT_robustness GL_EXT_draw_buffers_indexed GL_OES_draw_buffers_indexed GL_EXT_texture_border_clamp GL_OES_texture_border_clamp GL_EXT_texture_cube_map_array GL_OES_texture_cube_map_array GL_OES_sample_variables GL_OES_sample_shading GL_OES_shader_multisample_interpolation GL_EXT_shader_io_blocks GL_OES_shader_io_blocks GL_EXT_tessellation_shader GL_OES_tessellation_shader GL_EXT_primitive_bounding_box GL_OES_primitive_bounding_box GL_EXT_geometry_shader GL_OES_geometry_shader GL_ANDROID_extension_pack_es31a GL_EXT_gpu_shader5 GL_OES_gpu_shader5 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_copy_image GL_OES_copy_image GL_EXT_shader_non_constant_global_initializers GL_EXT_color_buffer_half_float GL_EXT_color_buffer_float GL_EXT_YUV_target GL_OVR_multiview GL_OVR_multiview2 GL_OVR_multiview_multisampled_render_to_texture GL_KHR_robustness GL_KHR_robust_buffer_access_behavior GL_EXT_draw_elements_base_vertex GL_OES_draw_elements_base_vertex GL_EXT_protected_textures GL_EXT_buffer_storage GL_EXT_external_buffer GL_EXT_EGL_image_array GL_ARM_texture_unnormalized_coordinates 
-2026-07-16 15:42:23.105 T:1896     info <general>: CAndroidUtils: SetNativeResolution: 1: 1920x1080 1920x1080@60.000004
-2026-07-16 15:42:23.107 T:1896     info <general>: GLES: Maximum texture width: 8192
-2026-07-16 15:42:23.108 T:1896     info <general>: load keymapping
-2026-07-16 15:42:23.119 T:1896     info <general>: Loading special://xbmc/system/keymaps/appcommand.xml
-2026-07-16 15:42:23.120 T:1896     info <general>: Loading special://xbmc/system/keymaps/customcontroller.AppleRemote.xml
-2026-07-16 15:42:23.121 T:1896     info <general>: Loading special://xbmc/system/keymaps/customcontroller.Harmony.xml
-2026-07-16 15:42:23.124 T:1896     info <general>: Loading special://xbmc/system/keymaps/customcontroller.SiriRemote.xml
-2026-07-16 15:42:23.125 T:1896     info <general>: Loading special://xbmc/system/keymaps/gamepad.xml
-2026-07-16 15:42:23.128 T:1896     info <general>: Loading special://xbmc/system/keymaps/joystick.xml
-2026-07-16 15:42:23.131 T:1896     info <general>: Loading special://xbmc/system/keymaps/keyboard.xml
-2026-07-16 15:42:23.139 T:1896     info <general>: Loading special://xbmc/system/keymaps/mouse.xml
-2026-07-16 15:42:23.140 T:1896     info <general>: Loading special://xbmc/system/keymaps/remote.xml
-2026-07-16 15:42:23.144 T:1896     info <general>: Loading special://xbmc/system/keymaps/touchscreen.xml
-2026-07-16 15:42:23.150 T:1896     info <general>: GUI format 1920x1080, Display 1920x1080 @ 60.000004 - Full Screen
-2026-07-16 15:42:23.185 T:1911     info <general>: Float is supported
-2026-07-16 15:42:23.186 T:1911     info <general>: Multi channel Float is supported
-2026-07-16 15:42:23.228 T:1911     info <general>: Float is supported
-2026-07-16 15:42:23.228 T:1911     info <general>: Multi channel Float is supported
-2026-07-16 15:42:23.848 T:1911     info <general>: Found 1 Lists of Devices
-2026-07-16 15:42:23.848 T:1911     info <general>: Enumerated AUDIOTRACK devices:
-2026-07-16 15:42:23.848 T:1911     info <general>:     Device 1
-2026-07-16 15:42:23.848 T:1911     info <general>:         m_deviceName      : AudioTrack (RAW)
-2026-07-16 15:42:23.848 T:1911     info <general>:         m_displayName     : AudioTrack (RAW)
-2026-07-16 15:42:23.848 T:1911     info <general>:         m_displayNameExtra: Android IEC packer
-2026-07-16 15:42:23.848 T:1911     info <general>:         m_deviceType      : AE_DEVTYPE_HDMI
-2026-07-16 15:42:23.848 T:1911     info <general>:         m_channels        : FL, FR, FC, LFE, SL, SR, BL, BR, BC, BLOC, BROC
-2026-07-16 15:42:23.848 T:1911     info <general>:         m_sampleRates     : 32000,44100,48000,88200,96000,176400,192000,32000,44100,48000,88200,96000,176400,192000
-2026-07-16 15:42:23.849 T:1911     info <general>:         m_dataFormats     : AE_FMT_S16LE,AE_FMT_FLOAT,AE_FMT_RAW,AE_FMT_S16LE,AE_FMT_FLOAT,AE_FMT_RAW
-2026-07-16 15:42:23.849 T:1911     info <general>:         m_streamTypes     : STREAM_TYPE_AC3,STREAM_TYPE_EAC3,STREAM_TYPE_DTSHD_CORE,STREAM_TYPE_DTS_1024,STREAM_TYPE_DTS_2048,STREAM_TYPE_DTS_512,STREAM_TYPE_DTSHD,STREAM_TYPE_DTSHD_MA
-2026-07-16 15:42:23.850 T:1912     info <general>: CActiveAESink::OpenSink - initialize sink
-2026-07-16 15:42:23.850 T:1912     info <general>: Trying to open: samplerate: 44100, channelMask: 12, encoding: 4
-2026-07-16 15:42:23.852 T:1912     info <general>: Minimum size we need for stream: 34032 Bytes
-2026-07-16 15:42:23.852 T:1912     info <general>: Audiotrack buffer params are: period time = 48.231 ms, period size = 17016 bytes, num periods = 4
-2026-07-16 15:42:23.852 T:1912     info <general>: Created Audiotrackbuffer with playing time of 192.925170 ms min buffer size: 68064 bytes
-2026-07-16 15:42:23.860 T:1912     info <general>: CAESinkAUDIOTRACK::Initializing with: m_sampleRate: 44100 format: AE_FMT_FLOAT (AE) method: PCM stream-type: PCM-STREAM min_buffer_size: 68064 m_frames: 2127 m_frameSize: 8 channels: 2
-2026-07-16 15:42:23.873 T:1896     info <general>: CLangInfo: loading resource.language.en_gb language information...
-2026-07-16 15:42:23.895 T:1896     info <general>: global locale set to en_US.UTF-8
-2026-07-16 15:42:23.896 T:1896     info <general>: CLangInfo: loading resource.language.en_gb language strings...
-2026-07-16 15:42:24.003 T:1896     info <general>: WaitForNet: Waiting for a network interface to come up (Timeout: 30 s)
-2026-07-16 15:42:24.003 T:1896     info <general>: WaitForNet: A network interface is up after waiting 0 ms
-2026-07-16 15:42:24.009 T:1967     info <general>: Running database version Addons33
-2026-07-16 15:42:24.014 T:1967     info <general>: Running database version ViewModes6
-2026-07-16 15:42:24.020 T:1967     info <general>: Running database version Textures13
-2026-07-16 15:42:24.041 T:1967     info <general>: MYSQL: Connected to version 10.11.17-MariaDB-ubu2204
-2026-07-16 15:42:24.072 T:1967    error <general>: Unable to open database: MyMusic83 [1049](Unknown database 'MyMusic83')
-2026-07-16 15:42:24.117 T:1967    error <general>: Unable to open database: MyMusic82 [1049](Unknown database 'MyMusic82')
-2026-07-16 15:42:24.159 T:1967    error <general>: Unable to open database: MyMusic81 [1049](Unknown database 'MyMusic81')
-2026-07-16 15:42:24.202 T:1967    error <general>: Unable to open database: MyMusic80 [1049](Unknown database 'MyMusic80')
-2026-07-16 15:42:24.245 T:1967    error <general>: Unable to open database: MyMusic79 [1049](Unknown database 'MyMusic79')
-2026-07-16 15:42:24.287 T:1967    error <general>: Unable to open database: MyMusic78 [1049](Unknown database 'MyMusic78')
-2026-07-16 15:42:24.334 T:1967    error <general>: Unable to open database: MyMusic77 [1049](Unknown database 'MyMusic77')
-2026-07-16 15:42:24.359 T:1967    error <general>: Unable to open database: MyMusic76 [1049](Unknown database 'MyMusic76')
-2026-07-16 15:42:24.385 T:1967    error <general>: Unable to open database: MyMusic75 [1049](Unknown database 'MyMusic75')
-2026-07-16 15:42:24.409 T:1967    error <general>: Unable to open database: MyMusic74 [1049](Unknown database 'MyMusic74')
-2026-07-16 15:42:24.443 T:1967    error <general>: Unable to open database: MyMusic73 [1049](Unknown database 'MyMusic73')
-2026-07-16 15:42:24.465 T:1967    error <general>: Unable to open database: MyMusic72 [1049](Unknown database 'MyMusic72')
-2026-07-16 15:42:24.489 T:1967    error <general>: Unable to open database: MyMusic71 [1049](Unknown database 'MyMusic71')
-2026-07-16 15:42:24.512 T:1967    error <general>: Unable to open database: MyMusic70 [1049](Unknown database 'MyMusic70')
-2026-07-16 15:42:24.536 T:1967    error <general>: Unable to open database: MyMusic69 [1049](Unknown database 'MyMusic69')
-2026-07-16 15:42:24.558 T:1967    error <general>: Unable to open database: MyMusic68 [1049](Unknown database 'MyMusic68')
-2026-07-16 15:42:24.581 T:1967    error <general>: Unable to open database: MyMusic67 [1049](Unknown database 'MyMusic67')
-2026-07-16 15:42:24.605 T:1967    error <general>: Unable to open database: MyMusic66 [1049](Unknown database 'MyMusic66')
-2026-07-16 15:42:24.636 T:1967    error <general>: Unable to open database: MyMusic65 [1049](Unknown database 'MyMusic65')
-2026-07-16 15:42:24.658 T:1967    error <general>: Unable to open database: MyMusic64 [1049](Unknown database 'MyMusic64')
-2026-07-16 15:42:24.681 T:1967    error <general>: Unable to open database: MyMusic63 [1049](Unknown database 'MyMusic63')
-2026-07-16 15:42:24.708 T:1967    error <general>: Unable to open database: MyMusic62 [1049](Unknown database 'MyMusic62')
-2026-07-16 15:42:24.733 T:1967    error <general>: Unable to open database: MyMusic61 [1049](Unknown database 'MyMusic61')
-2026-07-16 15:42:24.762 T:1967    error <general>: Unable to open database: MyMusic60 [1049](Unknown database 'MyMusic60')
-2026-07-16 15:42:24.785 T:1967    error <general>: Unable to open database: MyMusic59 [1049](Unknown database 'MyMusic59')
-2026-07-16 15:42:24.810 T:1967    error <general>: Unable to open database: MyMusic58 [1049](Unknown database 'MyMusic58')
-2026-07-16 15:42:24.840 T:1967    error <general>: Unable to open database: MyMusic57 [1049](Unknown database 'MyMusic57')
-2026-07-16 15:42:24.863 T:1967    error <general>: Unable to open database: MyMusic56 [1049](Unknown database 'MyMusic56')
-2026-07-16 15:42:24.886 T:1967    error <general>: Unable to open database: MyMusic55 [1049](Unknown database 'MyMusic55')
-2026-07-16 15:42:24.911 T:1967    error <general>: Unable to open database: MyMusic54 [1049](Unknown database 'MyMusic54')
-2026-07-16 15:42:24.937 T:1967    error <general>: Unable to open database: MyMusic53 [1049](Unknown database 'MyMusic53')
-2026-07-16 15:42:24.964 T:1967    error <general>: Unable to open database: MyMusic52 [1049](Unknown database 'MyMusic52')
-2026-07-16 15:42:24.986 T:1967    error <general>: Unable to open database: MyMusic51 [1049](Unknown database 'MyMusic51')
-2026-07-16 15:42:25.035 T:1967    error <general>: Unable to open database: MyMusic50 [1049](Unknown database 'MyMusic50')
-2026-07-16 15:42:25.063 T:1967    error <general>: Unable to open database: MyMusic49 [1049](Unknown database 'MyMusic49')
-2026-07-16 15:42:25.088 T:1967    error <general>: Unable to open database: MyMusic48 [1049](Unknown database 'MyMusic48')
-2026-07-16 15:42:25.115 T:1967    error <general>: Unable to open database: MyMusic47 [1049](Unknown database 'MyMusic47')
-2026-07-16 15:42:25.141 T:1967    error <general>: Unable to open database: MyMusic46 [1049](Unknown database 'MyMusic46')
-2026-07-16 15:42:25.165 T:1967    error <general>: Unable to open database: MyMusic45 [1049](Unknown database 'MyMusic45')
-2026-07-16 15:42:25.191 T:1967    error <general>: Unable to open database: MyMusic44 [1049](Unknown database 'MyMusic44')
-2026-07-16 15:42:25.213 T:1967    error <general>: Unable to open database: MyMusic43 [1049](Unknown database 'MyMusic43')
-2026-07-16 15:42:25.235 T:1967    error <general>: Unable to open database: MyMusic42 [1049](Unknown database 'MyMusic42')
-2026-07-16 15:42:25.258 T:1967    error <general>: Unable to open database: MyMusic41 [1049](Unknown database 'MyMusic41')
-2026-07-16 15:42:25.279 T:1967    error <general>: Unable to open database: MyMusic40 [1049](Unknown database 'MyMusic40')
-2026-07-16 15:42:25.305 T:1967    error <general>: Unable to open database: MyMusic39 [1049](Unknown database 'MyMusic39')
-2026-07-16 15:42:25.326 T:1967    error <general>: Unable to open database: MyMusic38 [1049](Unknown database 'MyMusic38')
-2026-07-16 15:42:25.353 T:1967    error <general>: Unable to open database: MyMusic37 [1049](Unknown database 'MyMusic37')
-2026-07-16 15:42:25.375 T:1967    error <general>: Unable to open database: MyMusic36 [1049](Unknown database 'MyMusic36')
-2026-07-16 15:42:25.397 T:1967    error <general>: Unable to open database: MyMusic35 [1049](Unknown database 'MyMusic35')
-2026-07-16 15:42:25.420 T:1967    error <general>: Unable to open database: MyMusic34 [1049](Unknown database 'MyMusic34')
-2026-07-16 15:42:25.449 T:1967    error <general>: Unable to open database: MyMusic33 [1049](Unknown database 'MyMusic33')
-2026-07-16 15:42:25.474 T:1967    error <general>: Unable to open database: MyMusic32 [1049](Unknown database 'MyMusic32')
-2026-07-16 15:42:25.503 T:1967    error <general>: SQL: Can't create new database: 'MyMusic83' (1006)
-2026-07-16 15:42:25.517 T:1967    error <general>: Unable to open database: MyMusic83 (11)
-2026-07-16 15:42:25.517 T:1967    error <general>: Unable to create new database
-2026-07-16 15:42:25.543 T:1967    error <general>: Unable to open database: MyVideos131 [1049](Unknown database 'MyVideos131')
-2026-07-16 15:42:25.568 T:1967    error <general>: Unable to open database: MyVideos130 [1049](Unknown database 'MyVideos130')
-2026-07-16 15:42:25.592 T:1967    error <general>: Unable to open database: MyVideos129 [1049](Unknown database 'MyVideos129')
-2026-07-16 15:42:25.614 T:1967    error <general>: Unable to open database: MyVideos128 [1049](Unknown database 'MyVideos128')
-2026-07-16 15:42:25.636 T:1967    error <general>: Unable to open database: MyVideos127 [1049](Unknown database 'MyVideos127')
-2026-07-16 15:42:25.663 T:1967    error <general>: Unable to open database: MyVideos126 [1049](Unknown database 'MyVideos126')
-2026-07-16 15:42:25.686 T:1967    error <general>: Unable to open database: MyVideos125 [1049](Unknown database 'MyVideos125')
-2026-07-16 15:42:25.710 T:1967    error <general>: Unable to open database: MyVideos124 [1049](Unknown database 'MyVideos124')
-2026-07-16 15:42:25.734 T:1967    error <general>: Unable to open database: MyVideos123 [1049](Unknown database 'MyVideos123')
-2026-07-16 15:42:25.758 T:1967    error <general>: Unable to open database: MyVideos122 [1049](Unknown database 'MyVideos122')
-2026-07-16 15:42:25.782 T:1967    error <general>: Unable to open database: MyVideos121 [1049](Unknown database 'MyVideos121')
-2026-07-16 15:42:25.803 T:1967    error <general>: Unable to open database: MyVideos120 [1049](Unknown database 'MyVideos120')
-2026-07-16 15:42:25.825 T:1967    error <general>: Unable to open database: MyVideos119 [1049](Unknown database 'MyVideos119')
-2026-07-16 15:42:25.854 T:1967    error <general>: Unable to open database: MyVideos118 [1049](Unknown database 'MyVideos118')
-2026-07-16 15:42:25.880 T:1967    error <general>: Unable to open database: MyVideos117 [1049](Unknown database 'MyVideos117')
-2026-07-16 15:42:25.903 T:1967    error <general>: Unable to open database: MyVideos116 [1049](Unknown database 'MyVideos116')
-2026-07-16 15:42:25.928 T:1967    error <general>: Unable to open database: MyVideos115 [1049](Unknown database 'MyVideos115')
-2026-07-16 15:42:25.951 T:1967    error <general>: Unable to open database: MyVideos114 [1049](Unknown database 'MyVideos114')
-2026-07-16 15:42:25.981 T:1967    error <general>: Unable to open database: MyVideos113 [1049](Unknown database 'MyVideos113')
-2026-07-16 15:42:26.003 T:1967    error <general>: Unable to open database: MyVideos112 [1049](Unknown database 'MyVideos112')
-2026-07-16 15:42:26.027 T:1967    error <general>: Unable to open database: MyVideos111 [1049](Unknown database 'MyVideos111')
-2026-07-16 15:42:26.051 T:1967    error <general>: Unable to open database: MyVideos110 [1049](Unknown database 'MyVideos110')
-2026-07-16 15:42:26.076 T:1967    error <general>: Unable to open database: MyVideos109 [1049](Unknown database 'MyVideos109')
-2026-07-16 15:42:26.102 T:1967    error <general>: Unable to open database: MyVideos108 [1049](Unknown database 'MyVideos108')
-2026-07-16 15:42:26.129 T:1967    error <general>: Unable to open database: MyVideos107 [1049](Unknown database 'MyVideos107')
-2026-07-16 15:42:26.152 T:1967    error <general>: Unable to open database: MyVideos106 [1049](Unknown database 'MyVideos106')
-2026-07-16 15:42:26.183 T:1967    error <general>: Unable to open database: MyVideos105 [1049](Unknown database 'MyVideos105')
-2026-07-16 15:42:26.210 T:1967    error <general>: Unable to open database: MyVideos104 [1049](Unknown database 'MyVideos104')
-2026-07-16 15:42:26.238 T:1967    error <general>: Unable to open database: MyVideos103 [1049](Unknown database 'MyVideos103')
-2026-07-16 15:42:26.266 T:1967    error <general>: Unable to open database: MyVideos102 [1049](Unknown database 'MyVideos102')
-2026-07-16 15:42:26.288 T:1967    error <general>: Unable to open database: MyVideos101 [1049](Unknown database 'MyVideos101')
-2026-07-16 15:42:26.311 T:1967    error <general>: Unable to open database: MyVideos100 [1049](Unknown database 'MyVideos100')
-2026-07-16 15:42:26.335 T:1967    error <general>: Unable to open database: MyVideos99 [1049](Unknown database 'MyVideos99')
-2026-07-16 15:42:26.358 T:1967    error <general>: Unable to open database: MyVideos98 [1049](Unknown database 'MyVideos98')
-2026-07-16 15:42:26.389 T:1967    error <general>: Unable to open database: MyVideos97 [1049](Unknown database 'MyVideos97')
-2026-07-16 15:42:26.413 T:1967    error <general>: Unable to open database: MyVideos96 [1049](Unknown database 'MyVideos96')
-2026-07-16 15:42:26.438 T:1967    error <general>: Unable to open database: MyVideos95 [1049](Unknown database 'MyVideos95')
-2026-07-16 15:42:26.462 T:1967    error <general>: Unable to open database: MyVideos94 [1049](Unknown database 'MyVideos94')
-2026-07-16 15:42:26.486 T:1967    error <general>: Unable to open database: MyVideos93 [1049](Unknown database 'MyVideos93')
-2026-07-16 15:42:26.511 T:1967    error <general>: Unable to open database: MyVideos92 [1049](Unknown database 'MyVideos92')
-2026-07-16 15:42:26.535 T:1967    error <general>: Unable to open database: MyVideos91 [1049](Unknown database 'MyVideos91')
-2026-07-16 15:42:26.561 T:1967    error <general>: Unable to open database: MyVideos90 [1049](Unknown database 'MyVideos90')
-2026-07-16 15:42:26.587 T:1967    error <general>: Unable to open database: MyVideos89 [1049](Unknown database 'MyVideos89')
-2026-07-16 15:42:26.612 T:1967    error <general>: Unable to open database: MyVideos88 [1049](Unknown database 'MyVideos88')
-2026-07-16 15:42:26.634 T:1967    error <general>: Unable to open database: MyVideos87 [1049](Unknown database 'MyVideos87')
-2026-07-16 15:42:26.662 T:1967    error <general>: Unable to open database: MyVideos86 [1049](Unknown database 'MyVideos86')
-2026-07-16 15:42:26.689 T:1967    error <general>: Unable to open database: MyVideos85 [1049](Unknown database 'MyVideos85')
-2026-07-16 15:42:26.714 T:1967    error <general>: Unable to open database: MyVideos84 [1049](Unknown database 'MyVideos84')
-2026-07-16 15:42:26.741 T:1967    error <general>: Unable to open database: MyVideos83 [1049](Unknown database 'MyVideos83')
-2026-07-16 15:42:26.768 T:1967    error <general>: Unable to open database: MyVideos82 [1049](Unknown database 'MyVideos82')
-2026-07-16 15:42:26.792 T:1967    error <general>: Unable to open database: MyVideos81 [1049](Unknown database 'MyVideos81')
-2026-07-16 15:42:26.816 T:1967    error <general>: Unable to open database: MyVideos80 [1049](Unknown database 'MyVideos80')
-2026-07-16 15:42:26.839 T:1967    error <general>: Unable to open database: MyVideos79 [1049](Unknown database 'MyVideos79')
-2026-07-16 15:42:26.860 T:1967    error <general>: Unable to open database: MyVideos78 [1049](Unknown database 'MyVideos78')
-2026-07-16 15:42:26.889 T:1967    error <general>: Unable to open database: MyVideos77 [1049](Unknown database 'MyVideos77')
-2026-07-16 15:42:26.913 T:1967    error <general>: Unable to open database: MyVideos76 [1049](Unknown database 'MyVideos76')
-2026-07-16 15:42:26.935 T:1967    error <general>: Unable to open database: MyVideos75 [1049](Unknown database 'MyVideos75')
-2026-07-16 15:42:26.961 T:1967    error <general>: SQL: Can't create new database: 'MyVideos131' (1006)
-2026-07-16 15:42:26.961 T:1967    error <general>: Unable to open database: MyVideos131 (11)
-2026-07-16 15:42:26.961 T:1967    error <general>: Unable to create new database
-2026-07-16 15:42:26.967 T:1967     info <general>: Running database version TV46
-2026-07-16 15:42:26.973 T:1967     info <general>: Running database version Epg16
-2026-07-16 15:42:27.078 T:1896     info <general>: Unloaded skin
-2026-07-16 15:42:27.089 T:1896     info <general>:   load skin from: /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/addons/skin.aeon.nox.silvo/ (version: 10.0.3)
-2026-07-16 15:42:27.089 T:1896     info <general>:   load fonts for skin...
-2026-07-16 15:42:27.092 T:1896     info <general>: Loading skin includes from /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/addons/skin.aeon.nox.silvo/16x9/Includes.xml
-2026-07-16 15:42:27.946 T:1896     info <general>: LoadFontsFromFile: Loading <fontset> with name 'Arial' from '/storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/addons/skin.aeon.nox.silvo/16x9/Font.xml'
-2026-07-16 15:42:28.137 T:1896     info <general>: LoadTimers: Trying to load skin timers from /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/addons/skin.aeon.nox.silvo/16x9/Timers.xml
-2026-07-16 15:42:28.145 T:1896     info <general>:   load new skin...
-2026-07-16 15:42:28.145 T:1896     info <general>: Loading custom window XMLs from skin path /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/addons/skin.aeon.nox.silvo/16x9
-2026-07-16 15:42:28.237 T:1896     info <general>:   initialize new skin...
-2026-07-16 15:42:28.237 T:1896     info <general>: Loading skin file: custom_1134_PausedOverlay.xml, load type: LOAD_ON_GUI_INIT
-2026-07-16 15:42:28.250 T:1896     info <general>: Loading skin file: DialogBusy.xml, load type: LOAD_ON_GUI_INIT
-2026-07-16 15:42:28.258 T:1896     info <general>: Skipped 1 duplicate messages..
-2026-07-16 15:42:28.258 T:1896     info <general>: Loading skin file: DialogNotification.xml, load type: LOAD_ON_GUI_INIT
-2026-07-16 15:42:28.261 T:1896     info <general>: Loading skin file: DialogVolumeBar.xml, load type: LOAD_ON_GUI_INIT
-2026-07-16 15:42:28.292 T:1896     info <general>: Loading skin file: DialogExtendedProgressBar.xml, load type: LOAD_ON_GUI_INIT
-2026-07-16 15:42:28.296 T:1896     info <general>: Loading skin file: Pointer.xml, load type: LOAD_ON_GUI_INIT
-2026-07-16 15:42:28.299 T:1896     info <general>: Loading skin file: DialogSeekBar.xml, load type: LOAD_ON_GUI_INIT
-2026-07-16 15:42:28.316 T:1896     info <general>: Loading resource://resource.uisounds.kodi/sounds.xml
-2026-07-16 15:42:28.438 T:1896     info <general>:   skin loaded...
-2026-07-16 15:42:28.439 T:1896     info <general>: Loading skin file: Startup.xml, load type: LOAD_EVERY_TIME
-2026-07-16 15:42:28.448 T:1896     info <general>: Loading skin file: custom_1101_Startup.xml, load type: KEEP_IN_MEMORY
-2026-07-16 15:42:28.565 T:1896     info <general>: Loading skin file: Home.xml, load type: KEEP_IN_MEMORY
-2026-07-16 15:42:28.590 T:1896  warning <general>: Skin has invalid include: skinshortcuts-template-widget1
-2026-07-16 15:42:28.590 T:1896  warning <general>: Skin has invalid include: skinshortcuts-template-widget2
-2026-07-16 15:42:28.720 T:1967    error <general>: GetDirectory - Error getting videodb://movies/titles/
-2026-07-16 15:42:28.720 T:1972    error <general>: GetDirectory - Error getting videodb://tvshows/titles/
-2026-07-16 15:42:28.720 T:1973    error <general>: GetDirectory - Error getting musicdb://artists/?albumartistsonly=true
-2026-07-16 15:42:28.722 T:1967    error <general>: GetDirectory - Error getting videodb://musicvideos/titles/
-2026-07-16 15:42:28.777 T:1896  warning <general>: JSONRPC: Could not parse type "Setting.Details.SettingList"
-2026-07-16 15:42:28.778 T:1896     info <general>: JSONRPC: Adding type "Setting.Details.SettingList" to list of incomplete definitions (waiting for "Setting.Details.Setting")
-2026-07-16 15:42:28.779 T:1896     info <general>: JSONRPC: Resolving incomplete types/methods referencing Setting.Details.Setting
-2026-07-16 15:42:28.846 T:1896     info <general>: JSONRPC v13.5.0: Successfully initialized
-2026-07-16 15:42:28.863 T:1896     info <general>: CPeripheralBusAndroid: scanning for input devices...
-2026-07-16 15:42:28.880 T:1896     info <general>: CPeripheralBusAndroid: added input device
-2026-07-16 15:42:28.881 T:1896     info <general>: Loading controller layout: /data/user/0/org.xbmc.kodi/cache/apk/assets/addons/game.controller.default/resources/layout.xml
-2026-07-16 15:42:28.986 T:1896     info <general>: Loading controller layout: /data/user/0/org.xbmc.kodi/cache/apk/assets/addons/game.controller.mouse/resources/layout.xml
-2026-07-16 15:42:29.174 T:1896     info <general>: Loading controller layout: /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/addons/game.controller.remote/resources/layout.xml
-2026-07-16 15:42:29.260 T:1896     info <general>: Register - new joystick device registered on android->android/inputdevice/4: virtual-search (18D1:0100)
-2026-07-16 15:42:29.261 T:1896     info <general>: Register - new keyboard device registered on application->keyboard: Keyboard (0000:0000)
-2026-07-16 15:42:29.262 T:1896     info <general>: Register - new mouse device registered on application->mouse: Mouse (0000:0000)
-2026-07-16 15:42:29.264 T:1896     info <general>: Loading player core factory settings from special://xbmc/system/playercorefactory.xml.
-2026-07-16 15:42:29.265 T:1896     info <general>: Loaded playercorefactory configuration
-2026-07-16 15:42:29.266 T:1896     info <general>: Loading player core factory settings from special://masterprofile/playercorefactory.xml.
-2026-07-16 15:42:29.266 T:1896     info <general>: special://masterprofile/playercorefactory.xml does not exist. Skipping.
-2026-07-16 15:42:29.267 T:1896     info <general>: removing tempfiles
-2026-07-16 15:42:29.276 T:1896     info <general>: initialize done
-2026-07-16 15:42:29.276 T:1896     info <general>: Running the application...
-2026-07-16 15:42:29.282 T:1896     info <general>: starting zeroconf publishing
-2026-07-16 15:42:29.283 T:1981     info <general>: ES: Starting UDP Event server on port 9777
-2026-07-16 15:42:29.284 T:1981     info <general>: UDP: Listening on port 9777 (ipv6 : false)
-2026-07-16 15:42:29.285 T:1896     info <general>: JSONRPC Server: Successfully initialized
-2026-07-16 15:42:29.290 T:1896     info <general>: CWSDiscoveryListenerUDP::Start - Started
-2026-07-16 15:42:29.400 T:1896     info <general>: GLES: Enabling VSYNC
-2026-07-16 15:42:30.047 T:1980     info <general>: ZeroconfAndroid: Kodi (Sony-TV). now registered and active
-2026-07-16 15:42:30.766 T:1896     info <general>: Skipped 1 duplicate messages..
-2026-07-16 15:42:30.766 T:1896     info <general>: Loading controller layout: /data/user/0/org.xbmc.kodi/cache/apk/assets/addons/game.controller.keyboard/resources/layout.xml
-2026-07-16 15:42:32.962 T:1896     info <general>: Loading skin file: MyVideoNav.xml, load type: KEEP_IN_MEMORY
-2026-07-16 15:42:38.903 T:1896    error <general>: GetNonFolderItemResumeInformation: Cannot open VideoDatabase
-2026-07-16 15:42:38.908 T:1896     info <general>: Skipped 1 duplicate messages..
-2026-07-16 15:42:38.908 T:1896     info <general>: Loading skin file: DialogContextMenu.xml, load type: KEEP_IN_MEMORY
-2026-07-16 15:42:45.421 T:1896     info <general>: Loading skin file: DialogSettings.xml, load type: KEEP_IN_MEMORY
-2026-07-16 15:42:49.580 T:1896    error <general>: GetNonFolderItemResumeInformation: Cannot open VideoDatabase
+2026-07-16 15:48:20.583 T:2756     info <general>: creating subdirectories
+2026-07-16 15:48:20.583 T:2756     info <general>: userdata folder: special://masterprofile/
+2026-07-16 15:48:20.583 T:2756     info <general>: recording folder: 
+2026-07-16 15:48:20.583 T:2756     info <general>: screenshots folder: 
+2026-07-16 15:48:20.620 T:2756     info <general>: Running database version Addons33
+2026-07-16 15:48:20.888 T:2756     info <general>: CAddonMgr::FindAddons: audioencoder.kodi.builtin.aac v1.0.2 installed
+2026-07-16 15:48:20.890 T:2756     info <general>: CAddonMgr::FindAddons: audioencoder.kodi.builtin.wma v1.0.2 installed
+2026-07-16 15:48:20.891 T:2756     info <general>: CAddonMgr::FindAddons: game.controller.default v1.0.46 installed
+2026-07-16 15:48:20.892 T:2756     info <general>: CAddonMgr::FindAddons: game.controller.keyboard v1.1.47 installed
+2026-07-16 15:48:20.893 T:2756     info <general>: CAddonMgr::FindAddons: game.controller.mouse v1.0.30 installed
+2026-07-16 15:48:20.894 T:2756     info <general>: CAddonMgr::FindAddons: game.controller.remote v1.0.32 installed
+2026-07-16 15:48:20.896 T:2756     info <general>: CAddonMgr::FindAddons: game.controller.snes v1.0.46 installed
+2026-07-16 15:48:20.896 T:2756     info <general>: CAddonMgr::FindAddons: kodi.binary.global.audioengine v1.1.1 installed
+2026-07-16 15:48:20.897 T:2756     info <general>: CAddonMgr::FindAddons: kodi.binary.global.filesystem v1.1.9 installed
+2026-07-16 15:48:20.898 T:2756     info <general>: CAddonMgr::FindAddons: kodi.binary.global.general v1.0.5 installed
+2026-07-16 15:48:20.898 T:2756     info <general>: CAddonMgr::FindAddons: kodi.binary.global.gui v5.15.0 installed
+2026-07-16 15:48:20.899 T:2756     info <general>: CAddonMgr::FindAddons: kodi.binary.global.main v2.0.2 installed
+2026-07-16 15:48:20.900 T:2756     info <general>: CAddonMgr::FindAddons: kodi.binary.global.network v1.0.4 installed
+2026-07-16 15:48:20.900 T:2756     info <general>: CAddonMgr::FindAddons: kodi.binary.global.tools v1.0.4 installed
+2026-07-16 15:48:20.901 T:2756     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.audiodecoder v4.0.0 installed
+2026-07-16 15:48:20.902 T:2756     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.audioencoder v3.0.0 installed
+2026-07-16 15:48:20.902 T:2756     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.game v3.0.2 installed
+2026-07-16 15:48:20.903 T:2756     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.imagedecoder v3.0.1 installed
+2026-07-16 15:48:20.904 T:2756     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.inputstream v3.3.0 installed
+2026-07-16 15:48:20.904 T:2756     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.peripheral v3.0.2 installed
+2026-07-16 15:48:20.905 T:2756     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.pvr v8.3.0 installed
+2026-07-16 15:48:20.907 T:2756     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.screensaver v2.2.0 installed
+2026-07-16 15:48:20.908 T:2756     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.vfs v3.0.1 installed
+2026-07-16 15:48:20.909 T:2756     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.videocodec v2.1.0 installed
+2026-07-16 15:48:20.909 T:2756     info <general>: CAddonMgr::FindAddons: kodi.binary.instance.visualization v4.0.0 installed
+2026-07-16 15:48:20.910 T:2756     info <general>: CAddonMgr::FindAddons: kodi.resource v1.0.0 installed
+2026-07-16 15:48:20.911 T:2756     info <general>: CAddonMgr::FindAddons: metadata.album.universal v3.1.18 installed
+2026-07-16 15:48:20.911 T:2756     info <general>: CAddonMgr::FindAddons: metadata.artists.universal v4.3.21 installed
+2026-07-16 15:48:20.912 T:2756     info <general>: CAddonMgr::FindAddons: metadata.common.allmusic.com v3.2.2 installed
+2026-07-16 15:48:20.913 T:2756     info <general>: CAddonMgr::FindAddons: metadata.common.fanart.tv v3.6.5 installed
+2026-07-16 15:48:20.913 T:2756     info <general>: CAddonMgr::FindAddons: metadata.common.musicbrainz.org v2.2.4 installed
+2026-07-16 15:48:20.914 T:2756     info <general>: CAddonMgr::FindAddons: metadata.common.theaudiodb.com v2.0.3 installed
+2026-07-16 15:48:20.915 T:2756     info <general>: CAddonMgr::FindAddons: metadata.generic.albums v1.0.18 installed
+2026-07-16 15:48:20.916 T:2756     info <general>: CAddonMgr::FindAddons: metadata.generic.artists v1.0.18 installed
+2026-07-16 15:48:20.916 T:2756     info <general>: CAddonMgr::FindAddons: metadata.local v1.0.1 installed
+2026-07-16 15:48:20.917 T:2756     info <general>: CAddonMgr::FindAddons: metadata.themoviedb.org.python v3.2.0 installed
+2026-07-16 15:48:20.918 T:2756     info <general>: CAddonMgr::FindAddons: metadata.tvshows.themoviedb.org.python v1.7.6 installed
+2026-07-16 15:48:20.918 T:2756     info <general>: CAddonMgr::FindAddons: peripheral.joystick v21.1.23 installed
+2026-07-16 15:48:20.919 T:2756     info <general>: CAddonMgr::FindAddons: repository.xbmc.org v3.4.0 installed
+2026-07-16 15:48:20.920 T:2756     info <general>: CAddonMgr::FindAddons: resource.images.recordlabels.white v0.0.7 installed
+2026-07-16 15:48:20.920 T:2756     info <general>: CAddonMgr::FindAddons: resource.images.studios.white v0.0.34 installed
+2026-07-16 15:48:20.921 T:2756     info <general>: CAddonMgr::FindAddons: resource.images.weathericons.default v1.1.9 installed
+2026-07-16 15:48:20.922 T:2756     info <general>: CAddonMgr::FindAddons: resource.language.en_gb v2.0.2 installed
+2026-07-16 15:48:20.924 T:2756     info <general>: CAddonMgr::FindAddons: resource.uisounds.kodi v1.0.1 installed
+2026-07-16 15:48:20.925 T:2756     info <general>: CAddonMgr::FindAddons: screensaver.bing v1.0.6 installed
+2026-07-16 15:48:20.925 T:2756     info <general>: CAddonMgr::FindAddons: screensaver.xbmc.builtin.black v1.0.34 installed
+2026-07-16 15:48:20.926 T:2756     info <general>: CAddonMgr::FindAddons: screensaver.xbmc.builtin.dim v1.0.66 installed
+2026-07-16 15:48:20.927 T:2756     info <general>: CAddonMgr::FindAddons: script.module.certifi v2023.5.7 installed
+2026-07-16 15:48:20.927 T:2756     info <general>: CAddonMgr::FindAddons: script.module.chardet v5.1.0 installed
+2026-07-16 15:48:20.928 T:2756     info <general>: CAddonMgr::FindAddons: script.module.idna v3.10.0 installed
+2026-07-16 15:48:20.929 T:2756     info <general>: CAddonMgr::FindAddons: script.module.kodi-six v0.1.3.1 installed
+2026-07-16 15:48:20.929 T:2756     info <general>: CAddonMgr::FindAddons: script.module.pil v5.1.0 installed
+2026-07-16 15:48:20.930 T:2756     info <general>: CAddonMgr::FindAddons: script.module.pycryptodome v3.4.3 installed
+2026-07-16 15:48:20.931 T:2756     info <general>: CAddonMgr::FindAddons: script.module.requests v2.31.0 installed
+2026-07-16 15:48:20.931 T:2756     info <general>: CAddonMgr::FindAddons: script.module.simplecache v2.0.2 installed
+2026-07-16 15:48:20.932 T:2756     info <general>: CAddonMgr::FindAddons: script.module.simpleeval v0.9.13 installed
+2026-07-16 15:48:20.933 T:2756     info <general>: CAddonMgr::FindAddons: script.module.six v1.16.0+matrix.1 installed
+2026-07-16 15:48:20.933 T:2756     info <general>: CAddonMgr::FindAddons: script.module.unidecode v1.3.6 installed
+2026-07-16 15:48:20.934 T:2756     info <general>: CAddonMgr::FindAddons: script.module.urllib3 v2.2.3 installed
+2026-07-16 15:48:20.935 T:2756     info <general>: CAddonMgr::FindAddons: script.skinshortcuts v2.0.3 installed
+2026-07-16 15:48:20.935 T:2756     info <general>: CAddonMgr::FindAddons: service.xbmc.versioncheck v0.5.30+matrix.1 installed
+2026-07-16 15:48:20.936 T:2756     info <general>: CAddonMgr::FindAddons: skin.aeon.nox.silvo v10.0.3 installed
+2026-07-16 15:48:20.937 T:2756     info <general>: CAddonMgr::FindAddons: skin.estuary v4.0.0 installed
+2026-07-16 15:48:20.937 T:2756     info <general>: CAddonMgr::FindAddons: webinterface.default v21.x-1.0.1 installed
+2026-07-16 15:48:20.938 T:2756     info <general>: CAddonMgr::FindAddons: xbmc.addon v21.3.0 installed
+2026-07-16 15:48:20.940 T:2756     info <general>: CAddonMgr::FindAddons: xbmc.core v0.1.0 installed
+2026-07-16 15:48:20.941 T:2756     info <general>: CAddonMgr::FindAddons: xbmc.gui v5.17.0 installed
+2026-07-16 15:48:20.942 T:2756     info <general>: CAddonMgr::FindAddons: xbmc.json v13.5.0 installed
+2026-07-16 15:48:20.942 T:2756     info <general>: CAddonMgr::FindAddons: xbmc.metadata v2.1.0 installed
+2026-07-16 15:48:20.943 T:2756     info <general>: CAddonMgr::FindAddons: xbmc.python v3.0.1 installed
+2026-07-16 15:48:20.944 T:2756     info <general>: CAddonMgr::FindAddons: xbmc.webinterface v1.0.0 installed
+2026-07-16 15:48:20.980 T:2756     info <general>: CKeyboardLayoutManager: loading keyboard layouts from special://xbmc/system/keyboardlayouts...
+2026-07-16 15:48:21.012 T:2756     info <general>: Load: loading filters from special://masterprofile/decoderfilter.xml
+2026-07-16 15:48:21.084 T:2756     info <general>: Mediacodec decoder: c2.android.aac.decoder
+2026-07-16 15:48:21.085 T:2756     info <general>: Mediacodec decoder: OMX.google.aac.decoder
+2026-07-16 15:48:21.085 T:2756     info <general>: Mediacodec decoder: c2.android.amrnb.decoder
+2026-07-16 15:48:21.085 T:2756     info <general>: Mediacodec decoder: OMX.google.amrnb.decoder
+2026-07-16 15:48:21.085 T:2756     info <general>: Mediacodec decoder: c2.android.amrwb.decoder
+2026-07-16 15:48:21.085 T:2756     info <general>: Mediacodec decoder: OMX.google.amrwb.decoder
+2026-07-16 15:48:21.085 T:2756     info <general>: Mediacodec decoder: c2.android.flac.decoder
+2026-07-16 15:48:21.085 T:2756     info <general>: Mediacodec decoder: OMX.google.flac.decoder
+2026-07-16 15:48:21.085 T:2756     info <general>: Mediacodec decoder: c2.android.g711.alaw.decoder
+2026-07-16 15:48:21.085 T:2756     info <general>: Mediacodec decoder: OMX.google.g711.alaw.decoder
+2026-07-16 15:48:21.086 T:2756     info <general>: Mediacodec decoder: c2.android.g711.mlaw.decoder
+2026-07-16 15:48:21.086 T:2756     info <general>: Mediacodec decoder: OMX.google.g711.mlaw.decoder
+2026-07-16 15:48:21.086 T:2756     info <general>: Mediacodec decoder: c2.android.mp3.decoder
+2026-07-16 15:48:21.086 T:2756     info <general>: Mediacodec decoder: OMX.google.mp3.decoder
+2026-07-16 15:48:21.086 T:2756     info <general>: Mediacodec decoder: c2.android.opus.decoder
+2026-07-16 15:48:21.086 T:2756     info <general>: Mediacodec decoder: OMX.google.opus.decoder
+2026-07-16 15:48:21.086 T:2756     info <general>: Mediacodec decoder: c2.android.raw.decoder
+2026-07-16 15:48:21.086 T:2756     info <general>: Mediacodec decoder: OMX.google.raw.decoder
+2026-07-16 15:48:21.086 T:2756     info <general>: Mediacodec decoder: c2.android.vorbis.decoder
+2026-07-16 15:48:21.086 T:2756     info <general>: Mediacodec decoder: OMX.google.vorbis.decoder
+2026-07-16 15:48:21.087 T:2756     info <general>: Mediacodec decoder: OMX.realtek.audio.decoder
+2026-07-16 15:48:21.087 T:2756     info <general>: Mediacodec decoder: OMX.realtek.video.decoder
+2026-07-16 15:48:21.087 T:2756     info <general>: Mediacodec decoder: c2.android.avc.decoder
+2026-07-16 15:48:21.087 T:2756     info <general>: Mediacodec decoder: OMX.google.h264.decoder
+2026-07-16 15:48:21.087 T:2756     info <general>: Mediacodec decoder: c2.android.h263.decoder
+2026-07-16 15:48:21.087 T:2756     info <general>: Mediacodec decoder: OMX.google.h263.decoder
+2026-07-16 15:48:21.087 T:2756     info <general>: Mediacodec decoder: c2.android.hevc.decoder
+2026-07-16 15:48:21.087 T:2756     info <general>: Mediacodec decoder: OMX.google.hevc.decoder
+2026-07-16 15:48:21.087 T:2756     info <general>: Mediacodec decoder: c2.android.mpeg2.decoder
+2026-07-16 15:48:21.088 T:2756     info <general>: Mediacodec decoder: OMX.google.mpeg2.decoder
+2026-07-16 15:48:21.088 T:2756     info <general>: Mediacodec decoder: c2.android.mpeg4.decoder
+2026-07-16 15:48:21.088 T:2756     info <general>: Mediacodec decoder: OMX.google.mpeg4.decoder
+2026-07-16 15:48:21.088 T:2756     info <general>: Mediacodec decoder: c2.android.vp8.decoder
+2026-07-16 15:48:21.088 T:2756     info <general>: Mediacodec decoder: OMX.google.vp8.decoder
+2026-07-16 15:48:21.088 T:2756     info <general>: Mediacodec decoder: c2.android.vp9.decoder
+2026-07-16 15:48:21.088 T:2756     info <general>: Mediacodec decoder: OMX.google.vp9.decoder
+2026-07-16 15:48:21.090 T:2756     info <general>: RetroPlayer[RENDER]: Registering renderer factory for OpenGLES
+2026-07-16 15:48:21.091 T:2756     info <general>: CAndroidUtils: window resolution: 1920x1080
+2026-07-16 15:48:21.092 T:2756     info <general>: CAndroidUtils: Current resolution: 1920x1080 1920x1080 @ 60.000004 - Full Screen
+2026-07-16 15:48:21.092 T:2756     info <general>: Skipped 1 duplicate messages..
+2026-07-16 15:48:21.092 T:2756     info <general>: EGL_VERSION = 1.4 Android META-EGL
+2026-07-16 15:48:21.092 T:2756     info <general>: EGL_VENDOR = Android
+2026-07-16 15:48:21.092 T:2756     info <general>: EGL_EXTENSIONS = EGL_KHR_get_all_proc_addresses EGL_ANDROID_presentation_time EGL_KHR_swap_buffers_with_damage EGL_ANDROID_get_native_client_buffer EGL_ANDROID_front_buffer_auto_refresh EGL_ANDROID_get_frame_timestamps EGL_EXT_surface_SMPTE2086_metadata EGL_EXT_surface_CTA861_3_metadata EGL_KHR_image EGL_KHR_image_base EGL_EXT_image_gl_colorspace EGL_KHR_gl_colorspace EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_KHR_fence_sync EGL_KHR_create_context EGL_KHR_config_attribs EGL_KHR_surfaceless_context EGL_EXT_create_context_robustness EGL_ANDROID_image_native_buffer EGL_KHR_wait_sync EGL_ANDROID_recordable EGL_KHR_partial_update EGL_EXT_pixel_format_float EGL_KHR_mutable_render_buffer EGL_IMG_context_priority EGL_KHR_no_config_context 
+2026-07-16 15:48:21.092 T:2756     info <general>: EGL_CLIENT_EXTENSIONS = EGL_EXT_client_extensions EGL_KHR_platform_android EGL_ANGLE_platform_angle EGL_ANDROID_GLES_layers
+2026-07-16 15:48:21.096 T:2756     info <general>: CApplication::CreateGUI - using the default windowing system
+2026-07-16 15:48:21.096 T:2756     info <general>: Checking resolution 16
+2026-07-16 15:48:21.096 T:2756     info <general>: CAndroidUtils: SetNativeResolution: 1: 1920x1080 1920x1080@60.000004
+2026-07-16 15:48:21.099 T:2756     info <general>: GL_VENDOR = ARM
+2026-07-16 15:48:21.099 T:2756     info <general>: GL_RENDERER = Mali-G31
+2026-07-16 15:48:21.099 T:2756     info <general>: GL_VERSION = OpenGL ES 3.2 v1.r26p0-01eac0.###other-sha0123456789ABCDEF0###
+2026-07-16 15:48:21.099 T:2756     info <general>: GL_SHADING_LANGUAGE_VERSION = OpenGL ES GLSL ES 3.20
+2026-07-16 15:48:21.099 T:2756     info <general>: GL_EXTENSIONS = GL_EXT_debug_marker GL_ARM_rgba8 GL_ARM_mali_shader_binary GL_OES_depth24 GL_OES_depth_texture GL_OES_depth_texture_cube_map GL_OES_packed_depth_stencil GL_OES_rgb8_rgba8 GL_EXT_read_format_bgra GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_standard_derivatives GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_image_external_essl3 GL_OES_EGL_sync GL_OES_texture_npot GL_OES_vertex_half_float GL_OES_required_internalformat GL_OES_vertex_array_object GL_OES_mapbuffer GL_EXT_texture_format_BGRA8888 GL_EXT_texture_rg GL_EXT_texture_type_2_10_10_10_REV GL_OES_fbo_render_mipmap GL_OES_element_index_uint GL_EXT_shadow_samplers GL_OES_texture_compression_astc GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_KHR_texture_compression_astc_sliced_3d GL_EXT_texture_compression_astc_decode_mode GL_EXT_texture_compression_astc_decode_mode_rgb9e5 GL_KHR_debug GL_EXT_occlusion_query_boolean GL_EXT_disjoint_timer_query GL_EXT_blend_minmax GL_EXT_discard_framebuffer GL_OES_get_program_binary GL_OES_texture_3D GL_EXT_texture_storage GL_EXT_multisampled_render_to_texture GL_EXT_multisampled_render_to_texture2 GL_OES_surfaceless_context GL_OES_texture_stencil8 GL_EXT_shader_pixel_local_storage GL_ARM_shader_framebuffer_fetch GL_ARM_shader_framebuffer_fetch_depth_stencil GL_ARM_mali_program_binary GL_EXT_sRGB GL_EXT_sRGB_write_control GL_EXT_texture_sRGB_decode GL_EXT_texture_sRGB_R8 GL_EXT_texture_sRGB_RG8 GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_OES_texture_storage_multisample_2d_array GL_OES_shader_image_atomic GL_EXT_robustness GL_EXT_draw_buffers_indexed GL_OES_draw_buffers_indexed GL_EXT_texture_border_clamp GL_OES_texture_border_clamp GL_EXT_texture_cube_map_array GL_OES_texture_cube_map_array GL_OES_sample_variables GL_OES_sample_shading GL_OES_shader_multisample_interpolation GL_EXT_shader_io_blocks GL_OES_shader_io_blocks GL_EXT_tessellation_shader GL_OES_tessellation_shader GL_EXT_primitive_bounding_box GL_OES_primitive_bounding_box GL_EXT_geometry_shader GL_OES_geometry_shader GL_ANDROID_extension_pack_es31a GL_EXT_gpu_shader5 GL_OES_gpu_shader5 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_copy_image GL_OES_copy_image GL_EXT_shader_non_constant_global_initializers GL_EXT_color_buffer_half_float GL_EXT_color_buffer_float GL_EXT_YUV_target GL_OVR_multiview GL_OVR_multiview2 GL_OVR_multiview_multisampled_render_to_texture GL_KHR_robustness GL_KHR_robust_buffer_access_behavior GL_EXT_draw_elements_base_vertex GL_OES_draw_elements_base_vertex GL_EXT_protected_textures GL_EXT_buffer_storage GL_EXT_external_buffer GL_EXT_EGL_image_array GL_ARM_texture_unnormalized_coordinates 
+2026-07-16 15:48:21.897 T:2756     info <general>: CAndroidUtils: SetNativeResolution: 1: 1920x1080 1920x1080@60.000004
+2026-07-16 15:48:21.899 T:2756     info <general>: GLES: Maximum texture width: 8192
+2026-07-16 15:48:21.899 T:2756     info <general>: load keymapping
+2026-07-16 15:48:21.910 T:2756     info <general>: Loading special://xbmc/system/keymaps/appcommand.xml
+2026-07-16 15:48:21.911 T:2756     info <general>: Loading special://xbmc/system/keymaps/customcontroller.AppleRemote.xml
+2026-07-16 15:48:21.913 T:2756     info <general>: Loading special://xbmc/system/keymaps/customcontroller.Harmony.xml
+2026-07-16 15:48:21.916 T:2756     info <general>: Loading special://xbmc/system/keymaps/customcontroller.SiriRemote.xml
+2026-07-16 15:48:21.917 T:2756     info <general>: Loading special://xbmc/system/keymaps/gamepad.xml
+2026-07-16 15:48:21.920 T:2756     info <general>: Loading special://xbmc/system/keymaps/joystick.xml
+2026-07-16 15:48:21.923 T:2756     info <general>: Loading special://xbmc/system/keymaps/keyboard.xml
+2026-07-16 15:48:21.931 T:2756     info <general>: Loading special://xbmc/system/keymaps/mouse.xml
+2026-07-16 15:48:21.932 T:2756     info <general>: Loading special://xbmc/system/keymaps/remote.xml
+2026-07-16 15:48:21.936 T:2756     info <general>: Loading special://xbmc/system/keymaps/touchscreen.xml
+2026-07-16 15:48:21.941 T:2756     info <general>: GUI format 1920x1080, Display 1920x1080 @ 60.000004 - Full Screen
+2026-07-16 15:48:21.980 T:2774     info <general>: Float is supported
+2026-07-16 15:48:21.981 T:2774     info <general>: Multi channel Float is supported
+2026-07-16 15:48:22.021 T:2774     info <general>: Float is supported
+2026-07-16 15:48:22.021 T:2774     info <general>: Multi channel Float is supported
+2026-07-16 15:48:22.577 T:2774     info <general>: Found 1 Lists of Devices
+2026-07-16 15:48:22.577 T:2774     info <general>: Enumerated AUDIOTRACK devices:
+2026-07-16 15:48:22.577 T:2774     info <general>:     Device 1
+2026-07-16 15:48:22.577 T:2774     info <general>:         m_deviceName      : AudioTrack (RAW)
+2026-07-16 15:48:22.577 T:2774     info <general>:         m_displayName     : AudioTrack (RAW)
+2026-07-16 15:48:22.578 T:2774     info <general>:         m_displayNameExtra: Android IEC packer
+2026-07-16 15:48:22.578 T:2774     info <general>:         m_deviceType      : AE_DEVTYPE_HDMI
+2026-07-16 15:48:22.578 T:2774     info <general>:         m_channels        : FL, FR, FC, LFE, SL, SR, BL, BR, BC, BLOC, BROC
+2026-07-16 15:48:22.578 T:2774     info <general>:         m_sampleRates     : 32000,44100,48000,88200,96000,176400,192000,32000,44100,48000,88200,96000,176400,192000
+2026-07-16 15:48:22.578 T:2774     info <general>:         m_dataFormats     : AE_FMT_S16LE,AE_FMT_FLOAT,AE_FMT_RAW,AE_FMT_S16LE,AE_FMT_FLOAT,AE_FMT_RAW
+2026-07-16 15:48:22.578 T:2774     info <general>:         m_streamTypes     : STREAM_TYPE_AC3,STREAM_TYPE_EAC3,STREAM_TYPE_DTSHD_CORE,STREAM_TYPE_DTS_1024,STREAM_TYPE_DTS_2048,STREAM_TYPE_DTS_512,STREAM_TYPE_DTSHD,STREAM_TYPE_DTSHD_MA
+2026-07-16 15:48:22.579 T:2775     info <general>: CActiveAESink::OpenSink - initialize sink
+2026-07-16 15:48:22.579 T:2775     info <general>: Trying to open: samplerate: 44100, channelMask: 12, encoding: 4
+2026-07-16 15:48:22.582 T:2775     info <general>: Minimum size we need for stream: 34032 Bytes
+2026-07-16 15:48:22.582 T:2775     info <general>: Audiotrack buffer params are: period time = 48.231 ms, period size = 17016 bytes, num periods = 4
+2026-07-16 15:48:22.582 T:2775     info <general>: Created Audiotrackbuffer with playing time of 192.925170 ms min buffer size: 68064 bytes
+2026-07-16 15:48:22.594 T:2775     info <general>: CAESinkAUDIOTRACK::Initializing with: m_sampleRate: 44100 format: AE_FMT_FLOAT (AE) method: PCM stream-type: PCM-STREAM min_buffer_size: 68064 m_frames: 2127 m_frameSize: 8 channels: 2
+2026-07-16 15:48:22.611 T:2756     info <general>: CLangInfo: loading resource.language.en_gb language information...
+2026-07-16 15:48:22.614 T:2756     info <general>: global locale set to en_US.UTF-8
+2026-07-16 15:48:22.614 T:2756     info <general>: CLangInfo: loading resource.language.en_gb language strings...
+2026-07-16 15:48:22.717 T:2756     info <general>: WaitForNet: Waiting for a network interface to come up (Timeout: 30 s)
+2026-07-16 15:48:22.718 T:2756     info <general>: WaitForNet: A network interface is up after waiting 0 ms
+2026-07-16 15:48:22.730 T:2816     info <general>: Running database version Addons33
+2026-07-16 15:48:22.734 T:2816     info <general>: Running database version ViewModes6
+2026-07-16 15:48:22.739 T:2816     info <general>: Running database version Textures13
+2026-07-16 15:48:22.800 T:2816     info <general>: creating version table
+2026-07-16 15:48:22.801 T:2816     info <general>: create artist table
+2026-07-16 15:48:22.802 T:2816     info <general>: create album table
+2026-07-16 15:48:22.803 T:2816     info <general>: create audiobook table
+2026-07-16 15:48:22.803 T:2816     info <general>: create album_artist table
+2026-07-16 15:48:22.804 T:2816     info <general>: create album_source table
+2026-07-16 15:48:22.804 T:2816     info <general>: create genre table
+2026-07-16 15:48:22.804 T:2816     info <general>: create path table
+2026-07-16 15:48:22.805 T:2816     info <general>: create source table
+2026-07-16 15:48:22.805 T:2816     info <general>: create source_path table
+2026-07-16 15:48:22.806 T:2816     info <general>: create song table
+2026-07-16 15:48:22.807 T:2816     info <general>: create song_artist table
+2026-07-16 15:48:22.807 T:2816     info <general>: create song_genre table
+2026-07-16 15:48:22.808 T:2816     info <general>: create role table
+2026-07-16 15:48:22.808 T:2816     info <general>: create infosetting table
+2026-07-16 15:48:22.809 T:2816     info <general>: create discography table
+2026-07-16 15:48:22.809 T:2816     info <general>: create art table
+2026-07-16 15:48:22.810 T:2816     info <general>: create versiontagscan table
+2026-07-16 15:48:22.811 T:2816     info <general>: create removed_link table
+2026-07-16 15:48:22.811 T:2816     info <general>: CreateAnalytics - creating indices
+2026-07-16 15:48:22.821 T:2816     info <general>: create triggers
+2026-07-16 15:48:22.827 T:2816     info <general>: create song view
+2026-07-16 15:48:22.829 T:2816     info <general>: create album view
+2026-07-16 15:48:22.830 T:2816     info <general>: create artist view
+2026-07-16 15:48:22.831 T:2816     info <general>: create albumartist view
+2026-07-16 15:48:22.832 T:2816     info <general>: create songartist view
+2026-07-16 15:48:22.871 T:2816     info <general>: MYSQL: Connected to version 10.11.17-MariaDB-ubu2204
+2026-07-16 15:48:22.902 T:2816    error <general>: Unable to open database: MyVideos131 [1049](Unknown database 'MyVideos131')
+2026-07-16 15:48:22.951 T:2816    error <general>: Unable to open database: MyVideos130 [1049](Unknown database 'MyVideos130')
+2026-07-16 15:48:22.984 T:2816    error <general>: Unable to open database: MyVideos129 [1049](Unknown database 'MyVideos129')
+2026-07-16 15:48:23.009 T:2816    error <general>: Unable to open database: MyVideos128 [1049](Unknown database 'MyVideos128')
+2026-07-16 15:48:23.035 T:2816    error <general>: Unable to open database: MyVideos127 [1049](Unknown database 'MyVideos127')
+2026-07-16 15:48:23.060 T:2816    error <general>: Unable to open database: MyVideos126 [1049](Unknown database 'MyVideos126')
+2026-07-16 15:48:23.083 T:2816    error <general>: Unable to open database: MyVideos125 [1049](Unknown database 'MyVideos125')
+2026-07-16 15:48:23.106 T:2816    error <general>: Unable to open database: MyVideos124 [1049](Unknown database 'MyVideos124')
+2026-07-16 15:48:23.136 T:2816    error <general>: Unable to open database: MyVideos123 [1049](Unknown database 'MyVideos123')
+2026-07-16 15:48:23.158 T:2816    error <general>: Unable to open database: MyVideos122 [1049](Unknown database 'MyVideos122')
+2026-07-16 15:48:23.183 T:2816    error <general>: Unable to open database: MyVideos121 [1049](Unknown database 'MyVideos121')
+2026-07-16 15:48:23.208 T:2816    error <general>: Unable to open database: MyVideos120 [1049](Unknown database 'MyVideos120')
+2026-07-16 15:48:23.234 T:2816    error <general>: Unable to open database: MyVideos119 [1049](Unknown database 'MyVideos119')
+2026-07-16 15:48:23.259 T:2816    error <general>: Unable to open database: MyVideos118 [1049](Unknown database 'MyVideos118')
+2026-07-16 15:48:23.281 T:2816    error <general>: Unable to open database: MyVideos117 [1049](Unknown database 'MyVideos117')
+2026-07-16 15:48:23.308 T:2816    error <general>: Unable to open database: MyVideos116 [1049](Unknown database 'MyVideos116')
+2026-07-16 15:48:23.332 T:2816    error <general>: Unable to open database: MyVideos115 [1049](Unknown database 'MyVideos115')
+2026-07-16 15:48:23.359 T:2816    error <general>: Unable to open database: MyVideos114 [1049](Unknown database 'MyVideos114')
+2026-07-16 15:48:23.384 T:2816    error <general>: Unable to open database: MyVideos113 [1049](Unknown database 'MyVideos113')
+2026-07-16 15:48:23.408 T:2816    error <general>: Unable to open database: MyVideos112 [1049](Unknown database 'MyVideos112')
+2026-07-16 15:48:23.438 T:2816    error <general>: Unable to open database: MyVideos111 [1049](Unknown database 'MyVideos111')
+2026-07-16 15:48:23.462 T:2816    error <general>: Unable to open database: MyVideos110 [1049](Unknown database 'MyVideos110')
+2026-07-16 15:48:23.485 T:2816    error <general>: Unable to open database: MyVideos109 [1049](Unknown database 'MyVideos109')
+2026-07-16 15:48:23.508 T:2816    error <general>: Unable to open database: MyVideos108 [1049](Unknown database 'MyVideos108')
+2026-07-16 15:48:23.533 T:2816    error <general>: Unable to open database: MyVideos107 [1049](Unknown database 'MyVideos107')
+2026-07-16 15:48:23.561 T:2816    error <general>: Unable to open database: MyVideos106 [1049](Unknown database 'MyVideos106')
+2026-07-16 15:48:23.586 T:2816    error <general>: Unable to open database: MyVideos105 [1049](Unknown database 'MyVideos105')
+2026-07-16 15:48:23.609 T:2816    error <general>: Unable to open database: MyVideos104 [1049](Unknown database 'MyVideos104')
+2026-07-16 15:48:23.632 T:2816    error <general>: Unable to open database: MyVideos103 [1049](Unknown database 'MyVideos103')
+2026-07-16 15:48:23.663 T:2816    error <general>: Unable to open database: MyVideos102 [1049](Unknown database 'MyVideos102')
+2026-07-16 15:48:23.690 T:2816    error <general>: Unable to open database: MyVideos101 [1049](Unknown database 'MyVideos101')
+2026-07-16 15:48:23.715 T:2816    error <general>: Unable to open database: MyVideos100 [1049](Unknown database 'MyVideos100')
+2026-07-16 15:48:23.738 T:2816    error <general>: Unable to open database: MyVideos99 [1049](Unknown database 'MyVideos99')
+2026-07-16 15:48:23.762 T:2816    error <general>: Unable to open database: MyVideos98 [1049](Unknown database 'MyVideos98')
+2026-07-16 15:48:23.786 T:2816    error <general>: Unable to open database: MyVideos97 [1049](Unknown database 'MyVideos97')
+2026-07-16 15:48:23.811 T:2816    error <general>: Unable to open database: MyVideos96 [1049](Unknown database 'MyVideos96')
+2026-07-16 15:48:23.834 T:2816    error <general>: Unable to open database: MyVideos95 [1049](Unknown database 'MyVideos95')
+2026-07-16 15:48:23.862 T:2816    error <general>: Unable to open database: MyVideos94 [1049](Unknown database 'MyVideos94')
+2026-07-16 15:48:23.885 T:2816    error <general>: Unable to open database: MyVideos93 [1049](Unknown database 'MyVideos93')
+2026-07-16 15:48:23.908 T:2816    error <general>: Unable to open database: MyVideos92 [1049](Unknown database 'MyVideos92')
+2026-07-16 15:48:23.935 T:2816    error <general>: Unable to open database: MyVideos91 [1049](Unknown database 'MyVideos91')
+2026-07-16 15:48:23.963 T:2816    error <general>: Unable to open database: MyVideos90 [1049](Unknown database 'MyVideos90')
+2026-07-16 15:48:23.985 T:2816    error <general>: Unable to open database: MyVideos89 [1049](Unknown database 'MyVideos89')
+2026-07-16 15:48:24.010 T:2816    error <general>: Unable to open database: MyVideos88 [1049](Unknown database 'MyVideos88')
+2026-07-16 15:48:24.035 T:2816    error <general>: Unable to open database: MyVideos87 [1049](Unknown database 'MyVideos87')
+2026-07-16 15:48:24.059 T:2816    error <general>: Unable to open database: MyVideos86 [1049](Unknown database 'MyVideos86')
+2026-07-16 15:48:24.080 T:2816    error <general>: Unable to open database: MyVideos85 [1049](Unknown database 'MyVideos85')
+2026-07-16 15:48:24.109 T:2816    error <general>: Unable to open database: MyVideos84 [1049](Unknown database 'MyVideos84')
+2026-07-16 15:48:24.132 T:2816    error <general>: Unable to open database: MyVideos83 [1049](Unknown database 'MyVideos83')
+2026-07-16 15:48:24.161 T:2816    error <general>: Unable to open database: MyVideos82 [1049](Unknown database 'MyVideos82')
+2026-07-16 15:48:24.186 T:2816    error <general>: Unable to open database: MyVideos81 [1049](Unknown database 'MyVideos81')
+2026-07-16 15:48:24.208 T:2816    error <general>: Unable to open database: MyVideos80 [1049](Unknown database 'MyVideos80')
+2026-07-16 15:48:24.233 T:2816    error <general>: Unable to open database: MyVideos79 [1049](Unknown database 'MyVideos79')
+2026-07-16 15:48:24.264 T:2816    error <general>: Unable to open database: MyVideos78 [1049](Unknown database 'MyVideos78')
+2026-07-16 15:48:24.287 T:2816    error <general>: Unable to open database: MyVideos77 [1049](Unknown database 'MyVideos77')
+2026-07-16 15:48:24.312 T:2816    error <general>: Unable to open database: MyVideos76 [1049](Unknown database 'MyVideos76')
+2026-07-16 15:48:24.339 T:2816    error <general>: Unable to open database: MyVideos75 [1049](Unknown database 'MyVideos75')
+2026-07-16 15:48:24.367 T:2816    error <general>: SQL: Can't create new database: 'MyVideos131' (1006)
+2026-07-16 15:48:24.372 T:2816    error <general>: Unable to open database: MyVideos131 (11)
+2026-07-16 15:48:24.372 T:2816    error <general>: Unable to create new database
+2026-07-16 15:48:24.378 T:2816     info <general>: Running database version TV46
+2026-07-16 15:48:24.382 T:2816     info <general>: Running database version Epg16
+2026-07-16 15:48:24.479 T:2756     info <general>: Unloaded skin
+2026-07-16 15:48:24.490 T:2756     info <general>:   load skin from: /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/addons/skin.aeon.nox.silvo/ (version: 10.0.3)
+2026-07-16 15:48:24.490 T:2756     info <general>:   load fonts for skin...
+2026-07-16 15:48:24.494 T:2756     info <general>: Loading skin includes from /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/addons/skin.aeon.nox.silvo/16x9/Includes.xml
+2026-07-16 15:48:25.300 T:2756     info <general>: LoadFontsFromFile: Loading <fontset> with name 'Arial' from '/storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/addons/skin.aeon.nox.silvo/16x9/Font.xml'
+2026-07-16 15:48:25.488 T:2756     info <general>: LoadTimers: Trying to load skin timers from /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/addons/skin.aeon.nox.silvo/16x9/Timers.xml
+2026-07-16 15:48:25.497 T:2756     info <general>:   load new skin...
+2026-07-16 15:48:25.497 T:2756     info <general>: Loading custom window XMLs from skin path /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/addons/skin.aeon.nox.silvo/16x9
+2026-07-16 15:48:25.580 T:2756     info <general>:   initialize new skin...
+2026-07-16 15:48:25.580 T:2756     info <general>: Loading skin file: custom_1134_PausedOverlay.xml, load type: LOAD_ON_GUI_INIT
+2026-07-16 15:48:25.600 T:2756     info <general>: Loading skin file: DialogBusy.xml, load type: LOAD_ON_GUI_INIT
+2026-07-16 15:48:25.607 T:2756     info <general>: Skipped 1 duplicate messages..
+2026-07-16 15:48:25.607 T:2756     info <general>: Loading skin file: DialogNotification.xml, load type: LOAD_ON_GUI_INIT
+2026-07-16 15:48:25.612 T:2756     info <general>: Loading skin file: DialogVolumeBar.xml, load type: LOAD_ON_GUI_INIT
+2026-07-16 15:48:25.642 T:2756     info <general>: Loading skin file: DialogExtendedProgressBar.xml, load type: LOAD_ON_GUI_INIT
+2026-07-16 15:48:25.647 T:2756     info <general>: Loading skin file: Pointer.xml, load type: LOAD_ON_GUI_INIT
+2026-07-16 15:48:25.650 T:2756     info <general>: Loading skin file: DialogSeekBar.xml, load type: LOAD_ON_GUI_INIT
+2026-07-16 15:48:25.668 T:2756     info <general>: Loading resource://resource.uisounds.kodi/sounds.xml
+2026-07-16 15:48:25.790 T:2756     info <general>:   skin loaded...
+2026-07-16 15:48:25.790 T:2756     info <general>: Loading skin file: Startup.xml, load type: LOAD_EVERY_TIME
+2026-07-16 15:48:25.792 T:2756     info <general>: Loading skin file: custom_1101_Startup.xml, load type: KEEP_IN_MEMORY
+2026-07-16 15:48:25.910 T:2756     info <general>: Loading skin file: Home.xml, load type: KEEP_IN_MEMORY
+2026-07-16 15:48:25.933 T:2756  warning <general>: Skin has invalid include: skinshortcuts-template-widget1
+2026-07-16 15:48:25.933 T:2756  warning <general>: Skin has invalid include: skinshortcuts-template-widget2
+2026-07-16 15:48:26.063 T:2816    error <general>: GetDirectory - Error getting videodb://movies/titles/
+2026-07-16 15:48:26.064 T:2816    error <general>: GetDirectory - Error getting videodb://musicvideos/titles/
+2026-07-16 15:48:26.064 T:2817    error <general>: GetDirectory - Error getting videodb://tvshows/titles/
+2026-07-16 15:48:26.124 T:2756  warning <general>: JSONRPC: Could not parse type "Setting.Details.SettingList"
+2026-07-16 15:48:26.124 T:2756     info <general>: JSONRPC: Adding type "Setting.Details.SettingList" to list of incomplete definitions (waiting for "Setting.Details.Setting")
+2026-07-16 15:48:26.125 T:2756     info <general>: JSONRPC: Resolving incomplete types/methods referencing Setting.Details.Setting
+2026-07-16 15:48:26.195 T:2756     info <general>: JSONRPC v13.5.0: Successfully initialized
+2026-07-16 15:48:26.212 T:2756     info <general>: CPeripheralBusAndroid: scanning for input devices...
+2026-07-16 15:48:26.228 T:2756     info <general>: CPeripheralBusAndroid: added input device
+2026-07-16 15:48:26.230 T:2756     info <general>: Loading controller layout: /data/user/0/org.xbmc.kodi/cache/apk/assets/addons/game.controller.default/resources/layout.xml
+2026-07-16 15:48:26.316 T:2756     info <general>: Loading controller layout: /data/user/0/org.xbmc.kodi/cache/apk/assets/addons/game.controller.mouse/resources/layout.xml
+2026-07-16 15:48:26.484 T:2756     info <general>: Loading controller layout: /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/addons/game.controller.remote/resources/layout.xml
+2026-07-16 15:48:26.563 T:2756     info <general>: Register - new joystick device registered on android->android/inputdevice/4: virtual-search (18D1:0100)
+2026-07-16 15:48:26.564 T:2756     info <general>: Register - new keyboard device registered on application->keyboard: Keyboard (0000:0000)
+2026-07-16 15:48:26.567 T:2756     info <general>: Register - new mouse device registered on application->mouse: Mouse (0000:0000)
+2026-07-16 15:48:26.573 T:2756     info <general>: Loading player core factory settings from special://xbmc/system/playercorefactory.xml.
+2026-07-16 15:48:26.576 T:2756     info <general>: Loaded playercorefactory configuration
+2026-07-16 15:48:26.577 T:2756     info <general>: Loading player core factory settings from special://masterprofile/playercorefactory.xml.
+2026-07-16 15:48:26.578 T:2756     info <general>: special://masterprofile/playercorefactory.xml does not exist. Skipping.
+2026-07-16 15:48:26.578 T:2756     info <general>: removing tempfiles
+2026-07-16 15:48:26.586 T:2756     info <general>: initialize done
+2026-07-16 15:48:26.587 T:2756     info <general>: Running the application...
+2026-07-16 15:48:26.596 T:2756     info <general>: starting zeroconf publishing
+2026-07-16 15:48:26.597 T:2829     info <general>: ES: Starting UDP Event server on port 9777
+2026-07-16 15:48:26.597 T:2829     info <general>: UDP: Listening on port 9777 (ipv6 : false)
+2026-07-16 15:48:26.599 T:2756     info <general>: JSONRPC Server: Successfully initialized
+2026-07-16 15:48:26.602 T:2756     info <general>: CWSDiscoveryListenerUDP::Start - Started
+2026-07-16 15:48:26.722 T:2756     info <general>: GLES: Enabling VSYNC
+2026-07-16 15:48:27.355 T:2828     info <general>: ZeroconfAndroid: Kodi (Sony-TV). now registered and active
+2026-07-16 15:48:28.390 T:2756     info <general>: Skipped 1 duplicate messages..
+2026-07-16 15:48:28.390 T:2756     info <general>: Loading controller layout: /data/user/0/org.xbmc.kodi/cache/apk/assets/addons/game.controller.keyboard/resources/layout.xml
+2026-07-16 15:48:30.466 T:2756     info <general>: Loading skin file: MyVideoNav.xml, load type: KEEP_IN_MEMORY
+2026-07-16 15:48:36.295 T:2756    error <general>: GetNonFolderItemResumeInformation: Cannot open VideoDatabase
+2026-07-16 15:48:36.304 T:2756     info <general>: Skipped 1 duplicate messages..
+2026-07-16 15:48:36.304 T:2756     info <general>: Loading skin file: DialogContextMenu.xml, load type: KEEP_IN_MEMORY
+2026-07-16 15:48:41.107 T:2756     info <general>: Loading skin file: DialogSettings.xml, load type: KEEP_IN_MEMORY
