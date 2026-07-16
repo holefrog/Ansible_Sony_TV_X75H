@@ -196,7 +196,7 @@ mysql -h 192.168.50.xxx -u root -p < kodi_full_backup_before_upgrade.sql
 **原因**：自动化建库时发生了竞态条件（Race Condition）。Kodi 在初次启动时，刚向 MariaDB 创建了 `MyVideos131` 库名，还没来得及执行内部的数十条 `CREATE TABLE` 和 `CREATE VIEW` 语句，外部的 Ansible 脚本因为轮询探测到数据库名存在，就立刻执行 `am force-stop` 将 Kodi 强行关闭。这留下了一个只有空壳、没有数据表和视图的“残缺”数据库。
 
 **解决方案**：
-1. 必须在 MariaDB 中彻底删除已损坏的空壳数据库（也可直接执行项目中提供的 `reset_kodi_db.yml` 进行一键清理）：
+1. 必须在 MariaDB 中彻底删除已损坏的空壳数据库（也可直接执行项目中提供的 `tools/reset_kodi_db.yml` 进行一键清理）：
    ```sql
    DROP DATABASE MyVideos131;
    ```
