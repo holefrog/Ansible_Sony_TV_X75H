@@ -6,6 +6,9 @@
   vars_files:
     - ../group_vars/all.yml
   tasks:
+    - name: 确保安装了数据库依赖
+      ansible.builtin.import_tasks: ensure_pymysql.yml
+
     - name: 统计 Kodi 数据库中的媒体条目总数
       delegate_to: localhost
       ansible.mariadb.mariadb_query:

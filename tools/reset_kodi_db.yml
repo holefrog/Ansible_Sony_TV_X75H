@@ -7,6 +7,9 @@
     - ../group_vars/all.yml
 
   tasks:
+    - name: 确保安装了数据库依赖
+      ansible.builtin.import_tasks: ensure_pymysql.yml
+
     - name: 删除 MyVideos131 数据库
       ansible.mariadb.mariadb_db:
         login_host: "{{ mariadb_host }}"

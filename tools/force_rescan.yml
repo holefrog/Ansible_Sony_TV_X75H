@@ -6,6 +6,9 @@
   vars_files:
     - ../group_vars/all.yml
   tasks:
+    - name: 确保安装了数据库依赖
+      ansible.builtin.import_tasks: ensure_pymysql.yml
+
     - name: 清除 Kodi 数据库中的目录哈希缓存 (破坏 Fast Hash)
       ansible.mariadb.mariadb_query:
         login_host: "{{ mariadb_host }}"

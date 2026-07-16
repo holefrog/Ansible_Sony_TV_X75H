@@ -1,0 +1,14 @@
+---
+- name: 检查控制节点是否已安装 PyMySQL
+  delegate_to: localhost
+  ansible.builtin.command: python3 -c "import pymysql"
+  register: pymysql_check
+  changed_when: false
+  failed_when: false
+
+- name: 安装 PyMySQL（Ansible mariadb 模块依赖）
+  delegate_to: localhost
+  ansible.builtin.pip:
+    name: PyMySQL
+    extra_args: "--break-system-packages"
+  when: pymysql_check.rc != 0

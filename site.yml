@@ -17,17 +17,7 @@
           按 Enter 继续，Ctrl+C 取消
           ====================================================
 
-    - name: 检查控制节点是否已安装 PyMySQL
-      ansible.builtin.command: python3 -c "import pymysql"
-      register: pymysql_check
-      changed_when: false
-      failed_when: false
 
-    - name: 安装 PyMySQL（Ansible community.mysql 模块依赖）
-      ansible.builtin.pip:
-        name: PyMySQL
-        extra_args: "--break-system-packages"
-      when: pymysql_check.rc != 0
 
     - name: 验证 MariaDB 连通性 (检查 3306 端口)
       ansible.builtin.wait_for:
