@@ -3,6 +3,8 @@
   hosts: localhost
   connection: local
   gather_facts: false
+  vars_files:
+    - ../group_vars/all.yml
   tasks:
     - name: 统计 Kodi 数据库中的媒体条目总数
       delegate_to: localhost

@@ -8,6 +8,7 @@ echo "请选择要执行的操作："
 echo "1. 正常部署 (运行 site.yml)"
 echo "2. 清空 Kodi 数据库 (重置)"
 echo "3. 检查并修复 Kodi 媒体库 (查漏 + 强制重扫)"
+echo "4. 从电视拉取 Kodi 运行日志"
 echo "0. 退出 (默认)"
 echo "======================================"
 read -r -p "请输入选项 [0]: " choice
@@ -40,6 +41,11 @@ case "$choice" in
         else
             echo ">>> 检查完毕，退出。"
         fi
+        exit 0
+        ;;
+    4)
+        echo ">>> 正在从电视拉取 Kodi 日志..."
+        ansible-playbook tools/fetch_kodi_log.yml
         exit 0
         ;;
     *)

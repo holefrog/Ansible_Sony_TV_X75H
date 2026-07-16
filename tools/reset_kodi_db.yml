@@ -3,6 +3,8 @@
   hosts: localhost
   connection: local
   gather_facts: false
+  vars_files:
+    - ../group_vars/all.yml
 
   tasks:
     - name: 删除 MyVideos131 数据库

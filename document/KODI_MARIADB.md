@@ -230,9 +230,7 @@ docker ps | grep kodi-mariadb
 **Kodi 日志位置（用于排查连接问题）**
 
 ```bash
-adb -s 192.168.50.220:5555 pull \
-  /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/temp/kodi.log \
-  ./kodi.log
+ansible-playbook tools/fetch_kodi_log.yml
 ```
 
 查找关键字：`Unable to open database` 或 `SQL:`。
