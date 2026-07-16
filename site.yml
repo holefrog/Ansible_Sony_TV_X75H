@@ -29,12 +29,12 @@
         extra_args: "--break-system-packages"
       when: pymysql_check.rc != 0
 
-    - name: 验证 MariaDB 连通性
-      community.mysql.mysql_info:
-        login_host: "{{ mariadb_host }}"
-        login_port: "{{ mariadb_port }}"
-        login_user: root
-        login_password: "{{ mariadb_root_password }}"
+    - name: 验证 MariaDB 连通性 (检查 3306 端口)
+      ansible.builtin.wait_for:
+        host: "{{ mariadb_host }}"
+        port: "{{ mariadb_port }}"
+        timeout: 3
+        state: started
       register: db_info
       failed_when: false
 
