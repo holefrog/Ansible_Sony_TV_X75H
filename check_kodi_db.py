@@ -9,10 +9,10 @@ try:
     with open(yaml_path, 'r', encoding='utf-8') as f:
         config = yaml.safe_load(f)
         
-    NAS_HOST = config.get('mariadb_host')
-    NAS_PORT = config.get('mariadb_port', 3306)
-    DB_USER = config.get('mariadb_user')
-    DB_PASSWORD = config.get('mariadb_password')
+    MARIADB_HOST = config.get('mariadb_host')
+    MARIADB_PORT = config.get('mariadb_port', 3306)
+    MARIADB_USER = config.get('mariadb_user')
+    MARIADB_PASSWORD = config.get('mariadb_user_password')
 except Exception as e:
     print(f"❌ 读取 {yaml_path} 失败: {e}")
     print("👉 请确保安装了 pyyaml 库: pip install pyyaml")

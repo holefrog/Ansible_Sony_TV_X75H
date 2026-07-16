@@ -42,6 +42,7 @@
       ansible.builtin.fail:
         msg: |
           【连接失败】无法连接到 MariaDB {{ mariadb_host }}:{{ mariadb_port }}
+          在部署前，要先运行 Ansible_QNAP 项目部署 MariaDB。
           请检查：
           1. QNAP 上 kodi-mariadb 容器是否正在运行
           2. 3306 端口是否已对外开放
@@ -51,4 +52,3 @@
   roles:
     - system_init
     - apps
-    - mariadb_init
