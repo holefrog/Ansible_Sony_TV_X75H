@@ -6,7 +6,7 @@
   # 所有变量统一在 group_vars/all.yml 中定义
   pre_tasks:
     - name: 载入外部数据库配置
-      ansible.builtin.import_tasks: load_db_secrets.yml
+      ansible.builtin.import_tasks: tools/load_db_secrets.yml
 
     - name: 部署前检查清单
       ansible.builtin.pause:
