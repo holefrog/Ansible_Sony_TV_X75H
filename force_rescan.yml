@@ -5,7 +5,7 @@
   gather_facts: false
   tasks:
     - name: 清除 Kodi 数据库中的目录哈希缓存 (破坏 Fast Hash)
-      community.mysql.mysql_query:
+      ansible.mysql.mysql_query:
         login_host: "{{ mariadb_host }}"
         login_port: "{{ mariadb_port }}"
         login_user: "{{ mariadb_user }}"

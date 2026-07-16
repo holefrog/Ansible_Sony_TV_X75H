@@ -6,7 +6,7 @@
 
   tasks:
     - name: 删除 MyVideos131 数据库
-      community.mysql.mysql_db:
+      ansible.mysql.mysql_db:
         login_host: "{{ mariadb_host }}"
         login_port: "{{ mariadb_port }}"
         login_user: root
@@ -15,7 +15,7 @@
         state: absent
 
     - name: 删除 MyMusic83 数据库
-      community.mysql.mysql_db:
+      ansible.mysql.mysql_db:
         login_host: "{{ mariadb_host }}"
         login_port: "{{ mariadb_port }}"
         login_user: root
