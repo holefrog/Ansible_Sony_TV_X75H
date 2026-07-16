@@ -1,3 +1,4 @@
 ---
 - import_tasks: connect.yml
 - import_tasks: clear.yml
+- import_tasks: check_db.yml
