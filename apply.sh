@@ -30,7 +30,7 @@ case "$choice" in
         ;;
     3)
         echo ">>> 开始检查 Kodi 数据库..."
-        python3 check_kodi_db.py
+        ansible-playbook run_check_db.yml
         echo "--------------------------------------"
         read -r -p "是否需要清除哈希缓存并强制 Kodi 重新扫描以修复遗漏? (y/N): " rescan_choice
         if [[ "$rescan_choice" =~ ^[Yy]$ ]]; then
