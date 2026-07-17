@@ -41,8 +41,8 @@
             query: "SHOW DATABASES LIKE 'MyVideos131';"
           register: wait_db
           until: wait_db.rowcount[0] > 0
-          retries: 12
-          delay: 5
+          retries: 24
+          delay: 10
           changed_when: false
 
         - name: 自动关闭 Kodi 以释放数据库锁定

@@ -1,0 +1,7 @@
+- hosts: localhost
+  vars_files:
+    - group_vars/all.yml
+  vars:
+    role_path: /home/david/Coding/Ansible_Sony_TV_X75H/roles/apps
+  tasks:
+    - import_tasks: roles/apps/tasks/install_apks.yml

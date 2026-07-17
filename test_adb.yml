@@ -1,0 +1,14 @@
+- hosts: localhost
+  vars_files:
+    - group_vars/all.yml
+  tasks:
+    - name: check
+      ansible.builtin.command: "{{ adb_cmd }} shell ls /data/local/tmp/ansible_installed_apks/"
+      register: res
+      failed_when: false
+    - debug: var=res.stdout_lines
+    - name: check file
+      ansible.builtin.command: "{{ adb_cmd }} shell ls /data/local/tmp/ansible_installed_apks/26260c4e3098cb9fe12dbb678ffb6271b4c82538"
+      register: res2
+      failed_when: false
+    - debug: var=res2

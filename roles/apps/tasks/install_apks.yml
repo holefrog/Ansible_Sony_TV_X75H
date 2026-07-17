@@ -19,12 +19,12 @@
 
 - name: 创建 TV 端安装记录目录
   delegate_to: localhost
-  ansible.builtin.command: "{{ adb_cmd }} shell mkdir -p /data/local/tmp/ansible_installed_apks"
+  ansible.builtin.command: "{{ adb_cmd }} shell mkdir -p /sdcard/ansible_installed_apks"
   changed_when: false
 
 - name: 检查 APK 是否已经安装（比对 MD5）
   delegate_to: localhost
-  ansible.builtin.command: "{{ adb_cmd }} shell ls /data/local/tmp/ansible_installed_apks/{{ item.stat.checksum }}"
+  ansible.builtin.command: "{{ adb_cmd }} shell ls /sdcard/ansible_installed_apks/{{ item.stat.checksum }}"
   loop: "{{ apk_stats.results | default([]) }}"
   register: apk_check
   changed_when: false
@@ -56,7 +56,7 @@
 
 - name: 标记已成功安装的 APK
   delegate_to: localhost
-  ansible.builtin.command: "{{ adb_cmd }} shell touch /data/local/tmp/ansible_installed_apks/{{ item.item.stat.checksum }}"
+  ansible.builtin.command: "{{ adb_cmd }} shell touch /sdcard/ansible_installed_apks/{{ item.item.stat.checksum }}"
   loop: "{{ install_result.results | default([]) }}"
   loop_control:
     label: "{{ item.item.item.path | basename }}"
