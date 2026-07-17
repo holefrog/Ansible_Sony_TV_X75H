@@ -66,7 +66,8 @@ Ansible_Sony_TV_X75H/
 
 - 控制节点（ThinkPad）已安装 `adb`、`ansible`、`python3-pymysql`
 - TV 已开启开发者模式及网络 ADB 调试
-- QNAP 上 `kodi-mariadb` 容器已运行（见第 5 节）
+- **核心依赖**：QNAP 基础设施层已部署完毕，且本地存在 `~/.config/homelab/mariadb_config.yml` 凭证文件（由 `Ansible_QNAP` 自动生成）
+- 所有 APK 已手动下载并放入 `roles/apps/files/`
 - 所有 APK 已手动下载并放入 `roles/apps/files/`
 
 安装 PyMySQL（Ansible MySQL 模块依赖）：
@@ -81,11 +82,13 @@ pip install PyMySQL --break-system-packages
 
 ### 3.1 首次完整部署流程
 
+> **注意**：本剧本不再拥有数据库密码！密码由外部文件 `~/.config/homelab/mariadb_config.yml` 动态注入。
+
 ```
-第一步：QNAP 启动 MariaDB 容器
-第二步：./apply.sh             ← 创建 kodi 用户和权限，并部署 TV（含推送 advancedsettings.xml）
-第三步：等待 Kodi 自动启动并完成首次建库（MyVideos131），此时 Kodi 才会根据 advancedsettings.xml 连接 MariaDB 并完成数据库创建
-第四步：Ansible 会继续写入媒体路径绑定关系
+第一步：前往 Ansible_QNAP 项目运行 ./apply.sh 部署 MariaDB 容器，并生成凭证
+第二步：返回本项目，运行 ./apply.sh  ← 自动读取凭证，并部署 TV（含推送 advancedsettings.xml）
+第三步：等待 Kodi 自动启动并完成首次建库（MyVideos131），由于我们给了足量的等待时间，Kodi 能够从容建表
+第四步：Ansible 会继续连接 MariaDB 验证库是否就绪，并写入媒体路径绑定关系
 第五步：Kodi 扫描媒体           ← 读取 NFO 写入 MariaDB，完成
 ```
 
@@ -129,13 +132,19 @@ Kodi 启动直接连 MariaDB，媒体库全部恢复，无需任何手动操作�
 
 ---
 
-## 5. MariaDB 容器设置（已交由 Ansible_QNAP 项目管理）
+## 5. 跨项目解耦与 MariaDB 容器（由 Ansible_QNAP 管理）
 
-**重要更新**：为了贯彻“前后端分离”的架构思想，本 TV 项目现在仅负责客户端配置。
-关于 MariaDB 的所有部署操作（包括 docker-compose 启动容器、创建数据库用户、关闭 SSL、写入媒体库路径绑定等）已经全部迁移到专门的基础设施项目 **Ansible_QNAP** 中实现。
+**重要更新**：为了贯彻“微服务解耦”的架构思想，本 TV 项目现在**完全作为一个纯客户端 (Consumer)**。
 
-在运行本 TV 部署脚本前，请务必先运行 Ansible_QNAP 项目的部署脚本。
-本项目的 `site.yml` 也会在第一步自动检测 MariaDB 的 3306 端口连通性，若未准备好将自动阻断部署并提示。
+关于 MariaDB 的所有“脏活累活”（包括 docker-compose 启动容器、创建数据库用户、关闭 SSL、修复挂载权限等）已经**全部迁移到专门的基础设施项目 Ansible_QNAP** 中实现。
+
+**协同机制：**
+1. 在 `Ansible_QNAP` 部署完成时，它会在你的控制节点自动生成文件 `~/.config/homelab/mariadb_config.yml`。
+2. 当你运行本项目的 `site.yml` 时，它会第一时间 `include_vars` 这个凭证文件。
+3. 随后，本项目通过自带的 `kodi.yml` 生成连接 MariaDB 的 `advancedsettings.xml` 并推送到 TV 端。
+4. 本项目还包含了一个更长、更健壮的“等待机制”，确保 TV 端的 Kodi 在首次启动后有充足的时间（>20秒）自发创建 `MyVideos131` 库。
+
+在运行本 TV 部署脚本前，请务必先确认 QNAP 项目部署成功，并生成了有效的凭证。若凭证不存在或 3306 端口无法连通，部署将被自动阻断。
 
 ### 5.3 版本升级说明
 
